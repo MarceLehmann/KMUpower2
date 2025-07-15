@@ -181,6 +181,7 @@
 
         nav ul li {
             margin-left: 30px;
+            position: relative;
         }
 
         nav ul li a {
@@ -189,12 +190,56 @@
             padding: 8px 0;
             border-bottom: 2px solid transparent;
             transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         nav ul li a.active, nav ul li a:hover {
             color: var(--primary-color);
             border-bottom-color: var(--primary-color);
             text-decoration: none;
+        }
+        
+        .dropdown .dropdown-toggle .arrow {
+            transition: transform 0.2s ease;
+            font-size: 0.8em;
+        }
+        .dropdown:hover .dropdown-toggle .arrow {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: -1rem;
+            background-color: var(--light-color);
+            box-shadow: var(--shadow-hover);
+            border-radius: var(--border-radius);
+            padding: 0.5rem 0;
+            list-style: none;
+            z-index: 1010;
+            min-width: 200px;
+            border: 1px solid var(--border-color);
+        }
+        .dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu li {
+            margin: 0;
+        }
+        .dropdown-menu li a {
+            padding: 0.75rem 1.5rem;
+            border-bottom: none;
+            display: block;
+            width: 100%;
+        }
+         .dropdown-menu li a:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-dark-color);
+            border-bottom: none;
         }
 
         .menu-toggle {
@@ -336,8 +381,8 @@
         }
         footer .container.grid-footer {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 30px;
         }
         footer h4 {
             color: var(--light-color);
@@ -458,7 +503,7 @@
             h2 { font-size: 2.2rem; }
             .pricing-grid { grid-template-columns: 1fr; }
             .pricing-card.highlight { transform: scale(1); }
-            footer .container.grid-footer { grid-template-columns: 1fr 1fr; }
+            footer .container.grid-footer { grid-template-columns: repeat(3, 1fr); gap: 30px; }
         }
 
         @media (max-width: 768px) {
@@ -495,14 +540,37 @@
                 display: block;
                 padding: 1rem 2rem;
                 font-size: 1.2rem;
+                border-bottom: none !important;
             }
             nav ul li a.active, nav ul li a:hover {
                 border-bottom-color: transparent;
                 background-color: var(--secondary-color);
             }
+            
+            .dropdown .dropdown-menu {
+                display: none;
+                position: static;
+                box-shadow: none;
+                border: none;
+                width: 100%;
+                padding-left: 2rem;
+                background-color: var(--secondary-color);
+                border-radius: 0;
+            }
+            .dropdown.open .dropdown-menu {
+                display: block;
+            }
+            .dropdown a.dropdown-toggle {
+                justify-content: space-between;
+                width: 100%;
+            }
+            
             .menu-toggle {
                 display: block;
             }
+            footer .container.grid-footer { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) {
             footer .container.grid-footer { grid-template-columns: 1fr; }
         }
     </style>
@@ -522,7 +590,15 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="loesungen.html">Lösungen</a></li>
-                        <li><a href="kmupowersuite.html">KMUpowerSuite</a></li>
+                        <li class="dropdown">
+                            <a href="kmupowersuite.html" class="dropdown-toggle">KMUpowerSuite <span class="arrow">&#9662;</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="kmupowersuite.html">Übersicht</a></li>
+                                <li><a href="suite-crm.html">CRM</a></li>
+                                <li><a href="suite-mailing.html">Mailing</a></li>
+                                <li><a href="suite-mitarbeiter.html">Mitarbeiter</a></li>
+                            </ul>
+                        </li>
                         <li><a href="preise.html" class="active">Preise</a></li>
                         <li><a href="ueber-uns.html">Über Uns</a></li>
                         <li><a href="kontakt.html">Kontakt</a></li>
@@ -720,7 +796,6 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="loesungen.html">Lösungen</a></li>
-                        <li><a href="kmupowersuite.html">KMUpowerSuite</a></li>
                         <li><a href="preise.html">Preise</a></li>
                         <li><a href="ueber-uns.html">Über Uns</a></li>
                         <li><a href="kontakt.html">Kontakt</a></li>
@@ -733,6 +808,12 @@
                        <li><a href="loesungen.html#power-automate">Power Automate</a></li>
                        <li><a href="loesungen.html#ki-integration">KI-Integration</a></li>
                        <li><a href="loesungen.html#beratung">Beratung</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Für Partner</h4>
+                    <ul>
+                        <li><a href="it-partner.html">IT-Partner Programm</a></li>
                     </ul>
                 </div>
                  <div>
@@ -763,67 +844,40 @@
     </div>
 
     <script>
-        // --- Mobile Menu ---
+        document.getElementById('current-year').textContent = new Date().getFullYear();
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav');
         if (menuToggle && nav) {
-            const closeIcon = '&times;';
-            const menuIcon = '&#9776;';
             menuToggle.addEventListener('click', () => {
                 const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
                 nav.classList.toggle('active');
                 menuToggle.setAttribute('aria-expanded', String(!isExpanded));
-                menuToggle.innerHTML = !isExpanded ? closeIcon : menuIcon;
+                menuToggle.innerHTML = !isExpanded ? '&times;' : '&#9776;';
                 document.body.style.overflow = !isExpanded ? 'hidden' : '';
             });
+            // Handle mobile dropdown
+            const dropdowns = nav.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+                toggle.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('open');
+                    }
+                });
+            });
         }
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // --- Modal Logic ---
+        
         const openModalButtons = document.querySelectorAll('[data-modal-target]');
         const closeModalButtons = document.querySelectorAll('[data-modal-close]');
         const overlay = document.getElementById('booking-modal');
 
-        function openModal(modal) {
-            if (modal == null) return;
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal(modal) {
-            if (modal == null) return;
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        openModalButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                const modal = document.querySelector(button.dataset.modalTarget);
-                openModal(modal);
-            });
-        });
-
-        if (overlay) {
-            overlay.addEventListener('click', e => {
-                if (e.target === overlay) {
-                    closeModal(overlay);
-                }
-            });
-        }
-
-        closeModalButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const modal = button.closest('.modal-overlay');
-                closeModal(modal);
-            });
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === "Escape" && overlay && overlay.classList.contains('active')) {
-                closeModal(overlay);
-            }
-        });
+        function openModal(modal) { if (modal) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; }}
+        function closeModal(modal) { if (modal) { modal.classList.remove('active'); document.body.style.overflow = ''; }}
+        openModalButtons.forEach(b => b.addEventListener('click', (e) => { e.preventDefault(); openModal(document.querySelector(b.dataset.modalTarget)); }));
+        if (overlay) overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(overlay); });
+        closeModalButtons.forEach(b => b.addEventListener('click', () => closeModal(b.closest('.modal-overlay'))));
+        document.addEventListener('keydown', e => { if (e.key === "Escape" && overlay && overlay.classList.contains('active')) closeModal(overlay); });
     </script>
 </body>
 </html>

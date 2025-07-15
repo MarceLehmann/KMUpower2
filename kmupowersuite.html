@@ -118,6 +118,7 @@
             border: 2px solid transparent;
             font-size: 1rem;
             text-align: center;
+            width: 100%;
         }
 
         .btn-primary {
@@ -182,6 +183,7 @@
 
         nav ul li {
             margin-left: 30px;
+            position: relative;
         }
 
         nav ul li a {
@@ -190,12 +192,56 @@
             padding: 8px 0;
             border-bottom: 2px solid transparent;
             transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         nav ul li a.active, nav ul li a:hover {
             color: var(--primary-color);
             border-bottom-color: var(--primary-color);
             text-decoration: none;
+        }
+
+        .dropdown .dropdown-toggle .arrow {
+            transition: transform 0.2s ease;
+            font-size: 0.8em;
+        }
+        .dropdown:hover .dropdown-toggle .arrow {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: -1rem;
+            background-color: var(--light-color);
+            box-shadow: var(--shadow-hover);
+            border-radius: var(--border-radius);
+            padding: 0.5rem 0;
+            list-style: none;
+            z-index: 1010;
+            min-width: 200px;
+            border: 1px solid var(--border-color);
+        }
+        .dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu li {
+            margin: 0;
+        }
+        .dropdown-menu li a {
+            padding: 0.75rem 1.5rem;
+            border-bottom: none;
+            display: block;
+            width: 100%;
+        }
+         .dropdown-menu li a:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-dark-color);
+            border-bottom: none;
         }
 
         .menu-toggle {
@@ -228,6 +274,8 @@
             padding: 2.5rem;
             box-shadow: var(--shadow);
             transition: all var(--transition-speed) ease;
+            display: flex;
+            flex-direction: column;
         }
         .card:hover {
             transform: translateY(-8px);
@@ -237,35 +285,84 @@
             margin-bottom: 0.5rem;
         }
         
+        .card.card-link {
+            text-decoration: none;
+            color: inherit;
+        }
+        .card.card-link h3, .card.card-link p {
+             color: inherit;
+             color: var(--dark-color);
+        }
+         .card.card-link p {
+             color: var(--text-light-color);
+         }
+        
         .module-grid {
              display: grid;
              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
              gap: 30px;
         }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            align-items: flex-end;
+            margin-top: 60px;
+        }
         
-        .table-responsive {
-            overflow-x: auto;
+        .pricing-card {
+            background-color: var(--light-color);
             border: 1px solid var(--border-color);
             border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: all var(--transition-speed) ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-        }
-        
-        th, td {
-            padding: 1rem 1.25rem;
+        .pricing-card-header {
             border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
         }
-        th {
-            background-color: var(--secondary-color);
-            font-weight: 600;
+        .pricing-card-body {
+            flex-grow: 1;
         }
-        
-        tr:last-child td {
-            border-bottom: none;
+        .pricing-card-footer {
+            margin-top: 2rem;
+        }
+        .pricing-card.highlight {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+            box-shadow: var(--shadow-hover);
+        }
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--dark-color);
+        }
+        .pricing-card .price span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-light-color);
+        }
+        .pricing-card ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .pricing-card ul li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        .pricing-card ul li svg {
+            color: var(--primary-color);
+            margin-right: 15px;
+            flex-shrink: 0;
+            margin-top: 5px;
         }
         
         .cta-section {
@@ -289,8 +386,8 @@
         }
         footer .container.grid-footer {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 30px;
         }
         footer h4 {
             color: var(--light-color);
@@ -409,8 +506,9 @@
         @media(max-width: 992px) {
             h1 { font-size: 2.8rem; }
             h2 { font-size: 2.2rem; }
-            .grid-3 { grid-template-columns: 1fr; }
-            footer .container.grid-footer { grid-template-columns: 1fr 1fr; }
+            .grid-3, .pricing-grid { grid-template-columns: 1fr; }
+            .pricing-card.highlight { transform: scale(1); }
+            footer .container.grid-footer { grid-template-columns: repeat(3, 1fr); gap: 30px; }
         }
 
         @media (max-width: 768px) {
@@ -447,17 +545,41 @@
                 display: block;
                 padding: 1rem 2rem;
                 font-size: 1.2rem;
+                border-bottom: none !important;
             }
              nav ul li a.active, nav ul li a:hover {
                 border-bottom-color: transparent;
                 background-color: var(--secondary-color);
             }
+            
+            .dropdown .dropdown-menu {
+                display: none;
+                position: static;
+                box-shadow: none;
+                border: none;
+                width: 100%;
+                padding-left: 2rem;
+                background-color: var(--secondary-color);
+                border-radius: 0;
+            }
+            .dropdown.open .dropdown-menu {
+                display: block;
+            }
+            .dropdown a.dropdown-toggle {
+                justify-content: space-between;
+                width: 100%;
+            }
+
             .menu-toggle {
                 display: block;
             }
             .cta-section {
                  padding: 3rem 1.5rem;
             }
+            footer .container.grid-footer { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 480px) {
             footer .container.grid-footer { grid-template-columns: 1fr; }
         }
     </style>
@@ -477,7 +599,15 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="loesungen.html">Lösungen</a></li>
-                        <li><a href="kmupowersuite.html" class="active">KMUpowerSuite</a></li>
+                        <li class="dropdown">
+                            <a href="kmupowersuite.html" class="dropdown-toggle active">KMUpowerSuite <span class="arrow">&#9662;</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="kmupowersuite.html">Übersicht</a></li>
+                                <li><a href="suite-crm.html">CRM</a></li>
+                                <li><a href="suite-mailing.html">Mailing</a></li>
+                                <li><a href="suite-mitarbeiter.html">Mitarbeiter</a></li>
+                            </ul>
+                        </li>
                         <li><a href="preise.html">Preise</a></li>
                         <li><a href="ueber-uns.html">Über Uns</a></li>
                         <li><a href="kontakt.html">Kontakt</a></li>
@@ -504,18 +634,18 @@
                     
                     <h3>Kernmodule (Ihre Basis für den Erfolg)</h3>
                     <div class="module-grid" style="margin-top: 2rem; margin-bottom: 4rem;">
-                        <div class="card">
+                        <a href="suite-crm.html" class="card card-link">
                             <h3>CRM</h3>
                             <p>Kunden, Interessenten und Lieferanten in einer 360°-Sicht verwalten.</p>
-                        </div>
-                        <div class="card">
+                        </a>
+                        <a href="suite-mailing.html" class="card card-link">
                             <h3>Mailing / Newsletter</h3>
                             <p>Zielgruppen aus dem CRM erstellen und Sequenzmails versenden.</p>
-                        </div>
-                        <div class="card">
+                        </a>
+                        <a href="suite-mitarbeiter.html" class="card card-link">
                             <h3>Mitarbeiterverwaltung</h3>
                             <p>Zentrale Verwaltung von Stammdaten und Rollen.</p>
-                        </div>
+                        </a>
                     </div>
 
                     <h3>Erweiterbare Add-ons</h3>
@@ -554,33 +684,57 @@
                         <h2>Preisgestaltung</h2>
                         <p>Transparente Einmalpreise für die Implementierung. Keine versteckten Lizenzkosten – eine M365 Business Standard Lizenz pro User genügt.</p>
                     </div>
-                    <div class="table-responsive">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Paket</th>
-                                    <th>Einmaliger Preis (CHF/€)</th>
-                                    <th>Inhalt</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Einzelmodul</strong></td>
-                                    <td>1'000</td>
-                                    <td>1 Modul nach Wahl, Grundeinrichtung</td>
-                                </tr>
-                                 <tr>
-                                    <td><strong>Kernpaket (3 Module)</strong></td>
-                                    <td>2'222</td>
-                                    <td>CRM, Mailing, Mitarbeiterverwaltung</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Komplettpaket (7 Module)</strong></td>
-                                    <td>7'500</td>
-                                    <td>Kernpaket + 4 Add-ons, inkl. 20h Support</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <div class="pricing-card-header">
+                                <h3>Einzelmodul</h3>
+                                <div class="price">1'000<span> CHF</span></div>
+                                <p>Ein Modul nach Wahl inkl. Grundeinrichtung.</p>
+                            </div>
+                            <div class="pricing-card-body">
+                                <ul>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Perfekter Einstieg</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Jederzeit erweiterbar</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-card-footer">
+                                <button class="btn btn-secondary" style="width:100%" data-modal-target="#booking-modal">Anfragen</button>
+                            </div>
+                        </div>
+                        <div class="pricing-card highlight">
+                             <div class="pricing-card-header">
+                                <h3>Kernpaket</h3>
+                                <div class="price">2'222<span> CHF</span></div>
+                                <p>Die 3 wichtigsten Module für einen erfolgreichen Start.</p>
+                            </div>
+                            <div class="pricing-card-body">
+                                <ul>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>CRM-Modul</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Mailing-Modul</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Mitarbeiter-Modul</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-card-footer">
+                                <button class="btn btn-primary" style="width:100%" data-modal-target="#booking-modal">Beliebtestes Paket</button>
+                            </div>
+                        </div>
+                        <div class="pricing-card">
+                             <div class="pricing-card-header">
+                                <h3>Komplettpaket</h3>
+                                <div class="price">7'500<span> CHF</span></div>
+                                <p>Das Rundum-sorglos-Paket für die komplette Digitalisierung.</p>
+                            </div>
+                            <div class="pricing-card-body">
+                               <ul>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Kernpaket (3 Module)</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Plus 4 Add-ons nach Wahl</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Inklusive 20h Support</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-card-footer">
+                                <button class="btn btn-secondary" style="width:100%" data-modal-target="#booking-modal">Anfragen</button>
+                            </div>
+                        </div>
                     </div>
                      <p style="text-align: center; margin-top: 2rem; font-style: italic;">Nachkauf-Staffel: 2. Modul 900 / 3. 800 / 4. 700 / 5. 600 / ab 6. 500</p>
                 </div>
@@ -646,7 +800,6 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="loesungen.html">Lösungen</a></li>
-                        <li><a href="kmupowersuite.html">KMUpowerSuite</a></li>
                         <li><a href="preise.html">Preise</a></li>
                         <li><a href="ueber-uns.html">Über Uns</a></li>
                         <li><a href="kontakt.html">Kontakt</a></li>
@@ -659,6 +812,12 @@
                        <li><a href="loesungen.html#power-automate">Power Automate</a></li>
                        <li><a href="loesungen.html#ki-integration">KI-Integration</a></li>
                        <li><a href="loesungen.html#beratung">Beratung</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Für Partner</h4>
+                    <ul>
+                        <li><a href="it-partner.html">IT-Partner Programm</a></li>
                     </ul>
                 </div>
                  <div>
@@ -689,21 +848,29 @@
     </div>
 
     <script>
-        // --- Mobile Menu ---
+        document.getElementById('current-year').textContent = new Date().getFullYear();
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav');
         if (menuToggle && nav) {
-            const closeIcon = '&times;';
-            const menuIcon = '&#9776;';
             menuToggle.addEventListener('click', () => {
                 const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
                 nav.classList.toggle('active');
                 menuToggle.setAttribute('aria-expanded', String(!isExpanded));
-                menuToggle.innerHTML = !isExpanded ? closeIcon : menuIcon;
+                menuToggle.innerHTML = !isExpanded ? '&times;' : '&#9776;';
                 document.body.style.overflow = !isExpanded ? 'hidden' : '';
             });
+            // Handle mobile dropdown
+            const dropdowns = nav.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+                toggle.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('open');
+                    }
+                });
+            });
         }
-        document.getElementById('current-year').textContent = new Date().getFullYear();
 
         // --- Modal Logic ---
         const openModalButtons = document.querySelectorAll('[data-modal-target]');

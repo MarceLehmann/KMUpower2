@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unsere Lösungen | KMUpower</title>
-    <meta name="description" content="Umfassendes Portfolio zur Digitalisierung Ihres Unternehmens: Beratungsleistungen, Lösungsentwicklung mit Power Platform und KI-Integration.">
+    <title>IT-Partner Programm | KMUpower</title>
+    <meta name="description" content="Werden Sie Partner von KMUpower. Erweitern Sie Ihr Portfolio mit unserer Microsoft Power Platform Expertise und schaffen Sie Mehrwert für Ihre Kunden.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -92,16 +92,6 @@
             letter-spacing: 0.5px;
             margin-bottom: 0.5rem;
         }
-
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color var(--transition-speed) ease;
-        }
-
-        a:hover {
-            color: var(--primary-dark-color);
-        }
         
         .btn {
             display: inline-block;
@@ -128,7 +118,7 @@
             box-shadow: var(--shadow-hover);
             text-decoration: none;
         }
-
+        
         header {
             background-color: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -152,10 +142,6 @@
             align-items: center;
             gap: 10px;
             text-decoration: none;
-        }
-        .logo a:hover {
-            text-decoration: none;
-            opacity: 0.9;
         }
         .logo-img {
             height: 32px;
@@ -192,7 +178,7 @@
             align-items: center;
             gap: 5px;
         }
-
+        
         nav ul li a.active, nav ul li a:hover {
             color: var(--primary-color);
             border-bottom-color: var(--primary-color);
@@ -252,10 +238,6 @@
         section {
             padding: 100px 0;
         }
-        section:not(:first-of-type) {
-             border-top: 1px solid var(--border-color);
-        }
-
         .section-bg {
             background-color: var(--secondary-color);
         }
@@ -267,32 +249,6 @@
             align-items: center;
         }
         
-        .grid-2.reversed > div:first-child {
-            order: 2;
-        }
-
-        .image-placeholder {
-            background-color: var(--secondary-color); 
-            border-radius: var(--border-radius); 
-            width: 100%; 
-            height: 100%;
-            min-height: 350px;
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        .image-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-        .image-placeholder:hover img {
-            transform: scale(1.05);
-        }
-
         .value-list {
             list-style: none;
             margin-top: 2rem;
@@ -310,6 +266,16 @@
             flex-shrink: 0;
             margin-top: 5px;
         }
+
+        .partner-package-card {
+            border: 2px solid var(--primary-color);
+            background: var(--secondary-color);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+        }
+        .partner-package-card ul li svg {
+            color: var(--dark-color);
+        }
         
         .cta-section {
             background: linear-gradient(45deg, var(--dark-color), #3c5a75);
@@ -324,7 +290,7 @@
         .cta-section p {
             color: #bdc3c7;
         }
-
+        
         footer {
             background-color: var(--dark-color);
             color: #bdc3c7;
@@ -360,8 +326,7 @@
             border-top: 1px solid #34495e;
             font-size: 0.9rem;
         }
-        
-        /* --- Modal Styles --- */
+
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -378,13 +343,11 @@
             visibility: hidden;
             transition: opacity 0.3s ease, visibility 0s 0.3s;
         }
-
         .modal-overlay.active {
             opacity: 1;
             visibility: visible;
             transition: opacity 0.3s ease;
         }
-
         .modal-container {
             background-color: var(--light-color);
             border-radius: var(--border-radius);
@@ -394,74 +357,30 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            transform: scale(0.95) translateY(20px);
-            transition: transform 0.3s ease;
         }
-
-        .modal-overlay.active .modal-container {
-            transform: scale(1) translateY(0);
-        }
-
         .modal-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1rem 1.5rem;
             border-bottom: 1px solid var(--border-color);
-            flex-shrink: 0;
         }
-
-        .modal-title-text {
-            font-size: 1.25rem;
-            margin: 0;
-        }
-
-        .modal-close {
-            background: none;
-            border: none;
-            font-size: 2.5rem;
-            line-height: 1;
-            cursor: pointer;
-            color: var(--text-light-color);
-            transition: color 0.2s, transform 0.2s;
-        }
-        .modal-close:hover {
-            color: var(--dark-color);
-            transform: rotate(90deg);
-        }
-
-        .modal-content {
-            flex-grow: 1;
-            overflow-y: auto;
-        }
-
-        .iframe-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-        .iframe-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
+        .modal-title-text { font-size: 1.25rem; margin: 0; }
+        .modal-close { background: none; border: none; font-size: 2.5rem; line-height: 1; cursor: pointer; color: var(--text-light-color); }
+        .modal-content { flex-grow: 1; overflow-y: auto; }
+        .iframe-container { position: relative; width: 100%; height: 100%; }
+        .iframe-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
         @media(max-width: 992px) {
             h1 { font-size: 2.8rem; }
             h2 { font-size: 2.2rem; }
             .grid-2 { grid-template-columns: 1fr; gap: 40px; }
-            .grid-2.reversed > div:first-child { order: 1; }
-            .image-placeholder { min-height: 300px; margin-bottom: 2rem;}
-            footer .container.grid-footer { grid-template-columns: repeat(3, 1fr); gap: 30px; }
+            footer .container.grid-footer { grid-template-columns: 1fr 1fr; }
         }
-
         @media (max-width: 768px) {
-            body { font-size: 16px; }
             header { padding: 0.75rem 0; }
             .logo-text { font-size: 1.2rem; }
+            .menu-toggle { display: block; }
             nav {
                 display: none;
                 position: fixed;
@@ -478,54 +397,14 @@
                 display: flex;
                 transform: translateX(0);
             }
-            nav ul {
-                flex-direction: column;
-                width: 100%;
-                padding: 2rem 0;
-                align-items: flex-start;
-            }
-            nav ul li {
-                margin: 0;
-                width: 100%;
-            }
-            nav ul li a {
-                display: block;
-                padding: 1rem 2rem;
-                font-size: 1.2rem;
-                border-bottom: none !important;
-            }
-            nav ul li a.active, nav ul li a:hover {
-                border-bottom-color: transparent;
-                background-color: var(--secondary-color);
-            }
-            
-            .dropdown .dropdown-menu {
-                display: none;
-                position: static;
-                box-shadow: none;
-                border: none;
-                width: 100%;
-                padding-left: 2rem;
-                background-color: var(--secondary-color);
-                border-radius: 0;
-            }
-            .dropdown.open .dropdown-menu {
-                display: block;
-            }
-            .dropdown a.dropdown-toggle {
-                justify-content: space-between;
-                width: 100%;
-            }
-            
-            .menu-toggle {
-                display: block;
-            }
-            .cta-section {
-                 padding: 3rem 1.5rem;
-            }
-            footer .container.grid-footer { grid-template-columns: 1fr 1fr; }
-        }
-        @media (max-width: 480px) {
+            nav ul { flex-direction: column; width: 100%; padding: 2rem 0; align-items: flex-start; }
+            nav ul li { margin: 0; width: 100%; }
+            nav ul li a { display: block; padding: 1rem 2rem; font-size: 1.2rem; }
+            nav ul li a.active, nav ul li a:hover { border-bottom-color: transparent; background-color: var(--secondary-color); }
+            .dropdown .dropdown-menu { display: none; position: static; box-shadow: none; border: none; width: 100%; padding-left: 2rem; }
+            .dropdown.open .dropdown-menu { display: block; }
+            .dropdown a.dropdown-toggle { justify-content: space-between; width: 100%; }
+            .cta-section { padding: 3rem 1.5rem; }
             footer .container.grid-footer { grid-template-columns: 1fr; }
         }
     </style>
@@ -535,7 +414,7 @@
         <header>
             <div class="container">
                 <div class="logo">
-                    <a href="index.html">
+                     <a href="index.html">
                         <img src="LOGO_KMUpower_high.webp" alt="KMUpower Logo" class="logo-img"/>
                         <span class="logo-text">KMU<span class="logo-text-power">power</span></span>
                     </a>
@@ -544,7 +423,7 @@
                 <nav id="main-nav">
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="loesungen.html" class="active">Lösungen</a></li>
+                        <li><a href="loesungen.html">Lösungen</a></li>
                         <li class="dropdown">
                             <a href="kmupowersuite.html" class="dropdown-toggle">KMUpowerSuite <span class="arrow">&#9662;</span></a>
                             <ul class="dropdown-menu">
@@ -563,95 +442,48 @@
         </header>
 
         <main>
-            <section class="section-bg" style="padding-bottom: 40px;">
+            <section class="section-bg">
                 <div class="container">
-                    <p class="subheading">IHR WEG ZUR DIGITALEN EXZELLENZ</p>
-                    <h1>Massgeschneiderte Lösungen für Ihren Erfolg.</h1>
-                    <p class="lead">Wir bieten ein umfassendes Portfolio, um die Digitalisierung in Ihrem Unternehmen pragmatisch und wertorientiert voranzutreiben.</p>
-                </div>
-            </section>
-            
-            <section id="beratung">
-                <div class="container grid-2">
-                    <div>
-                        <p class="subheading">STRATEGIE & PLANUNG</p>
-                        <h2>Digitalisierungsberatung</h2>
-                        <p>Der erste Schritt zu nachhaltigem Erfolg. Wir analysieren Ihr Potenzial und entwickeln eine klare, umsetzbare Strategie, die perfekt zu Ihrem KMU passt.</p>
-                        <ul class="value-list">
-                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>KMU Digital Check:</strong> Fundierte Analyse Ihres digitalen Reifegrads als Basis für alle weiteren Schritte.</div></li>
-                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Prozessoptimierung:</strong> Gemeinsame Identifikation und Priorisierung von Automatisierungspotenzialen.</div></li>
-                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Digitalisierungs-Roadmap:</strong> Entwicklung einer massgeschneiderten, strategischen Agenda für Ihre digitale Zukunft.</div></li>
-                        </ul>
-                    </div>
-                    <div class="image-placeholder">
-                        <img src="https://storage.googleapis.com/gemini-marc-files/7d223ac867a1496a7751910d60d3d5f5" alt="Digital strategy session illustration">
-                    </div>
-                </div>
-            </section>
-
-             <section id="power-apps" class="section-bg">
-                <div class="container grid-2 reversed">
-                    <div class="image-placeholder">
-                        <img src="https://storage.googleapis.com/gemini-marc-files/8c081e74fa0782d4957e87ab0bb69527" alt="Custom Power App on a tablet">
-                    </div>
-                    <div>
-                        <p class="subheading">INDIVIDUELLE APPS</p>
-                        <h2>Power Apps Entwicklung</h2>
-                        <p>Wir nutzen die Low-Code-Revolution, um individuelle Geschäftsanwendungen zu erstellen, die Ihre Arbeitsweise verändern – passgenau, skalierbar und zukunftssicher.</p>
-                         <ul class="value-list">
-                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Massgeschneiderte Apps:</strong> Von der mobilen Zeiterfassung bis zur komplexen Projektmanagement-Lösung.</div></li>
-                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Nahtlose Integration:</strong> Perfekte Anbindung an Ihre bestehenden Systeme wie Microsoft 365, ERP oder CRM.</div></li>
-                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Fokus auf User Experience:</strong> Intuitive und ansprechende Oberflächen für maximale Akzeptanz bei den Mitarbeitenden.</div></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            
-             <section id="power-automate">
-                <div class="container grid-2">
-                    <div>
-                        <p class="subheading">AUTOMATISIERUNG</p>
-                        <h2>Power Automate Workflows</h2>
-                        <p>Befreien Sie Ihre Mitarbeitenden von repetitiven, manuellen Aufgaben. Wir automatisieren Ihre Geschäftsprozesse und schaffen so Freiraum für wertschöpfende Tätigkeiten.</p>
-                         <ul class="value-list">
-                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Prozessautomatisierung:</strong> Von einfachen Genehmigungs-Workflows bis zur komplexen, systemübergreifenden Prozesskette.</div></li>
-                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Datenintegration:</strong> Nahtlose Anbindung an hunderte Datenquellen, von M365 bis zu Legacy-Systemen.</div></li>
-                        </ul>
-                    </div>
-                    <div class="image-placeholder">
-                         <img src="https://storage.googleapis.com/gemini-marc-files/8c72832a823e2060378e9944743285c5" alt="Workflow automation diagram">
-                    </div>
-                </div>
-            </section>
-            
-            <section id="ki-integration" class="section-bg">
-                <div class="container grid-2 reversed">
-                     <div class="image-placeholder">
-                        <img src="https://storage.googleapis.com/gemini-marc-files/2e90c67926715f33f6a27e0258752243" alt="Artificial intelligence brain illustration">
-                    </div>
-                    <div>
-                        <p class="subheading">INTELLIGENZ & INNOVATION</p>
-                        <h2>KI-Integration</h2>
-                        <p>Geben Sie Ihrem Unternehmen einen Wettbewerbsvorteil. Wir integrieren modernste KI-Technologien, um Ihre Prozesse intelligenter und Ihre Entscheidungen datengestützter zu machen.</p>
-                        <ul class="value-list">
-                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Microsoft Copilot Studio & Azure OpenAI:</strong> Intelligente Assistenz und modernste Sprachmodelle direkt in Ihren Geschäftsanwendungen.</div></li>
-                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>AI Builder:</strong> Nutzung vortrainierter KI-Modelle für Aufgaben wie Dokumentenverarbeitung, Vorhersagen oder Texterkennung.</div></li>
-                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Intelligente Prozesse:</strong> Von der automatisierten Rechnungsverarbeitung bis zur prädiktiven Analyse zur Unterstützung strategischer Entscheidungen.</div></li>
-                        </ul>
-                    </div>
+                    <p class="subheading">GEMEINSAM STARK</p>
+                    <h1>Das KMUpower IT-Partner Programm</h1>
+                    <p class="lead">Erweitern Sie Ihr Portfolio und bieten Sie Ihren Kunden erstklassige Digitalisierungslösungen auf Basis der Microsoft Power Platform. Wir sind Ihr spezialisierter Partner im Hintergrund.</p>
                 </div>
             </section>
             
             <section>
-                <div class="container">
-                    <div class="cta-section">
-                        <h2>Bereit für den nächsten Schritt?</h2>
-                        <p class="lead">Lassen Sie uns in einem unverbindlichen Gespräch herausfinden, wie wir Ihre spezifischen Herausforderungen lösen können.</p>
-                        <button class="btn btn-primary" data-modal-target="#booking-modal" style="margin-top: 1rem; display: inline-block; width: auto;">Jetzt kostenloses Erstgespräch buchen</button>
+                <div class="container grid-2">
+                    <div>
+                        <h2>Ihr Vorteil als unser Partner</h2>
+                        <p>Als etablierter IT-Dienstleister betreuen Sie Ihre Kunden umfassend. Doch die Nachfrage nach spezialisierten Low-Code-Lösungen und Prozessautomatisierung wächst rasant. Hier kommen wir ins Spiel.</p>
+                        <ul class="value-list">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Portfolioerweiterung:</strong> Bieten Sie gefragte Power Platform Expertise an, ohne eigene Spezialisten aufbauen zu müssen.</div></li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Fokus auf Ihr Kerngeschäft:</strong> Wir übernehmen die Spezialaufgaben, Sie konzentrieren sich auf die strategische Kundenbetreuung.</div></li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Zusätzliche Einnahmen:</strong> Profitieren Sie von attraktiven Konditionen und schaffen Sie neue Umsatzströme.</div></li>
+                              <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>White-Label-Option:</strong> Auf Wunsch treten wir als Teil Ihres Teams gegenüber dem Endkunden auf.</div></li>
+                        </ul>
+                    </div>
+                     <div class="partner-package-card">
+                        <h3>Exklusives IT-Partner Paket</h3>
+                        <p>Unser massgeschneidertes Retainer-Modell für eine reibungslose und kontinuierliche Zusammenarbeit.</p>
+                        <h2 style="font-size: 2.8rem; margin-top: 2rem;">1'400 <span style="font-size: 1rem; font-weight: 500;">CHF/Monat</span></h2>
+                        <ul class="value-list">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>8 Stunden</strong> Support & Entwicklungsleistung pro Monat.</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Garantierte Reaktionszeit</strong> von 4 Stunden (werktags).</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Kostenlose 4h-Schulung</strong> bei Abschluss eines 12-Monats-Vertrags.</li>
+                        </ul>
                     </div>
                 </div>
             </section>
 
+            <section class="section-bg">
+                <div class="container">
+                    <div class="cta-section">
+                        <h2>Lassen Sie uns Partner werden.</h2>
+                        <p class="lead">Kontaktieren Sie uns für ein unverbindliches Gespräch und erfahren Sie mehr über die Vorteile unseres Partnerprogramms.</p>
+                        <button class="btn btn-primary" data-modal-target="#booking-modal" style="margin-top: 1rem; display: inline-block; width: auto;">Gespräch vereinbaren</button>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <footer>
@@ -673,10 +505,10 @@
                  <div>
                     <h4>Leistungen</h4>
                     <ul>
-                       <li><a href="#power-apps">Power Apps</a></li>
-                       <li><a href="#power-automate">Power Automate</a></li>
-                       <li><a href="#ki-integration">KI-Integration</a></li>
-                       <li><a href="#beratung">Beratung</a></li>
+                       <li><a href="loesungen.html#power-apps">Power Apps</a></li>
+                       <li><a href="loesungen.html#power-automate">Power Automate</a></li>
+                       <li><a href="loesungen.html#ki-integration">KI-Integration</a></li>
+                       <li><a href="loesungen.html#beratung">Beratung</a></li>
                     </ul>
                 </div>
                 <div>
@@ -697,7 +529,7 @@
             </div>
         </footer>
     </div>
-
+    
     <div id="booking-modal" class="modal-overlay" aria-hidden="true">
         <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="modal-title">
             <header class="modal-header">
@@ -723,16 +555,17 @@
                 menuToggle.setAttribute('aria-expanded', String(!isExpanded));
                 menuToggle.innerHTML = !isExpanded ? '&times;' : '&#9776;';
                 document.body.style.overflow = !isExpanded ? 'hidden' : '';
-            });
-             // Handle mobile dropdown
-            const dropdowns = nav.querySelectorAll('.dropdown');
-            dropdowns.forEach(dropdown => {
-                const toggle = dropdown.querySelector('.dropdown-toggle');
-                toggle.addEventListener('click', (e) => {
-                    if (window.innerWidth <= 768) {
-                        e.preventDefault();
-                        dropdown.classList.toggle('open');
-                    }
+
+                // Handle mobile dropdown
+                const dropdowns = nav.querySelectorAll('.dropdown');
+                dropdowns.forEach(dropdown => {
+                    const toggle = dropdown.querySelector('.dropdown-toggle');
+                    toggle.addEventListener('click', (e) => {
+                        if (window.innerWidth <= 768) {
+                           e.preventDefault();
+                           dropdown.classList.toggle('open');
+                        }
+                    });
                 });
             });
         }

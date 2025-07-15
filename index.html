@@ -199,6 +199,7 @@
 
         nav ul li {
             margin-left: 30px;
+            position: relative;
         }
 
         nav ul li a {
@@ -207,12 +208,56 @@
             padding: 8px 0;
             border-bottom: 2px solid transparent;
             transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         nav ul li a.active, nav ul li a:hover {
             color: var(--primary-color);
             border-bottom-color: var(--primary-color);
             text-decoration: none;
+        }
+        
+        .dropdown .dropdown-toggle .arrow {
+            transition: transform 0.2s ease;
+            font-size: 0.8em;
+        }
+        .dropdown:hover .dropdown-toggle .arrow {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: -1rem;
+            background-color: var(--light-color);
+            box-shadow: var(--shadow-hover);
+            border-radius: var(--border-radius);
+            padding: 0.5rem 0;
+            list-style: none;
+            z-index: 1010;
+            min-width: 200px;
+            border: 1px solid var(--border-color);
+        }
+        .dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu li {
+            margin: 0;
+        }
+        .dropdown-menu li a {
+            padding: 0.75rem 1.5rem;
+            border-bottom: none;
+            display: block;
+            width: 100%;
+        }
+         .dropdown-menu li a:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-dark-color);
+            border-bottom: none;
         }
 
         .menu-toggle {
@@ -303,11 +348,19 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 40px;
+            gap: 20px 40px;
         }
         .authority-bar span {
             font-weight: 600;
             color: var(--text-light-color);
+        }
+        .authority-bar .authority-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .authority-bar .authority-item img {
+            height: 40px;
         }
 
         .logo-wall {
@@ -398,8 +451,8 @@
         }
         footer .container.grid-footer {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 30px;
         }
         footer h4 {
             color: var(--light-color);
@@ -522,7 +575,7 @@
             .grid-3, .grid-2 { grid-template-columns: 1fr; }
             .grid-2 > .image-placeholder { order: -1; margin-bottom: 2rem; }
             .founder-section { padding: 3rem; }
-            footer .container.grid-footer { grid-template-columns: 1fr 1fr; }
+            footer .container.grid-footer { grid-template-columns: repeat(3, 1fr); gap: 30px; }
         }
 
         @media (max-width: 768px) {
@@ -559,17 +612,40 @@
                 display: block;
                 padding: 1rem 2rem;
                 font-size: 1.2rem;
+                border-bottom: none !important;
             }
              nav ul li a.active, nav ul li a:hover {
                 border-bottom-color: transparent;
                 background-color: var(--secondary-color);
             }
+            .dropdown .dropdown-menu {
+                display: none;
+                position: static;
+                box-shadow: none;
+                border: none;
+                width: 100%;
+                padding-left: 2rem;
+                background-color: var(--secondary-color);
+                border-radius: 0;
+            }
+            .dropdown.open .dropdown-menu {
+                display: block;
+            }
+            .dropdown a.dropdown-toggle {
+                justify-content: space-between;
+                width: 100%;
+            }
+            
             .menu-toggle {
                 display: block;
             }
             .hero .buttons { flex-direction: column; }
             .video-grid { grid-template-columns: 1fr; }
             .founder-section { padding: 2rem; }
+            footer .container.grid-footer { grid-template-columns: 1fr 1fr; }
+        }
+        
+        @media (max-width: 480px) {
             footer .container.grid-footer { grid-template-columns: 1fr; }
         }
     </style>
@@ -590,7 +666,15 @@
                     <ul>
                         <li><a href="index.html" class="active">Home</a></li>
                         <li><a href="loesungen.html">Lösungen</a></li>
-                        <li><a href="kmupowersuite.html">KMUpowerSuite</a></li>
+                        <li class="dropdown">
+                            <a href="kmupowersuite.html" class="dropdown-toggle">KMUpowerSuite <span class="arrow">&#9662;</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="kmupowersuite.html">Übersicht</a></li>
+                                <li><a href="suite-crm.html">CRM</a></li>
+                                <li><a href="suite-mailing.html">Mailing</a></li>
+                                <li><a href="suite-mitarbeiter.html">Mitarbeiter</a></li>
+                            </ul>
+                        </li>
                         <li><a href="preise.html">Preise</a></li>
                         <li><a href="ueber-uns.html">Über Uns</a></li>
                         <li><a href="kontakt.html">Kontakt</a></li>
@@ -614,8 +698,9 @@
             <div class="authority-bar">
                 <div class="container">
                     <span><strong>AUSGEZEICHNETE EXPERTISE:</strong></span>
-                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: -2px; margin-right: 5px;"><path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-3.6V4.24zM1 4.239v6.522l6.5 3.6V6.839L1 4.24zM8 6.236L1.596 3.5 8 1.113 14.404 3.5 8 6.236z"/></svg>MICROSOFT MVP</span>
-                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: -2px; margin-right: 5px;"><path d="M8.736 5.07a.5.5 0 0 0-.472 0l-3.512 2.107a.5.5 0 0 0 0 .848l3.512 2.107a.5.5 0 0 0 .728-.424V5.494a.5.5 0 0 0-.256-.424z"/><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8z"/></svg>PARTNER OF THE YEAR SCHWEIZ</span>
+                    <div class="authority-item">
+                        <img src="https://storage.googleapis.com/gemini-marc-files/b6892550153835a6397268994a86b9ba" alt="Microsoft MVP Logo">
+                    </div>
                 </div>
             </div>
             
@@ -729,7 +814,6 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="loesungen.html">Lösungen</a></li>
-                        <li><a href="kmupowersuite.html">KMUpowerSuite</a></li>
                         <li><a href="preise.html">Preise</a></li>
                         <li><a href="ueber-uns.html">Über Uns</a></li>
                         <li><a href="kontakt.html">Kontakt</a></li>
@@ -742,6 +826,12 @@
                        <li><a href="loesungen.html#power-automate">Power Automate</a></li>
                        <li><a href="loesungen.html#ki-integration">KI-Integration</a></li>
                        <li><a href="loesungen.html#beratung">Beratung</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4>Für Partner</h4>
+                    <ul>
+                        <li><a href="it-partner.html">IT-Partner Programm</a></li>
                     </ul>
                 </div>
                  <div>
@@ -772,23 +862,33 @@
     </div>
 
     <script>
-        // --- Mobile Menu ---
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav');
         if (menuToggle && nav) {
-            const closeIcon = '&times;';
-            const menuIcon = '&#9776;';
             menuToggle.addEventListener('click', () => {
                 const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
                 nav.classList.toggle('active');
                 menuToggle.setAttribute('aria-expanded', String(!isExpanded));
-                menuToggle.innerHTML = !isExpanded ? closeIcon : menuIcon;
+                menuToggle.innerHTML = !isExpanded ? '&times;' : '&#9776;';
                 document.body.style.overflow = !isExpanded ? 'hidden' : '';
             });
+             // Handle mobile dropdown
+            const dropdowns = nav.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+                toggle.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 768) {
+                        // Prevent link navigation only on mobile
+                        e.preventDefault();
+                        // Toggle the 'open' class on the parent .dropdown element
+                        dropdown.classList.toggle('open');
+                    }
+                });
+            });
         }
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // --- Modal Logic ---
+        
         const openModalButtons = document.querySelectorAll('[data-modal-target]');
         const closeModalButtons = document.querySelectorAll('[data-modal-close]');
         const overlay = document.getElementById('booking-modal');
