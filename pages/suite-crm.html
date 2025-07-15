@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt | KMUpower</title>
-    <meta name="description" content="Kontaktieren Sie KMUpower für ein kostenloses Erstgespräch. Wir freuen uns darauf, Ihre Prozesse zu optimieren.">
+    <title>CRM Modul | KMUpowerSuite</title>
+    <meta name="description" content="Das CRM-Modul der KMUpowerSuite: Zentralisieren Sie Kunden, Interessenten und Lieferanten für eine 360°-Sicht und stärkere Geschäftsbeziehungen.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -40,7 +39,7 @@
             font-family: 'Inter', sans-serif;
             line-height: 1.7;
             color: var(--text-color);
-            background-color: var(--secondary-color);
+            background-color: var(--light-color);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -53,10 +52,6 @@
 
         main {
             flex-grow: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 0;
         }
 
         .container {
@@ -73,24 +68,30 @@
             font-weight: 800;
         }
 
-        h1 { font-size: 3rem; letter-spacing: -1px; }
-        h2 { font-size: 2.25rem; }
+        h1 { font-size: 3.2rem; letter-spacing: -1.5px; }
+        h2 { font-size: 2.5rem; letter-spacing: -1px; }
+        h3 { font-size: 1.5rem; }
+        h4 { font-size: 1.1rem; font-weight: 600; }
 
         p {
             margin-bottom: 1.25rem;
             color: var(--text-light-color);
         }
 
-        a {
+        p.lead {
+            font-size: 1.25rem;
+            color: var(--text-light-color);
+            max-width: 750px;
+        }
+        
+        p.subheading {
+            text-transform: uppercase;
             color: var(--primary-color);
-            text-decoration: none;
-            transition: color var(--transition-speed) ease;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
         }
-
-        a:hover {
-            color: var(--primary-dark-color);
-        }
-
+        
         .btn {
             display: inline-block;
             padding: 16px 32px;
@@ -107,6 +108,7 @@
         .btn-primary {
             background-color: var(--primary-color);
             color: var(--dark-color);
+            box-shadow: 0 4px 6px rgba(var(--dark-color-rgb), 0.1);
         }
 
         .btn-primary:hover {
@@ -116,20 +118,6 @@
             text-decoration: none;
         }
         
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--dark-color);
-            border-color: var(--border-color);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--dark-color);
-            color: var(--light-color);
-            border-color: var(--dark-color);
-            transform: translateY(-3px);
-            text-decoration: none;
-        }
-
         header {
             background-color: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -153,10 +141,6 @@
             align-items: center;
             gap: 10px;
             text-decoration: none;
-        }
-        .logo a:hover {
-            text-decoration: none;
-            opacity: 0.9;
         }
         .logo-img {
             height: 32px;
@@ -193,19 +177,11 @@
             align-items: center;
             gap: 5px;
         }
-
+        
         nav ul li a.active, nav ul li a:hover {
             color: var(--primary-color);
             border-bottom-color: var(--primary-color);
             text-decoration: none;
-        }
-        
-        .dropdown .dropdown-toggle .arrow {
-            transition: transform 0.2s ease;
-            font-size: 0.8em;
-        }
-        .dropdown:hover .dropdown-toggle .arrow {
-            transform: rotate(180deg);
         }
         
         .dropdown .dropdown-menu {
@@ -219,10 +195,10 @@
             padding: 0.5rem 0;
             list-style: none;
             z-index: 1010;
-            min-width: 200px;
+            width: 200px;
             border: 1px solid var(--border-color);
         }
-        .dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu {
+        .dropdown:hover .dropdown-menu {
             display: block;
         }
         .dropdown-menu li {
@@ -250,108 +226,109 @@
             line-height: 1;
         }
 
-        .contact-wrapper {
+        section {
+            padding: 100px 0;
+        }
+        .section-bg {
+            background-color: var(--secondary-color);
+        }
+        
+        .grid-2 {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            background: var(--light-color);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-hover);
-            overflow: hidden;
-            max-width: 1000px;
-            margin: 0 auto;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
         }
-        .contact-info {
-            background: var(--dark-color) url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2334495e' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            color: var(--light-color);
-            padding: 3rem;
-            display: flex;
-            flex-direction: column;
+        
+        .image-placeholder {
+            border-radius: var(--border-radius); 
+            width: 100%; 
+            height: 100%;
+            min-height: 350px;
+            display: flex; 
+            align-items: center; 
             justify-content: center;
+            overflow: hidden;
+            box-shadow: var(--shadow);
         }
-        .contact-info h2, .contact-info p {
-             color: var(--light-color);
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
         }
-         .contact-info p {
-             color: #bdc3c7;
+        .image-placeholder:hover img {
+            transform: scale(1.05);
         }
-        .contact-info ul {
+        
+        .value-list {
             list-style: none;
             margin-top: 2rem;
         }
-        .contact-info ul li {
+
+        .value-list li {
+            margin-bottom: 1.25rem;
             display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            font-weight: 500;
+            align-items: flex-start;
         }
-        .contact-info ul li svg {
-            margin-right: 1rem;
+        
+        .value-list li svg {
             color: var(--primary-color);
+            margin-right: 15px;
             flex-shrink: 0;
-        }
-        .contact-info ul li a {
-            color: var(--light-color);
-            word-break: break-all;
-        }
-         .contact-info ul li a:hover {
-            color: var(--primary-color);
+            margin-top: 5px;
         }
         
-        .contact-form {
-            padding: 3rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: .5rem;
-            font-weight: 600;
-            color: var(--dark-color);
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: .85rem 1rem;
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
-            background-color: var(--secondary-color);
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(72, 224, 209, 0.3);
-            background-color: var(--light-color);
-        }
-        
-        .divider {
+        .cta-section {
+            background: linear-gradient(45deg, var(--dark-color), #3c5a75);
             text-align: center;
-            margin: 2rem 0;
-            color: var(--text-light-color);
-            font-weight: 500;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            position: relative;
+            padding: 5rem 2rem;
+            border-radius: var(--border-radius);
+            margin: 100px auto 0;
         }
-        .divider::before, .divider::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 40%;
-            height: 1px;
-            background-color: var(--border-color);
+        .cta-section h2, .cta-section p {
+            color: var(--light-color);
         }
-        .divider::before { left: 0; }
-        .divider::after { right: 0; }
+        .cta-section p {
+            color: #bdc3c7;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: #bdc3c7;
+            padding: 50px 0 0;
+        }
+        footer .container.grid-footer {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+        footer h4 {
+            color: var(--light-color);
+            margin-bottom: 1rem;
+        }
+        footer ul {
+            list-style: none;
+        }
+        footer ul li {
+            margin-bottom: 0.75rem;
+        }
+        footer ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+        }
+        footer ul li a:hover {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px 0;
+            border-top: 1px solid #34495e;
+            font-size: 0.9rem;
+        }
 
-        /* --- Modal Styles --- */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -368,13 +345,11 @@
             visibility: hidden;
             transition: opacity 0.3s ease, visibility 0s 0.3s;
         }
-
         .modal-overlay.active {
             opacity: 1;
             visibility: visible;
             transition: opacity 0.3s ease;
         }
-
         .modal-container {
             background-color: var(--light-color);
             border-radius: var(--border-radius);
@@ -384,72 +359,31 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            transform: scale(0.95) translateY(20px);
-            transition: transform 0.3s ease;
         }
-
-        .modal-overlay.active .modal-container {
-            transform: scale(1) translateY(0);
-        }
-
         .modal-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1rem 1.5rem;
             border-bottom: 1px solid var(--border-color);
-            flex-shrink: 0;
         }
-
-        .modal-title-text {
-            font-size: 1.25rem;
-            margin: 0;
-        }
-
-        .modal-close {
-            background: none;
-            border: none;
-            font-size: 2.5rem;
-            line-height: 1;
-            cursor: pointer;
-            color: var(--text-light-color);
-            transition: color 0.2s, transform 0.2s;
-        }
-        .modal-close:hover {
-            color: var(--dark-color);
-            transform: rotate(90deg);
-        }
-
-        .modal-content {
-            flex-grow: 1;
-            overflow-y: auto;
-        }
-
-        .iframe-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-        .iframe-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
+        .modal-title-text { font-size: 1.25rem; margin: 0; }
+        .modal-close { background: none; border: none; font-size: 2.5rem; line-height: 1; cursor: pointer; color: var(--text-light-color); }
+        .modal-content { flex-grow: 1; overflow-y: auto; }
+        .iframe-container { position: relative; width: 100%; height: 100%; }
+        .iframe-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
         @media(max-width: 992px) {
-            .contact-wrapper { grid-template-columns: 1fr; }
+            h1 { font-size: 2.8rem; }
+            h2 { font-size: 2.2rem; }
+            .grid-2 { grid-template-columns: 1fr; gap: 40px; }
+            .grid-2.reversed > div:first-child { order: -1; }
+            footer .container.grid-footer { grid-template-columns: 1fr 1fr; }
         }
-
         @media (max-width: 768px) {
-            body { font-size: 16px; background-color: var(--light-color); }
-             header { padding: 0.75rem 0; }
+            header { padding: 0.75rem 0; }
             .logo-text { font-size: 1.2rem; }
-            main { align-items: flex-start; padding-top: 0;}
-            .contact-wrapper { box-shadow: none; border-radius: 0; }
-            .contact-form, .contact-info { padding: 2rem; }
+            .menu-toggle { display: block; }
             nav {
                 display: none;
                 position: fixed;
@@ -466,48 +400,15 @@
                 display: flex;
                 transform: translateX(0);
             }
-            nav ul {
-                flex-direction: column;
-                width: 100%;
-                padding: 2rem 0;
-                align-items: flex-start;
-            }
-            nav ul li {
-                margin: 0;
-                width: 100%;
-            }
-            nav ul li a {
-                display: block;
-                padding: 1rem 2rem;
-                font-size: 1.2rem;
-                border-bottom: none !important;
-            }
-            nav ul li a.active, nav ul li a:hover {
-                border-bottom-color: transparent;
-                background-color: var(--secondary-color);
-            }
-            
-            .dropdown .dropdown-menu {
-                display: none;
-                position: static;
-                box-shadow: none;
-                border: none;
-                width: 100%;
-                padding-left: 2rem;
-                background-color: var(--secondary-color);
-                border-radius: 0;
-            }
-            .dropdown.open .dropdown-menu {
-                display: block;
-            }
-            .dropdown a.dropdown-toggle {
-                justify-content: space-between;
-                width: 100%;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
+            nav ul { flex-direction: column; width: 100%; padding: 2rem 0; align-items: flex-start; }
+            nav ul li { margin: 0; width: 100%; }
+            nav ul li a { display: block; padding: 1rem 2rem; font-size: 1.2rem; }
+            nav ul li a.active, nav ul li a:hover { border-bottom-color: transparent; background-color: var(--secondary-color); }
+            .dropdown .dropdown-menu { display: none; position: static; box-shadow: none; border: none; width: 100%; padding-left: 2rem; }
+            .dropdown.open .dropdown-menu { display: block; }
+            .dropdown a.dropdown-toggle { justify-content: space-between; width: 100%; }
+            .cta-section { padding: 3rem 1.5rem; }
+            footer .container.grid-footer { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -516,18 +417,18 @@
         <header>
             <div class="container">
                 <div class="logo">
-                     <a href="index.html">
-                        <img src="LOGO_KMUpower_high.webp" alt="KMUpower Logo" class="logo-img"/>
+                     <a href="../index.html">
+                        <img src="../assets/logos/LOGO_KMUpower_high.webp" alt="KMUpower Logo" class="logo-img"/>
                         <span class="logo-text">KMU<span class="logo-text-power">power</span></span>
                     </a>
                 </div>
                 <button class="menu-toggle" aria-label="Menü umschalten" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
                 <nav id="main-nav">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="../index.html">Home</a></li>
                         <li><a href="loesungen.html">Lösungen</a></li>
                         <li class="dropdown">
-                            <a href="kmupowersuite.html" class="dropdown-toggle">KMUpowerSuite <span class="arrow">&#9662;</span></a>
+                            <a href="kmupowersuite.html" class="dropdown-toggle active">KMUpowerSuite &#9662;</a>
                             <ul class="dropdown-menu">
                                 <li><a href="kmupowersuite.html">Übersicht</a></li>
                                 <li><a href="suite-crm.html">CRM</a></li>
@@ -537,51 +438,89 @@
                         </li>
                         <li><a href="preise.html">Preise</a></li>
                         <li><a href="ueber-uns.html">Über Uns</a></li>
-                        <li><a href="kontakt.html" class="active">Kontakt</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                        <li><a href="blog.html">Blog</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
 
         <main>
-            <div class="container">
-                <div class="contact-wrapper">
-                    <div class="contact-info">
-                        <h2>Starten wir ein Gespräch</h2>
-                        <p>Der schnellste Weg zu einer Lösung ist ein direktes Gespräch. Buchen Sie jetzt ein kostenloses, unverbindliches Erstgespräch. Alternativ können Sie uns auch eine Nachricht hinterlassen.</p>
-                        <ul>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                                <a href="mailto:info@kmupower.ch">info@kmupower.ch</a>
-                            </li>
-                             <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                                <span>Zürich, Schweiz</span>
-                            </li>
+            <section class="section-bg">
+                <div class="container">
+                    <p class="subheading">KMUPOWERSUITE KERNMODUL</p>
+                    <h1>CRM: Ihre 360°-Sicht auf Kunden & Kontakte</h1>
+                    <p class="lead">Das CRM-Modul ist das Fundament der KMUpowerSuite. Es zentralisiert alle Informationen zu Kunden, Interessenten und Lieferanten und schafft eine einheitliche Datenbasis für alle Ihre Geschäftsprozesse – von Vertrieb und Marketing bis zum Service.</p>
+                </div>
+            </section>
+            
+            <section>
+                <div class="container grid-2 reversed">
+                    <div class="image-placeholder">
+                        <img src="../assets/images/crm.png" alt="Modernes CRM Dashboard der KMUpowerSuite">
+                    </div>
+                    <div>
+                        <h2>Schluss mit Dateninseln – Hallo Klarheit!</h2>
+                        <p>Unser CRM-Modul löst klassische "Excel-Inseln" ab und sorgt für eine hohe Datenqualität im gesamten Unternehmen. Jeder Mitarbeiter hat Zugriff auf dieselben, aktuellen Informationen, was die Zusammenarbeit verbessert und Fehler reduziert.</p>
+                        <ul class="value-list">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Zentrale Kontaktverwaltung:</strong> Verwalten Sie Kunden, Interessenten und Lieferanten in einer einzigen, übersichtlichen Datenbank.</div></li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Vollständige Historie:</strong> Protokollieren Sie jede Interaktion – von E-Mails und Anrufen bis zu Meetings und Dokumenten.</div></li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Nahtlose Verknüpfung:</strong> Das CRM ist die Basis für weitere Module wie Mailing, Fakturierung und das Serviceportal.</div></li>
+                             <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Sicher & DSGVO-konform:</strong> Ihre wertvollen Kundendaten bleiben sicher in Ihrem eigenen Microsoft 365 Tenant in der Schweiz oder EU.</div></li>
                         </ul>
                     </div>
-                    <div class="contact-form">
-                        <button class="btn btn-primary" data-modal-target="#booking-modal" style="width: 100%;">Direkt Termin buchen</button>
-                        <div class="divider">oder</div>
-                        <form action="#" method="POST">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">E-Mail</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Ihre Nachricht</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-secondary" style="width: 100%;">Nachricht senden</button>
-                        </form>
+                </div>
+            </section>
+
+            <section class="section-bg">
+                <div class="container">
+                    <div class="cta-section">
+                        <h2>Bereit für ein CRM, das mitdenkt?</h2>
+                        <p class="lead">Erfahren Sie in einer Live-Demo, wie das KMUpowerSuite CRM Ihre Prozesse vereinfacht, die Datenqualität erhöht und Ihr Team entlastet.</p>
+                        <button class="btn btn-primary" data-modal-target="#booking-modal" style="margin-top: 1rem; display: inline-block; width: auto;">Demo anfordern</button>
                     </div>
                 </div>
-            </div>
+            </section>
         </main>
+
+        <footer>
+            <div class="container grid-footer">
+                <div>
+                    <h4>KMUpower</h4>
+                    <p style="color: #bdc3c7;">Wir ermächtigen KMUs durch digitale Exzellenz. Unser Fokus: Pragmatische Lösungen mit messbarem Mehrwert auf Basis der Microsoft Power Platform.</p>
+                </div>
+                <div>
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="loesungen.html">Lösungen</a></li>
+                        <li><a href="kmupowersuite.html">KMUpowerSuite</a></li>
+                        <li><a href="preise.html">Preise</a></li>
+                        <li><a href="ueber-uns.html">Über Uns</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4>Leistungen</h4>
+                    <ul>
+                       <li><a href="loesungen.html#power-apps">Power Apps</a></li>
+                       <li><a href="loesungen.html#power-automate">Power Automate</a></li>
+                       <li><a href="loesungen.html#ki-integration">KI-Integration</a></li>
+                       <li><a href="loesungen.html#beratung">Beratung</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="agb-impressum.html">AGB & Impressum</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                 <p>&copy; <span id="current-year">2024</span> KMUpower. Alle Rechte vorbehalten.</p>
+            </div>
+        </footer>
     </div>
     
     <div id="booking-modal" class="modal-overlay" aria-hidden="true">
@@ -599,7 +538,7 @@
     </div>
 
     <script>
-        document.getElementById('current-year')?.textContent = new Date().getFullYear();
+        document.getElementById('current-year').textContent = new Date().getFullYear();
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav');
         if (menuToggle && nav) {
@@ -609,16 +548,17 @@
                 menuToggle.setAttribute('aria-expanded', String(!isExpanded));
                 menuToggle.innerHTML = !isExpanded ? '&times;' : '&#9776;';
                 document.body.style.overflow = !isExpanded ? 'hidden' : '';
-            });
-             // Handle mobile dropdown
-            const dropdowns = nav.querySelectorAll('.dropdown');
-            dropdowns.forEach(dropdown => {
-                const toggle = dropdown.querySelector('.dropdown-toggle');
-                toggle.addEventListener('click', (e) => {
-                    if (window.innerWidth <= 768) {
-                        e.preventDefault();
-                        dropdown.classList.toggle('open');
-                    }
+
+                // Handle mobile dropdown
+                const dropdowns = nav.querySelectorAll('.dropdown');
+                dropdowns.forEach(dropdown => {
+                    const toggle = dropdown.querySelector('.dropdown-toggle');
+                    toggle.addEventListener('click', (e) => {
+                        if (window.innerWidth <= 768) {
+                           e.preventDefault();
+                           dropdown.classList.toggle('open');
+                        }
+                    });
                 });
             });
         }

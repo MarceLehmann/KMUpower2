@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mailing Modul | KMUpowerSuite</title>
-    <meta name="description" content="Das Mailing-Modul der KMUpowerSuite: Nutzen Sie Ihre CRM-Daten für gezielte, automatisierte und personalisierte E-Mail-Kampagnen und Newsletter.">
+    <title>IT-Partner Programm | KMUpower</title>
+    <meta name="description" content="Werden Sie Partner von KMUpower. Erweitern Sie Ihr Portfolio mit unserer Microsoft Power Platform Expertise und schaffen Sie Mehrwert für Ihre Kunden.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -185,6 +184,14 @@
             text-decoration: none;
         }
         
+        .dropdown .dropdown-toggle .arrow {
+            transition: transform 0.2s ease;
+            font-size: 0.8em;
+        }
+        .dropdown:hover .dropdown-toggle .arrow {
+            transform: rotate(180deg);
+        }
+        
         .dropdown .dropdown-menu {
             display: none;
             position: absolute;
@@ -196,10 +203,10 @@
             padding: 0.5rem 0;
             list-style: none;
             z-index: 1010;
-            width: 200px;
+            min-width: 200px;
             border: 1px solid var(--border-color);
         }
-        .dropdown:hover .dropdown-menu {
+        .dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu {
             display: block;
         }
         .dropdown-menu li {
@@ -241,27 +248,6 @@
             align-items: center;
         }
         
-        .image-placeholder {
-            border-radius: var(--border-radius); 
-            width: 100%; 
-            height: 100%;
-            min-height: 350px;
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        .image-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-        .image-placeholder:hover img {
-            transform: scale(1.05);
-        }
-        
         .value-list {
             list-style: none;
             margin-top: 2rem;
@@ -278,6 +264,16 @@
             margin-right: 15px;
             flex-shrink: 0;
             margin-top: 5px;
+        }
+
+        .partner-package-card {
+            border: 2px solid var(--primary-color);
+            background: var(--secondary-color);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+        }
+        .partner-package-card ul li svg {
+            color: var(--dark-color);
         }
         
         .cta-section {
@@ -301,8 +297,8 @@
         }
         footer .container.grid-footer {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 30px;
         }
         footer h4 {
             color: var(--light-color);
@@ -378,7 +374,6 @@
             h1 { font-size: 2.8rem; }
             h2 { font-size: 2.2rem; }
             .grid-2 { grid-template-columns: 1fr; gap: 40px; }
-            .grid-2.reversed > div:first-child { order: -1; }
             footer .container.grid-footer { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 768px) {
@@ -418,18 +413,18 @@
         <header>
             <div class="container">
                 <div class="logo">
-                     <a href="index.html">
-                        <img src="LOGO_KMUpower_high.webp" alt="KMUpower Logo" class="logo-img"/>
+                    <a href="../index.html">
+                        <img src="../assets/logos/LOGO_KMUpower_high.webp" alt="KMUpower Logo" class="logo-img"/>
                         <span class="logo-text">KMU<span class="logo-text-power">power</span></span>
                     </a>
                 </div>
                 <button class="menu-toggle" aria-label="Menü umschalten" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
                 <nav id="main-nav">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="../index.html">Home</a></li>
                         <li><a href="loesungen.html">Lösungen</a></li>
                         <li class="dropdown">
-                            <a href="kmupowersuite.html" class="dropdown-toggle active">KMUpowerSuite &#9662;</a>
+                            <a href="kmupowersuite.html" class="dropdown-toggle">KMUpowerSuite <span class="arrow">&#9662;</span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="kmupowersuite.html">Übersicht</a></li>
                                 <li><a href="suite-crm.html">CRM</a></li>
@@ -440,6 +435,7 @@
                         <li><a href="preise.html">Preise</a></li>
                         <li><a href="ueber-uns.html">Über Uns</a></li>
                         <li><a href="kontakt.html">Kontakt</a></li>
+                        <li><a href="blog.html">Blog</a></li>
                     </ul>
                 </nav>
             </div>
@@ -448,24 +444,32 @@
         <main>
             <section class="section-bg">
                 <div class="container">
-                    <p class="subheading">KMUPOWERSUITE MODUL</p>
-                    <h1>Gezielte Kommunikation mit dem Mailing-Modul</h1>
-                    <p class="lead">Erreichen Sie Ihre Kunden und Interessenten mit der richtigen Botschaft zur richtigen Zeit. Unser Mailing-Modul macht professionelles E-Mail-Marketing einfach und effektiv.</p>
+                    <p class="subheading">GEMEINSAM STARK</p>
+                    <h1>Das KMUpower IT-Partner Programm</h1>
+                    <p class="lead">Erweitern Sie Ihr Portfolio und bieten Sie Ihren Kunden erstklassige Digitalisierungslösungen auf Basis der Microsoft Power Platform. Wir sind Ihr spezialisierter Partner im Hintergrund.</p>
                 </div>
             </section>
             
             <section>
-                <div class="container grid-2 reversed">
-                    <div class="image-placeholder">
-                        <img src="https://storage.googleapis.com/gemini-marc-files/703649dd43e498c39ac3e99d2ec004f2" alt="Illustration showing personalized emails being sent to different customer segments">
-                    </div>
+                <div class="container grid-2">
                     <div>
-                        <h2>Sprechen Sie Ihre Zielgruppe direkt an</h2>
-                        <p>Verabschieden Sie sich von unpersönlichen Massen-E-Mails. Durch die direkte Anbindung an das CRM-Modul können Sie Ihre Kontakte präzise segmentieren und hochrelevante Inhalte versenden.</p>
+                        <h2>Ihr Vorteil als unser Partner</h2>
+                        <p>Als etablierter IT-Dienstleister betreuen Sie Ihre Kunden umfassend. Doch die Nachfrage nach spezialisierten Low-Code-Lösungen und Prozessautomatisierung wächst rasant. Hier kommen wir ins Spiel.</p>
                         <ul class="value-list">
-                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Präzise Segmentierung:</strong> Erstellen Sie Zielgruppen basierend auf beliebigen Kriterien aus Ihrem CRM.</div></li>
-                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Automatisierte Sequenzen:</strong> Richten Sie automatische E-Mail-Ketten für Onboarding, Follow-ups oder Kampagnen ein.</div></li>
-                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Personalisierte Inhalte:</strong> Sprechen Sie Ihre Kontakte mit Namen und relevanten Informationen direkt an, um die Interaktion zu erhöhen.</div></li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Portfolioerweiterung:</strong> Bieten Sie gefragte Power Platform Expertise an, ohne eigene Spezialisten aufbauen zu müssen.</div></li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Fokus auf Ihr Kerngeschäft:</strong> Wir übernehmen die Spezialaufgaben, Sie konzentrieren sich auf die strategische Kundenbetreuung.</div></li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Zusätzliche Einnahmen:</strong> Profitieren Sie von attraktiven Konditionen und schaffen Sie neue Umsatzströme.</div></li>
+                              <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>White-Label-Option:</strong> Auf Wunsch treten wir als Teil Ihres Teams gegenüber dem Endkunden auf.</div></li>
+                        </ul>
+                    </div>
+                     <div class="partner-package-card">
+                        <h3>Exklusives IT-Partner Paket</h3>
+                        <p>Unser massgeschneidertes Retainer-Modell für eine reibungslose und kontinuierliche Zusammenarbeit.</p>
+                        <h2 style="font-size: 2.8rem; margin-top: 2rem;">1'400 <span style="font-size: 1rem; font-weight: 500;">CHF/Monat</span></h2>
+                        <ul class="value-list">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>8 Stunden</strong> Support & Entwicklungsleistung pro Monat.</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Garantierte Reaktionszeit</strong> von 4 Stunden (werktags).</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Kostenlose 4h-Schulung</strong> bei Abschluss eines 12-Monats-Vertrags.</li>
                         </ul>
                     </div>
                 </div>
@@ -474,9 +478,9 @@
             <section class="section-bg">
                 <div class="container">
                     <div class="cta-section">
-                        <h2>Möchten Sie Ihr E-Mail-Marketing professionalisieren?</h2>
-                        <p class="lead">Erfahren Sie in einer Live-Demo, wie einfach Sie mit dem Mailing-Modul personalisierte und automatisierte Kampagnen erstellen können.</p>
-                        <button class="btn btn-primary" data-modal-target="#booking-modal" style="margin-top: 1rem; display: inline-block; width: auto;">Demo anfordern</button>
+                        <h2>Lassen Sie uns Partner werden.</h2>
+                        <p class="lead">Kontaktieren Sie uns für ein unverbindliches Gespräch und erfahren Sie mehr über die Vorteile unseres Partnerprogramms.</p>
+                        <button class="btn btn-primary" data-modal-target="#booking-modal" style="margin-top: 1rem; display: inline-block; width: auto;">Gespräch vereinbaren</button>
                     </div>
                 </div>
             </section>
@@ -491,21 +495,28 @@
                 <div>
                     <h4>Navigation</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="../index.html">Home</a></li>
                         <li><a href="loesungen.html">Lösungen</a></li>
                         <li><a href="kmupowersuite.html">KMUpowerSuite</a></li>
                         <li><a href="preise.html">Preise</a></li>
                         <li><a href="ueber-uns.html">Über Uns</a></li>
                         <li><a href="kontakt.html">Kontakt</a></li>
+                        <li><a href="blog.html">Blog</a></li>
                     </ul>
                 </div>
-                 <div>
+                <div>
                     <h4>Leistungen</h4>
                     <ul>
                        <li><a href="loesungen.html#power-apps">Power Apps</a></li>
                        <li><a href="loesungen.html#power-automate">Power Automate</a></li>
                        <li><a href="loesungen.html#ki-integration">KI-Integration</a></li>
                        <li><a href="loesungen.html#beratung">Beratung</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Für Partner</h4>
+                    <ul>
+                        <li><a href="it-partner.html">IT-Partner Programm</a></li>
                     </ul>
                 </div>
                  <div>
