@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -7,17 +8,21 @@
     <meta name="description" content="Kontaktieren Sie KMUpower für ein kostenloses Erstgespräch. Wir freuen uns darauf, Ihre Prozesse zu optimieren.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #0078d4;
-            --secondary-color: #f0f4f8;
+            --primary-color: #48e0d1;
+            --primary-dark-color: #3abdb0;
+            --secondary-color: #f8f9fa;
             --dark-color: #2c3e50;
             --light-color: #ffffff;
             --text-color: #34495e;
-            --border-color: #e0e0e0;
-            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --text-light-color: #566573;
+            --border-color: #e0e6ed;
+            --shadow: 0 4px 15px rgba(0,0,0,0.05);
+            --shadow-hover: 0 8px 25px rgba(0,0,0,0.1);
             --border-radius: 8px;
+            --transition-speed: 0.3s;
         }
 
         *, *::before, *::after {
@@ -32,9 +37,9 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             color: var(--text-color);
-            background-color: var(--light-color);
+            background-color: var(--secondary-color);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -47,64 +52,71 @@
 
         main {
             flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 0;
         }
 
         .container {
             width: 100%;
-            max-width: 1100px;
+            max-width: 1140px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             color: var(--dark-color);
-            line-height: 1.2;
+            line-height: 1.3;
             margin-bottom: 1rem;
+            font-weight: 700;
         }
 
-        h1 { font-size: 2.8rem; }
-        h2 { font-size: 2rem; }
-        h3 { font-size: 1.5rem; }
+        h1 { font-size: 3rem; letter-spacing: -1px; }
+        h2 { font-size: 2.25rem; }
 
         p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
+            color: var(--text-light-color);
         }
-        
+
         a {
             color: var(--primary-color);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color var(--transition-speed) ease;
         }
 
         a:hover {
-            text-decoration: underline;
+            color: var(--primary-dark-color);
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 24px;
+            padding: 14px 28px;
             border-radius: var(--border-radius);
-            font-weight: 500;
+            font-weight: 600;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all var(--transition-speed) ease;
             cursor: pointer;
-            border: none;
+            border: 2px solid transparent;
+            font-size: 1rem;
         }
 
         .btn-primary {
             background-color: var(--primary-color);
-            color: var(--light-color);
+            color: var(--dark-color);
         }
 
         .btn-primary:hover {
-            background-color: #005a9e;
-            transform: translateY(-2px);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            background-color: var(--primary-dark-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
             text-decoration: none;
         }
 
         header {
-            background-color: var(--light-color);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             box-shadow: var(--shadow);
             padding: 1rem 0;
             position: sticky;
@@ -129,9 +141,12 @@
         }
         .logo a:hover {
             text-decoration: none;
+            opacity: 0.9;
         }
-        .logo svg {
-            margin-right: 10px;
+        .logo img {
+            margin-right: 12px;
+            height: 32px;
+            width: auto;
         }
 
         nav ul {
@@ -141,13 +156,13 @@
         }
 
         nav ul li {
-            margin-left: 25px;
+            margin-left: 30px;
         }
 
         nav ul li a {
             color: var(--text-color);
             font-weight: 500;
-            padding: 5px 0;
+            padding: 8px 0;
             border-bottom: 2px solid transparent;
             transition: all 0.2s ease-in-out;
         }
@@ -160,25 +175,63 @@
 
         .menu-toggle {
             display: none;
-            font-size: 1.5rem;
+            font-size: 2rem;
             background: none;
             border: none;
             cursor: pointer;
             color: var(--dark-color);
+            line-height: 1;
         }
 
-        section {
-            padding: 60px 0;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
             background: var(--light-color);
-            padding: 2rem;
             border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-hover);
+            overflow: hidden;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .contact-info {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .contact-info h2, .contact-info p {
+             color: var(--light-color);
+        }
+         .contact-info p {
+             color: #bdc3c7;
+        }
+        .contact-info ul {
+            list-style: none;
+            margin-top: 2rem;
+        }
+        .contact-info ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        .contact-info ul li svg {
+            margin-right: 1rem;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+        .contact-info ul li a {
+            color: var(--light-color);
+            word-break: break-all;
+        }
+         .contact-info ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .contact-form {
+            padding: 3rem;
         }
         
         .form-group {
@@ -189,99 +242,70 @@
             display: block;
             margin-bottom: .5rem;
             font-weight: 500;
+            color: var(--dark-color);
         }
 
         .form-group input, .form-group textarea {
             width: 100%;
-            padding: .75rem;
+            padding: .85rem 1rem;
             border: 1px solid var(--border-color);
             border-radius: var(--border-radius);
             font-size: 1rem;
             font-family: inherit;
+            transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+            background-color: var(--secondary-color);
         }
 
         .form-group input:focus, .form-group textarea:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.2);
+            box-shadow: 0 0 0 3px rgba(72, 224, 209, 0.3);
+            background-color: var(--light-color);
         }
         
-        footer {
-            background-color: var(--dark-color);
-            color: #bdc3c7;
-            padding-top: 40px;
-        }
-        footer .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-        footer h4 {
-            color: var(--light-color);
-            margin-bottom: 1rem;
-        }
-        footer ul {
-            list-style: none;
-        }
-        footer ul li {
-            margin-bottom: 0.5rem;
-        }
-        footer ul li a {
-            color: #bdc3c7;
-            text-decoration: none;
-        }
-        footer ul li a:hover {
-            color: var(--light-color);
-            text-decoration: underline;
-        }
-        .footer-bottom {
-            text-align: center;
-            margin-top: 30px;
-            padding: 20px 0;
-            border-top: 1px solid #34495e;
-            font-size: 0.9rem;
-        }
-
         @media(max-width: 992px) {
-            h1 { font-size: 2.2rem; }
+            .contact-wrapper { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
-            body { font-size: 16px; }
+            body { font-size: 16px; background-color: var(--light-color); }
+             header { padding: 0.75rem 0; }
+            main { align-items: flex-start; }
+            .contact-form, .contact-info { padding: 2rem; }
             nav {
-                position: absolute;
-                top: 100%;
+                display: none;
+                position: fixed;
+                top: 67px;
                 left: 0;
                 width: 100%;
+                height: calc(100vh - 67px);
                 background-color: var(--light-color);
-                box-shadow: var(--shadow);
-                display: none;
                 flex-direction: column;
+                transform: translateX(100%);
+                transition: transform var(--transition-speed) ease-in-out;
             }
             nav.active {
                 display: flex;
+                transform: translateX(0);
             }
             nav ul {
                 flex-direction: column;
                 width: 100%;
-                padding: 1rem 0;
+                padding: 2rem 0;
+                align-items: flex-start;
             }
             nav ul li {
                 margin: 0;
                 width: 100%;
-                text-align: center;
             }
             nav ul li a {
                 display: block;
-                padding: 1rem;
-                border-bottom: 1px solid var(--border-color);
+                padding: 1rem 2rem;
+                font-size: 1.2rem;
             }
             nav ul li a.active, nav ul li a:hover {
+                border-bottom-color: transparent;
                 background-color: var(--secondary-color);
-                border-bottom-color: var(--border-color);
-            }
-            nav ul li a:hover {
-                color: var(--primary-color);
             }
             .menu-toggle {
                 display: block;
@@ -295,12 +319,11 @@
             <div class="container">
                 <div class="logo">
                     <a href="index.html">
-                        <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" rx="40" fill="#2c3e50"/><path d="M55 150V50H85L115 100L85 150H55Z" fill="#0078d4"/><path d="M145 50V150H115L85 100L115 50H145Z" fill="#f0f4f8"/></svg>
-                        <span>KMUpower</span>
+                        <img src="LOGO_KMUpower_high.webp" alt="KMUpower Logo" style="height: 32px; width: auto;"/>
                     </a>
                 </div>
-                <button class="menu-toggle" aria-label="Menü umschalten" aria-expanded="false">&#9776;</button>
-                <nav>
+                <button class="menu-toggle" aria-label="Menü umschalten" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+                <nav id="main-nav">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="loesungen.html">Lösungen</a></li>
@@ -313,57 +336,44 @@
         </header>
 
         <main>
-            <section>
-                <div class="container">
-                    <h1 style="text-align: center;">Kontaktieren Sie uns</h1>
-                    <p style="text-align: center; margin-bottom: 2rem;">Bereit, Ihre Prozesse zu optimieren? Wir freuen uns auf Ihre Nachricht.</p>
-                    <form class="contact-form">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h2>Starten wir ein Gespräch</h2>
+                        <p>Bereit, Ihre Prozesse zu optimieren? Füllen Sie das Formular aus oder kontaktieren Sie uns direkt. Wir freuen uns darauf, von Ihnen zu hören und ein kostenloses, unverbindliches Erstgespräch zu vereinbaren.</p>
+                        <ul>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                <a href="mailto:info@kmupower.ch">info@kmupower.ch</a>
+                            </li>
+                             <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                <span>Zürich, Schweiz</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <form class="contact-form" netlify>
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required />
+                            <input type="text" id="name" name="name" required placeholder="Ihr Name" />
                         </div>
                         <div class="form-group">
                             <label for="email">E-Mail</label>
-                            <input type="email" id="email" name="email" required />
+                            <input type="email" id="email" name="email" required placeholder="ihre.email@firma.ch" />
+                        </div>
+                         <div class="form-group">
+                            <label for="company">Unternehmen (optional)</label>
+                            <input type="text" id="company" name="company" placeholder="Ihr Unternehmen"/>
                         </div>
                         <div class="form-group">
                             <label for="message">Ihre Nachricht</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <textarea id="message" name="message" rows="5" required placeholder="Wobei können wir Ihnen helfen?"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary" style="width: 100%;">Nachricht senden</button>
                     </form>
                 </div>
-            </section>
+            </div>
         </main>
-
-        <footer>
-            <div class="container">
-                <div>
-                    <h4>KMUpower</h4>
-                    <p>Wir ermächtigen KMUs durch digitale Exzellenz.</p>
-                </div>
-                <div>
-                    <h4>Navigation</h4>
-                    <ul>
-                         <li><a href="index.html">Home</a></li>
-                         <li><a href="loesungen.html">Lösungen</a></li>
-                         <li><a href="preise.html">Preise</a></li>
-                         <li><a href="ueber-uns.html">Über Uns</a></li>
-                         <li><a href="kontakt.html">Kontakt</a></li>
-                    </ul>
-                </div>
-                 <div>
-                    <h4>Kontakt</h4>
-                    <ul>
-                        <li>Zürich, Schweiz</li>
-                        <li><a href="mailto:info@kmupower.ch">info@kmupower.ch</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                 <p>&copy; <span id="current-year">2024</span> KMUpower. Alle Rechte vorbehalten.</p>
-            </div>
-        </footer>
     </div>
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
@@ -371,25 +381,24 @@
         if (menuToggle && nav) {
             const closeIcon = '&times;';
             const menuIcon = '&#9776;';
-            menuToggle.addEventListener('click', () => {
+            menuToggle.addEventListener('click', (e) => {
                 const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
                 nav.classList.toggle('active');
                 menuToggle.setAttribute('aria-expanded', String(!isExpanded));
                 menuToggle.innerHTML = !isExpanded ? closeIcon : menuIcon;
+                document.body.style.overflow = !isExpanded ? 'hidden' : '';
             });
         }
         
-        const yearSpan = document.getElementById('current-year');
-        if (yearSpan) {
-            yearSpan.textContent = new Date().getFullYear();
-        }
-
         const contactForm = document.querySelector('.contact-form');
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Vielen Dank für Ihre Nachricht! Wir werden uns in Kürze bei Ihnen melden.');
-                contactForm.reset();
+                const isNetlify = contactForm.hasAttribute('netlify');
+                if (!isNetlify) {
+                    e.preventDefault();
+                    alert('Vielen Dank für Ihre Nachricht! Wir werden uns in Kürze bei Ihnen melden.');
+                    contactForm.reset();
+                }
             });
         }
     </script>
