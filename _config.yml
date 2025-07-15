@@ -2,8 +2,8 @@ title: KMUpower
 email: info@kmupower.ch
 description: >-
   Der Blog von KMUpower – Digitalisierung, Power Platform und Lösungen für KMU.
-baseurl: "" # Root
-url: "" # Wird ggf. für Deployment gesetzt
+baseurl: "/KMUpower2"
+url: "https://marcelehmann.github.io"
 permalink: /blog/:title/
 collections:
   posts:
