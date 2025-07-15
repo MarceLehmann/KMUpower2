@@ -1,0 +1,4 @@
+
+User-agent: *
+Allow: /
+Sitemap: https://www.kmupower.ch/sitemap.xml

@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Über Uns | KMUpower</title>
-    <meta name="description" content="Unsere Mission, Vision und Werte. Lernen Sie KMUpower und Gründer Marcel Lehmann kennen – Ihr Partner für digitale Exzellenz im Mittelstand.">
+    <title>KMUpowerSuite | KMUpower</title>
+    <meta name="description" content="Die KMUpowerSuite: Ihre modulare Business-Plattform für KMU auf Basis von Microsoft 365. Zentralisieren, automatisieren und skalieren Sie Ihre Geschäftsprozesse.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -61,6 +61,10 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+        
+        .container-sm {
+            max-width: 800px;
+        }
 
         h1, h2, h3, h4 {
             color: var(--dark-color);
@@ -82,8 +86,9 @@
         p.lead {
             font-size: 1.25rem;
             color: var(--text-light-color);
+            max-width: 750px;
         }
-
+        
         p.subheading {
             text-transform: uppercase;
             color: var(--primary-color);
@@ -210,46 +215,6 @@
             background-color: var(--secondary-color);
         }
         
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        
-        .expert-grid {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        
-        .expert-photo {
-            width: 100%;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            aspect-ratio: 1 / 1;
-        }
-        .expert-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        
-        .story-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .mission-vision-card {
-            padding: 3rem;
-            border-radius: var(--border-radius);
-            text-align: center;
-            height: 100%;
-        }
-        
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -260,7 +225,7 @@
             background-color: var(--light-color);
             border: 1px solid var(--border-color);
             border-radius: var(--border-radius);
-            padding: 2.5rem 2rem;
+            padding: 2.5rem;
             box-shadow: var(--shadow);
             transition: all var(--transition-speed) ease;
         }
@@ -270,6 +235,37 @@
         }
         .card h3 {
             margin-bottom: 0.5rem;
+        }
+        
+        .module-grid {
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+             gap: 30px;
+        }
+        
+        .table-responsive {
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        
+        th, td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        th {
+            background-color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
         }
         
         .cta-section {
@@ -413,8 +409,7 @@
         @media(max-width: 992px) {
             h1 { font-size: 2.8rem; }
             h2 { font-size: 2.2rem; }
-            .grid-2, .expert-grid, .grid-3 { grid-template-columns: 1fr; }
-            .expert-photo { height: 250px; width: 250px; margin: 0 auto 2rem; }
+            .grid-3 { grid-template-columns: 1fr; }
             footer .container.grid-footer { grid-template-columns: 1fr 1fr; }
         }
 
@@ -453,14 +448,13 @@
                 padding: 1rem 2rem;
                 font-size: 1.2rem;
             }
-            nav ul li a.active, nav ul li a:hover {
+             nav ul li a.active, nav ul li a:hover {
                 border-bottom-color: transparent;
                 background-color: var(--secondary-color);
             }
             .menu-toggle {
                 display: block;
             }
-            .mission-vision-card { padding: 2rem; }
             .cta-section {
                  padding: 3rem 1.5rem;
             }
@@ -483,9 +477,9 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="loesungen.html">Lösungen</a></li>
-                        <li><a href="kmupowersuite.html">KMUpowerSuite</a></li>
+                        <li><a href="kmupowersuite.html" class="active">KMUpowerSuite</a></li>
                         <li><a href="preise.html">Preise</a></li>
-                        <li><a href="ueber-uns.html" class="active">Über Uns</a></li>
+                        <li><a href="ueber-uns.html">Über Uns</a></li>
                         <li><a href="kontakt.html">Kontakt</a></li>
                     </ul>
                 </nav>
@@ -493,73 +487,148 @@
         </header>
 
         <main>
-            <section class="section-bg">
-                <div class="container">
-                   <div class="expert-grid">
-                       <div class="expert-photo">
-                           <img src="https://storage.googleapis.com/gemini-marc-files/878693b3f61909e7c51475c742c3d596" alt="Portrait of Marcel Lehmann">
-                       </div>
-                       <div>
-                           <p class="subheading">GRÜNDER & MICROSOFT MVP</p>
-                           <h1 style="font-size: 2.8rem;">Marcel Lehmann</h1>
-                           <p class="lead" style="color: var(--dark-color); font-weight: 500;">Als Power Platform-Experte kombiniere ich technische Innovation mit praxistauglichen Lösungen – speziell für KMUs in der Schweiz, Deutschland und Österreich.</p>
-                           <p>Mein Fokus: Low-Code-Entwicklung, Prozessautomatisierung und Digitalisierung. Ob Power Apps oder Power Automate – ich helfe Ihnen, veraltete Workflows durch moderne Cloud-Lösungen zu ersetzen.</p>
-                       </div>
-                   </div>
+            <section class="section-bg" style="text-align: center;">
+                <div class="container container-sm">
+                    <p class="subheading">DAS BETRIEBSSYSTEM FÜR IHR KMU</p>
+                    <h1>Die KMUpowerSuite</h1>
+                    <p class="lead">Eine modulare Business-Plattform auf Basis von Microsoft 365. Zentralisieren, automatisieren und skalieren Sie Ihre Geschäftsprozesse – ohne zusätzliche Server-Infrastruktur.</p>
                 </div>
             </section>
             
             <section>
-                <div class="container story-content">
-                    <h2 style="text-align: center;">Meine Geschichte: Vom Quereinsteiger zum Microsoft MVP</h2>
-                    <p>Mein Weg in die Tech-Welt war alles andere als klassisch – als Citizen Developer habe ich mir Expertise selbst erarbeitet. Diese unkonventionelle Perspektive ermöglicht es mir, innovative Lösungen zu schaffen, die Theorie und Praxis verbinden.</p>
-                    <p>Während meiner Zeit in einer Beratungsfirma gewann mein Team zweimal den „Partner of the Year Schweiz“-Award in der Kategorie Business Applications. Diese Auszeichnungen zeigen: Auch als Quereinsteiger kann man mit Leidenschaft und Pragmatismus Grosses erreichen.</p>
-                    <p>Heute verbinde ich u.a. in der Baubranche Handwerk mit High-Tech. Ob Ressourcenplanung, Dokumentation oder Kommunikation – mit der Microsoft Power Platform automatisieren wir Prozesse, die früher Tage kosteten. Das Beste? Die Lösungen sind so simpel, dass jedes Team sie nutzen kann – ganz ohne IT-Abteilung.</p>
-                    <p>Als Vater und Ehemann weiss ich, wie wichtig stabile Werte sind – im Beruf wie im Privaten. Mein christlicher Glaube gibt mir die Ruhe, komplexe Projekte gelassen anzugehen und gleichzeitig Zeit für das Wesentliche zu finden.</p>
+                <div class="container">
+                    <div class="container-sm" style="text-align: center; margin-bottom: 60px;">
+                        <h2>Kernmodule & Add-ons</h2>
+                        <p>Beginnen Sie mit einer soliden Basis und erweitern Sie die Suite flexibel, wenn Ihr Unternehmen wächst. Alle Module sind perfekt aufeinander abgestimmt.</p>
+                    </div>
+                    
+                    <h3>Kernmodule (Ihre Basis für den Erfolg)</h3>
+                    <div class="module-grid" style="margin-top: 2rem; margin-bottom: 4rem;">
+                        <div class="card">
+                            <h3>CRM</h3>
+                            <p>Kunden, Interessenten und Lieferanten in einer 360°-Sicht verwalten.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Mailing / Newsletter</h3>
+                            <p>Zielgruppen aus dem CRM erstellen und Sequenzmails versenden.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Mitarbeiterverwaltung</h3>
+                            <p>Zentrale Verwaltung von Stammdaten und Rollen.</p>
+                        </div>
+                    </div>
+
+                    <h3>Erweiterbare Add-ons</h3>
+                    <div class="module-grid" style="margin-top: 2rem;">
+                         <div class="card">
+                            <h3>Zeiterfassung</h3>
+                            <p>Kommt-/Geht-Zeiten und Pausen einfach erfassen.</p>
+                        </div>
+                         <div class="card">
+                            <h3>Projektmanagement</h3>
+                            <p>Aufgaben, Ressourcen und Teams-Kanäle verwalten.</p>
+                        </div>
+                         <div class="card">
+                            <h3>Urlaubsverwaltung</h3>
+                            <p>Integrierter Genehmigungs-Workflow für Abwesenheiten.</p>
+                        </div>
+                         <div class="card">
+                            <h3>Spesenabrechnung</h3>
+                            <p>Digitaler Beleg-Upload mit einfachem Freigabeprozess.</p>
+                        </div>
+                         <div class="card">
+                            <h3>Fakturierung</h3>
+                            <p>Rechnungen direkt aus Angeboten erstellen.</p>
+                        </div>
+                         <div class="card">
+                            <h3>Serviceportal</h3>
+                            <p>Internes und externes Ticketing-System.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section-bg">
+                <div class="container">
+                     <div class="container-sm" style="text-align: center; margin-bottom: 60px;">
+                        <h2>Preisgestaltung</h2>
+                        <p>Transparente Einmalpreise für die Implementierung. Keine versteckten Lizenzkosten – eine M365 Business Standard Lizenz pro User genügt.</p>
+                    </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Paket</th>
+                                    <th>Einmaliger Preis (CHF/€)</th>
+                                    <th>Inhalt</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Einzelmodul</strong></td>
+                                    <td>1'000</td>
+                                    <td>1 Modul nach Wahl, Grundeinrichtung</td>
+                                </tr>
+                                 <tr>
+                                    <td><strong>Kernpaket (3 Module)</strong></td>
+                                    <td>2'222</td>
+                                    <td>CRM, Mailing, Mitarbeiterverwaltung</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Komplettpaket (7 Module)</strong></td>
+                                    <td>7'500</td>
+                                    <td>Kernpaket + 4 Add-ons, inkl. 20h Support</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                     <p style="text-align: center; margin-top: 2rem; font-style: italic;">Nachkauf-Staffel: 2. Modul 900 / 3. 800 / 4. 700 / 5. 600 / ab 6. 500</p>
                 </div>
             </section>
 
-            <section class="section-bg">
-                <div class="container">
-                    <div class="grid-2">
-                        <div class="mission-vision-card" style="background-color: var(--dark-color); color: var(--light-color);">
-                             <h2 style="color: var(--light-color);">Unsere Mission</h2>
-                             <p class="lead" style="color: #bdc3c7;"><strong>Wir ermächtigen kleine und mittelständische Unternehmen durch digitale Exzellenz.</strong></p>
-                        </div>
-                         <div class="mission-vision-card" style="background-color: var(--light-color); border: 1px solid var(--border-color)">
-                             <h2>Unsere Vision</h2>
-                             <p class="lead"><strong>Die führende Kraft für intelligente Digitalisierung im DACH-KMU-Sektor sein.</strong></p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
             <section>
                 <div class="container">
-                    <h2 style="text-align: center; margin-bottom: 50px;">Unsere Kernwerte</h2>
-                    <div class="grid-3">
-                        <div class="card">
-                            <h3>Expertise mit Bodenständigkeit</h3>
-                            <p>Wir vereinen tiefes technisches Know-how mit praktischem Verständnis für die realen Anforderungen von KMUs.</p>
-                        </div>
-                         <div class="card">
-                            <h3>Wertorientierung</h3>
-                            <p>Jede unserer Lösungen muss einen messbaren Geschäftswert liefern, orientiert am Return on Investment.</p>
-                        </div>
-                         <div class="card">
-                            <h3>Pragmatischer Fortschritt</h3>
-                            <p>Wir bevorzugen realistische, schnell umsetzbare Lösungen gegenüber theoretisch perfekten, unpraktischen Ansätzen.</p>
-                        </div>
+                    <div class="container-sm" style="text-align: center; margin-bottom: 60px;">
+                        <h2>Support & Wartung</h2>
+                        <p>Wir lassen Sie nicht allein. Wählen Sie den passenden Retainer für kontinuierlichen Support und proaktive Wartung.</p>
                     </div>
+                     <div class="grid-3">
+                        <div class="card">
+                            <h3>Basic</h3>
+                            <p><strong>420 CHF/Monat</strong></p>
+                            <ul>
+                                <li>2 Support-Stunden</li>
+                                <li>24-48h Reaktionszeit</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3>Pro</h3>
+                            <p><strong>800 CHF/Monat</strong></p>
+                            <ul>
+                                <li>4 Support-Stunden</li>
+                                <li>&lt; 8h Reaktionszeit</li>
+                                <li>Proaktives Monitoring</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3>Premium</h3>
+                            <p><strong>1'520 CHF/Monat</strong></p>
+                            <ul>
+                                <li>8 Support-Stunden</li>
+                                <li>&lt; 4h Reaktionszeit</li>
+                                <li>Kostenlose Zusatzmodule & Quartals-Strategie</li>
+                            </ul>
+                        </div>
+                     </div>
                 </div>
             </section>
             
             <section class="section-bg">
                 <div class="container">
                     <div class="cta-section">
-                        <h2>Bereit, gemeinsam etwas zu bewegen?</h2>
-                        <p class="lead">Lassen Sie uns in einem unverbindlichen Gespräch herausfinden, wie wir Ihr Unternehmen voranbringen können.</p>
-                        <button class="btn btn-primary" data-modal-target="#booking-modal" style="margin-top: 1rem; display: inline-block; width: auto;">Jetzt kostenloses Erstgespräch buchen</button>
+                        <h2>Bereit für Ihr neues Betriebssystem?</h2>
+                        <p class="lead">Lassen Sie uns in einem unverbindlichen Gespräch klären, wie die KMUpowerSuite Ihr Unternehmen transformieren kann. Bereitstellung in nur 4 Wochen.</p>
+                        <button class="btn btn-primary" data-modal-target="#booking-modal" style="margin-top: 1rem; display: inline-block; width: auto;">Demo anfordern</button>
                     </div>
                 </div>
             </section>

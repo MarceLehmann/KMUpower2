@@ -141,6 +141,7 @@
             top: 0;
             z-index: 1000;
             width: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232c3e50' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
         header .container {
@@ -521,6 +522,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="loesungen.html">Lösungen</a></li>
+                        <li><a href="kmupowersuite.html">KMUpowerSuite</a></li>
                         <li><a href="preise.html" class="active">Preise</a></li>
                         <li><a href="ueber-uns.html">Über Uns</a></li>
                         <li><a href="kontakt.html">Kontakt</a></li>
@@ -598,7 +600,67 @@
                 </div>
             </section>
         
-            <section class="section-bg">
+            <section id="flex-packages" class="section-bg">
+                <div class="container">
+                    <h2 style="text-align: center;">FlexScale: Flexible Stundenpakete</h2>
+                    <p style="text-align: center;" class="lead">Für projektbezogene Einsätze oder punktuelle Unterstützung ohne langfristige Bindung. Ideal für maximale Flexibilität. Pakete sind 12 Monate gültig.</p>
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <div class="pricing-card-header">
+                                <h3>Flex 10</h3>
+                                <div class="price">2'100<span class="price-period"> CHF</span></div>
+                            </div>
+                            <div class="pricing-card-body">
+                                <ul>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>10 Stunden</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Effektiver Satz: 210 CHF/h</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Ideal für kleinere Projekte</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Best-Effort-Service</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-card-footer">
+                                <button class="btn btn-secondary" data-modal-target="#booking-modal">Paket buchen</button>
+                            </div>
+                        </div>
+                        <div class="pricing-card highlight">
+                             <div class="pricing-card-header">
+                                <h3>Flex 20</h3>
+                                <div class="price">4'000<span class="price-period"> CHF</span></div>
+                            </div>
+                            <div class="pricing-card-body">
+                                <ul>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>20 Stunden</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Effektiver Satz: 200 CHF/h</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Für mittlere Projekte & Schulungen</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Best-Effort-Service</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-card-footer">
+                                <button class="btn btn-primary" data-modal-target="#booking-modal">Beliebtestes Paket</button>
+                            </div>
+                        </div>
+                        <div class="pricing-card">
+                             <div class="pricing-card-header">
+                                <h3>Flex 50</h3>
+                                <div class="price">8'500<span class="price-period"> CHF</span></div>
+                            </div>
+                            <div class="pricing-card-body">
+                                <ul>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>50 Stunden</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Effektiver Satz: 170 CHF/h</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Für grössere Implementierungen</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Best-Effort-Service</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-card-footer">
+                                <button class="btn btn-secondary" data-modal-target="#booking-modal">Paket buchen</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
                 <div class="container">
                      <div class="winshare-card">
                         <h2 style="color: var(--primary-color); font-weight: 800;">WinShare: Unser Erfolgsbasiertes Modell</h2>
@@ -608,7 +670,7 @@
                 </div>
             </section>
             
-             <section>
+             <section class="section-bg">
                 <div class="container faq-section">
                     <h2 style="text-align: center;">Häufig gestellte Fragen (FAQ)</h2>
                     <details class="faq-item">
@@ -626,7 +688,7 @@
                      <details class="faq-item">
                         <summary>Was ist nicht in den Retainer-Paketen enthalten?</summary>
                         <div class="faq-content">
-                            <p>Die Retainer decken Support, Wartung und kleinere Optimierungen ab. Größere Neuentwicklungen oder komplett neue Projekte werden separat als FlexScale-Paket oder als eigenes Projekt angeboten. Wir sprechen das aber immer transparent mit Ihnen ab.</p>
+                            <p>Die Retainer decken Support, Wartung und kleinere Optimierungen ab. Grössere Neuentwicklungen oder komplett neue Projekte werden separat als FlexScale-Paket oder als eigenes Projekt angeboten. Wir sprechen das aber immer transparent mit Ihnen ab.</p>
                         </div>
                     </details>
                      <details class="faq-item">
@@ -638,7 +700,7 @@
                 </div>
             </section>
 
-             <section class="section-bg">
+             <section>
                 <div class="container cta-section">
                     <h2>Fragen oder individuelles Angebot?</h2>
                     <p class="lead">Jedes Unternehmen ist einzigartig. Lassen Sie uns in einem unverbindlichen Gespräch herausfinden, welches Modell am besten zu Ihnen passt.</p>
@@ -658,6 +720,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="loesungen.html">Lösungen</a></li>
+                        <li><a href="kmupowersuite.html">KMUpowerSuite</a></li>
                         <li><a href="preise.html">Preise</a></li>
                         <li><a href="ueber-uns.html">Über Uns</a></li>
                         <li><a href="kontakt.html">Kontakt</a></li>
@@ -673,10 +736,9 @@
                     </ul>
                 </div>
                  <div>
-                    <h4>Kontakt</h4>
+                    <h4>Rechtliches</h4>
                     <ul>
-                        <li>Zürich, Schweiz</li>
-                        <li><a href="mailto:info@kmupower.ch">info@kmupower.ch</a></li>
+                        <li><a href="agb-impressum.html">AGB & Impressum</a></li>
                     </ul>
                 </div>
             </div>
