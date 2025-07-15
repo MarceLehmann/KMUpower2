@@ -8,20 +8,21 @@
     <meta name="description" content="Transparente, skalierbare und wertorientierte Preismodelle für KMUs. Entdecken Sie unsere Retainer-, Flex- und erfolgsbasierten Angebote.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #48e0d1;
             --primary-dark-color: #3abdb0;
             --secondary-color: #f8f9fa;
             --dark-color: #2c3e50;
+            --dark-color-rgb: 44, 62, 80;
             --light-color: #ffffff;
             --text-color: #34495e;
             --text-light-color: #566573;
             --border-color: #e0e6ed;
             --shadow: 0 4px 15px rgba(0,0,0,0.05);
             --shadow-hover: 0 8px 25px rgba(0,0,0,0.1);
-            --border-radius: 8px;
+            --border-radius: 12px;
             --transition-speed: 0.3s;
         }
 
@@ -65,11 +66,11 @@
             color: var(--dark-color);
             line-height: 1.3;
             margin-bottom: 1rem;
-            font-weight: 700;
+            font-weight: 800;
         }
 
-        h1 { font-size: 3rem; letter-spacing: -1px; }
-        h2 { font-size: 2.25rem; }
+        h1 { font-size: 3.2rem; letter-spacing: -1.5px; }
+        h2 { font-size: 2.5rem; letter-spacing: -1px; }
         h3 { font-size: 1.5rem; }
         h4 { font-size: 1.1rem; font-weight: 600; }
 
@@ -79,11 +80,19 @@
         }
 
         p.lead {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--text-light-color);
             max-width: 750px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        p.subheading {
+            text-transform: uppercase;
+            color: var(--primary-color);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
         }
 
         a {
@@ -98,19 +107,22 @@
 
         .btn {
             display: inline-block;
-            padding: 14px 28px;
+            padding: 16px 32px;
             border-radius: var(--border-radius);
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
             transition: all var(--transition-speed) ease;
             cursor: pointer;
             border: 2px solid transparent;
             font-size: 1rem;
+            width: 100%;
+            text-align: center;
         }
 
         .btn-primary {
             background-color: var(--primary-color);
             color: var(--dark-color);
+            box-shadow: 0 4px 6px rgba(var(--dark-color-rgb), 0.1);
         }
 
         .btn-primary:hover {
@@ -153,7 +165,7 @@
         }
         .logo-text {
             font-size: 1.5rem;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--dark-color);
         }
         .logo-text-power {
@@ -172,7 +184,7 @@
 
         nav ul li a {
             color: var(--text-color);
-            font-weight: 500;
+            font-weight: 600;
             padding: 8px 0;
             border-bottom: 2px solid transparent;
             transition: all 0.2s ease-in-out;
@@ -195,32 +207,81 @@
         }
 
         section {
-            padding: 80px 0;
+            padding: 100px 0;
         }
         .section-bg {
             background-color: var(--secondary-color);
         }
 
-        .card {
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            align-items: flex-end;
+            margin-top: 60px;
+        }
+        
+        .pricing-card {
             background-color: var(--light-color);
             border: 1px solid var(--border-color);
             border-radius: var(--border-radius);
-            padding: 2.5rem 2rem;
+            padding: 2.5rem;
             box-shadow: var(--shadow);
             transition: all var(--transition-speed) ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
-        .card:hover {
-            transform: translateY(-8px);
+        .pricing-card-header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .pricing-card-body {
+            flex-grow: 1;
+        }
+        .pricing-card-footer {
+            margin-top: 2rem;
+        }
+        .pricing-card.highlight {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
             box-shadow: var(--shadow-hover);
         }
-        .card h3 {
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 800;
             color: var(--dark-color);
         }
-        
+        .pricing-card .price span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-light-color);
+        }
+        .pricing-card ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .pricing-card ul li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        .pricing-card ul li svg {
+            color: var(--primary-color);
+            margin-right: 15px;
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+
         .winshare-card {
             border: 2px solid var(--primary-color);
             background: linear-gradient(45deg, var(--dark-color), #3c5a75);
             color: var(--light-color);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            text-align: center;
         }
         .winshare-card h2, .winshare-card p, .winshare-card strong {
              color: var(--light-color);
@@ -228,51 +289,39 @@
          .winshare-card p.lead {
              color: #e0e6ed;
          }
-
-        .pricing-table-wrapper {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-        }
         
-        .pricing-table {
-            width: 100%;
-            min-width: 600px;
-            border-collapse: collapse;
-            margin-top: 2rem;
-            box-shadow: var(--shadow);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            border: 1px solid var(--border-color);
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto;
         }
-
-        .pricing-table th, .pricing-table td {
-            padding: 1rem 1.5rem;
-            text-align: left;
+        .faq-item {
             border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
         }
-
-        .pricing-table th {
-            background-color: var(--secondary-color);
-            color: var(--dark-color);
+        .faq-item summary {
             font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        
-        .pricing-table tbody tr:last-child td {
-            border-bottom: none;
+        .faq-item summary::-webkit-details-marker {
+            display: none;
         }
-
-        .pricing-table tbody tr {
-            background-color: var(--light-color);
-            transition: background-color var(--transition-speed);
+        .faq-item summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 400;
+            transition: transform 0.2s ease;
         }
-
-        .pricing-table tbody tr:hover {
-            background-color: #fafdff;
+        .faq-item[open] summary::after {
+            transform: rotate(45deg);
         }
-
-        .pricing-table td:first-child {
-            font-weight: 600;
-            color: var(--dark-color);
+        .faq-item .faq-content {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
         }
 
         .cta-section {
@@ -314,10 +363,100 @@
             border-top: 1px solid #34495e;
             font-size: 0.9rem;
         }
+        
+        /* --- Modal Styles --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(var(--dark-color-rgb), 0.85);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0s 0.3s;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-container {
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 900px;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform: scale(0.95) translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-container {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            flex-shrink: 0;
+        }
+
+        .modal-title-text {
+            font-size: 1.25rem;
+            margin: 0;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 2.5rem;
+            line-height: 1;
+            cursor: pointer;
+            color: var(--text-light-color);
+            transition: color 0.2s, transform 0.2s;
+        }
+        .modal-close:hover {
+            color: var(--dark-color);
+            transform: rotate(90deg);
+        }
+
+        .modal-content {
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
 
         @media(max-width: 992px) {
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
+            h1 { font-size: 2.8rem; }
+            h2 { font-size: 2.2rem; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .pricing-card.highlight { transform: scale(1); }
             footer .container.grid-footer { grid-template-columns: 1fr 1fr; }
         }
 
@@ -393,6 +532,7 @@
         <main>
             <section class="section-bg">
                 <div class="container" style="text-align: center;">
+                    <p class="subheading">PREISGESTALTUNG</p>
                     <h1>Faire & Transparente Preismodelle</h1>
                     <p class="lead">Transparent, skalierbar und wertorientiert – unsere Preismodelle sind speziell auf die Bedürfnisse und Budgets von KMUs zugeschnitten.</p>
                 </div>
@@ -402,48 +542,99 @@
                 <div class="container">
                     <h2 style="text-align: center;">Stability Retainer: Kontinuierliche Unterstützung</h2>
                     <p style="text-align: center;" class="lead">Ideal für Unternehmen, die ihre Digitalisierung aktiv vorantreiben, laufend optimieren und einen verlässlichen Partner an ihrer Seite haben möchten.</p>
-                    <div class="pricing-table-wrapper">
-                        <table class="pricing-table">
-                            <thead>
-                                <tr><th>Paket</th><th>Support-Stunden/Monat</th><th>Festpreis CHF/Monat</th><th>Effektiver Satz CHF/h</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>4h-Paket Basic</td><td>4 Stunden</td><td>800</td><td>200</td></tr>
-                                <tr><td>8h-Paket Pro</td><td>8 Stunden</td><td>1'520</td><td>190</td></tr>
-                                <tr><td>16h-Paket Premium</td><td>16 Stunden</td><td>2'880</td><td>180</td></tr>
-                            </tbody>
-                        </table>
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <div class="pricing-card-header">
+                                <h3>Basic</h3>
+                                <div class="price">800<span class="price-period"> CHF/Monat</span></div>
+                            </div>
+                            <div class="pricing-card-body">
+                                <ul>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>4 Support-Stunden</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Effektiver Satz: 200 CHF/h</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Monitoring & Bugfixes</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Monatliche Statusberichte</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-card-footer">
+                                <button class="btn btn-secondary" data-modal-target="#booking-modal">Paket wählen</button>
+                            </div>
+                        </div>
+                        <div class="pricing-card highlight">
+                             <div class="pricing-card-header">
+                                <h3>Pro</h3>
+                                <div class="price">1'520<span class="price-period"> CHF/Monat</span></div>
+                            </div>
+                            <div class="pricing-card-body">
+                                <ul>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>8 Support-Stunden</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Effektiver Satz: 190 CHF/h</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Schnellere Reaktionszeit (4h)</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Wöchentliche Check-ins</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-card-footer">
+                                <button class="btn btn-primary" data-modal-target="#booking-modal">Beliebtestes Paket</button>
+                            </div>
+                        </div>
+                        <div class="pricing-card">
+                             <div class="pricing-card-header">
+                                <h3>Premium</h3>
+                                <div class="price">2'880<span class="price-period"> CHF/Monat</span></div>
+                            </div>
+                            <div class="pricing-card-body">
+                                <ul>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>16 Support-Stunden</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Effektiver Satz: 180 CHF/h</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Garantierte Top-Priorität</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Proaktive Lösungskonzeption</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-card-footer">
+                                <button class="btn btn-secondary" data-modal-target="#booking-modal">Paket wählen</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
         
             <section class="section-bg">
                 <div class="container">
-                    <h2 style="text-align: center;">FlexScale: Flexible Stundenpakete</h2>
-                    <p style="text-align: center;" class="lead">Für projektbezogene Einsätze oder unregelmässigen Bedarf ohne langfristige Bindung. Alle Pakete sind 12 Monate gültig.</p>
-                    <div class="pricing-table-wrapper">
-                         <table class="pricing-table">
-                            <thead>
-                                <tr><th>Paket</th><th>Stunden</th><th>Festpreis CHF</th><th>Effektiver Satz CHF/h</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>Flex 5</td><td>5 Stunden</td><td>1'100</td><td>220</td></tr>
-                                <tr><td>Flex 10</td><td>10 Stunden</td><td>2'100</td><td>210</td></tr>
-                                <tr><td>Flex 20</td><td>20 Stunden</td><td>4'000</td><td>200</td></tr>
-                                <tr><td>Flex 30</td><td>30 Stunden</td><td>5'700</td><td>190</td></tr>
-                                <tr><td>Flex 50</td><td>50 Stunden</td><td>8'500</td><td>170</td></tr>
-                            </tbody>
-                        </table>
+                     <div class="winshare-card">
+                        <h2 style="color: var(--primary-color); font-weight: 800;">WinShare: Unser Erfolgsbasiertes Modell</h2>
+                        <p class="lead">Ein innovatives Modell mit geteiltem Risiko. Wir erstellen Ihre individuelle Automatisierungslösung. Über 6 Monate zahlen Sie einen kleinen Fixbetrag von nur <strong>300 CHF/Monat</strong> plus <strong>11% der tatsächlich erzielten Einsparungen</strong>. Danach gehört die Lösung Ihnen. Eine echte Win-Win-Partnerschaft.</p>
+                         <button class="btn btn-primary" data-modal-target="#booking-modal" style="margin-top: 1rem; max-width: 300px;">Mehr erfahren</button>
                     </div>
                 </div>
             </section>
             
-            <section>
-                <div class="container">
-                     <div class="card winshare-card" style="text-align: center;">
-                        <h2 style="color: var(--primary-color); font-weight: 700;">WinShare: Unser Erfolgsbasiertes Modell</h2>
-                        <p class="lead">Ein innovatives Modell mit geteiltem Risiko. Wir erstellen Ihre individuelle Automatisierungslösung. Über 6 Monate zahlen Sie einen kleinen Fixbetrag von nur <strong>300 CHF/Monat</strong> plus <strong>11% der tatsächlich erzielten Einsparungen</strong>. Danach gehört die Lösung Ihnen. Eine echte Win-Win-Partnerschaft.</p>
-                    </div>
+             <section>
+                <div class="container faq-section">
+                    <h2 style="text-align: center;">Häufig gestellte Fragen (FAQ)</h2>
+                    <details class="faq-item">
+                        <summary>Was passiert, wenn ich meine Retainer-Stunden nicht aufbrauche?</summary>
+                        <div class="faq-content">
+                            <p>Kein Problem. Sie können bis zu 25% Ihrer ungenutzten Stunden aus dem Vormonat in den nächsten Monat mitnehmen. So geht Ihnen keine wertvolle Zeit verloren.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Gibt es eine Mindestvertragslaufzeit für die Retainer?</summary>
+                        <div class="faq-content">
+                            <p>Ja, unsere Stability Retainer haben eine Mindestlaufzeit von 3 Monaten. Das gibt uns die nötige Zeit, um Ihre Systeme kennenzulernen und echten Mehrwert zu schaffen. Danach ist der Vertrag monatlich kündbar.</p>
+                        </div>
+                    </details>
+                     <details class="faq-item">
+                        <summary>Was ist nicht in den Retainer-Paketen enthalten?</summary>
+                        <div class="faq-content">
+                            <p>Die Retainer decken Support, Wartung und kleinere Optimierungen ab. Größere Neuentwicklungen oder komplett neue Projekte werden separat als FlexScale-Paket oder als eigenes Projekt angeboten. Wir sprechen das aber immer transparent mit Ihnen ab.</p>
+                        </div>
+                    </details>
+                     <details class="faq-item">
+                        <summary>Wie funktioniert die Abrechnung beim WinShare-Modell genau?</summary>
+                        <div class="faq-content">
+                            <p>Vor Projektstart definieren wir gemeinsam klare, messbare KPIs (z.B. eingesparte Arbeitsstunden). Monatlich wird die tatsächliche Einsparung gemessen. Sie erhalten dann eine Rechnung über den Fixbetrag von 300 CHF plus 11% dieser Einsparung. Alles vollkommen transparent.</p>
+                        </div>
+                    </details>
                 </div>
             </section>
 
@@ -451,7 +642,7 @@
                 <div class="container cta-section">
                     <h2>Fragen oder individuelles Angebot?</h2>
                     <p class="lead">Jedes Unternehmen ist einzigartig. Lassen Sie uns in einem unverbindlichen Gespräch herausfinden, welches Modell am besten zu Ihnen passt.</p>
-                    <a href="https://outlook.office365.com/book/Termin@thepoweraddicts.ch/s/Ze7FMsdTZEqr3sVwIhzBtg2?ismsaljsauthenabled=true" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Jetzt Termin buchen</a>
+                    <button class="btn btn-primary" data-modal-target="#booking-modal" style="margin-top: 1rem; display: inline-block; width: auto;">Jetzt Termin buchen</button>
                 </div>
             </section>
         </main>
@@ -494,13 +685,29 @@
             </div>
         </footer>
     </div>
+    
+    <div id="booking-modal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <header class="modal-header">
+                <h2 id="modal-title" class="modal-title-text">Kostenloses Erstgespräch buchen</h2>
+                <button class="modal-close" aria-label="Schliessen" data-modal-close>&times;</button>
+            </header>
+            <div class="modal-content">
+                <div class="iframe-container">
+                     <iframe src="https://outlook.office365.com/book/Termin@thepoweraddicts.ch/s/Ze7FMsdTZEqr3sVwIhzBtg2?ismsaljsauthenabled=true" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // --- Mobile Menu ---
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav');
         if (menuToggle && nav) {
             const closeIcon = '&times;';
             const menuIcon = '&#9776;';
-            menuToggle.addEventListener('click', (e) => {
+            menuToggle.addEventListener('click', () => {
                 const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
                 nav.classList.toggle('active');
                 menuToggle.setAttribute('aria-expanded', String(!isExpanded));
@@ -509,6 +716,52 @@
             });
         }
         document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // --- Modal Logic ---
+        const openModalButtons = document.querySelectorAll('[data-modal-target]');
+        const closeModalButtons = document.querySelectorAll('[data-modal-close]');
+        const overlay = document.getElementById('booking-modal');
+
+        function openModal(modal) {
+            if (modal == null) return;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modal) {
+            if (modal == null) return;
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        openModalButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const modal = document.querySelector(button.dataset.modalTarget);
+                openModal(modal);
+            });
+        });
+
+        if (overlay) {
+            overlay.addEventListener('click', e => {
+                if (e.target === overlay) {
+                    closeModal(overlay);
+                }
+            });
+        }
+
+        closeModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const modal = button.closest('.modal-overlay');
+                closeModal(modal);
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape" && overlay && overlay.classList.contains('active')) {
+                closeModal(overlay);
+            }
+        });
     </script>
 </body>
 </html>
