@@ -114,19 +114,24 @@
         .logo a {
             display: flex;
             align-items: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--dark-color);
+            gap: 10px;
             text-decoration: none;
         }
         .logo a:hover {
             text-decoration: none;
             opacity: 0.9;
         }
-        .logo img {
-            margin-right: 12px;
+        .logo-img {
             height: 32px;
             width: auto;
+        }
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+        .logo-text-power {
+            color: var(--primary-color);
         }
 
         nav ul {
@@ -268,6 +273,7 @@
         @media (max-width: 768px) {
             body { font-size: 16px; }
             header { padding: 0.75rem 0; }
+            .logo-text { font-size: 1.2rem; }
             nav {
                 display: none;
                 position: fixed;
@@ -315,7 +321,8 @@
             <div class="container">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="LOGO_KMUpower_high.webp" alt="KMUpower Logo" style="height: 32px; width: auto;"/>
+                        <img src="LOGO_KMUpower_high.webp" alt="KMUpower Logo" class="logo-img"/>
+                        <span class="logo-text">KMU<span class="logo-text-power">power</span></span>
                     </a>
                 </div>
                 <button class="menu-toggle" aria-label="Menü umschalten" aria-expanded="false" aria-controls="main-nav">&#9776;</button>

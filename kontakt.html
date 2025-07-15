@@ -113,6 +113,20 @@
             box-shadow: var(--shadow-hover);
             text-decoration: none;
         }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--dark-color);
+            border-color: var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            border-color: var(--dark-color);
+            transform: translateY(-3px);
+            text-decoration: none;
+        }
 
         header {
             background-color: rgba(255, 255, 255, 0.95);
@@ -134,19 +148,24 @@
         .logo a {
             display: flex;
             align-items: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--dark-color);
+            gap: 10px;
             text-decoration: none;
         }
         .logo a:hover {
             text-decoration: none;
             opacity: 0.9;
         }
-        .logo img {
-            margin-right: 12px;
+        .logo-img {
             height: 32px;
             width: auto;
+        }
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+        .logo-text-power {
+            color: var(--primary-color);
         }
 
         nav ul {
@@ -263,6 +282,12 @@
             background-color: var(--light-color);
         }
         
+        .divider {
+            text-align: center;
+            margin: 1.5rem 0;
+            color: var(--text-light-color);
+        }
+
         @media(max-width: 992px) {
             .contact-wrapper { grid-template-columns: 1fr; }
         }
@@ -270,6 +295,7 @@
         @media (max-width: 768px) {
             body { font-size: 16px; background-color: var(--light-color); }
              header { padding: 0.75rem 0; }
+            .logo-text { font-size: 1.2rem; }
             main { align-items: flex-start; }
             .contact-form, .contact-info { padding: 2rem; }
             nav {
@@ -318,8 +344,9 @@
         <header>
             <div class="container">
                 <div class="logo">
-                    <a href="index.html">
-                        <img src="LOGO_KMUpower_high.webp" alt="KMUpower Logo" style="height: 32px; width: auto;"/>
+                     <a href="index.html">
+                        <img src="LOGO_KMUpower_high.webp" alt="KMUpower Logo" class="logo-img"/>
+                        <span class="logo-text">KMU<span class="logo-text-power">power</span></span>
                     </a>
                 </div>
                 <button class="menu-toggle" aria-label="Menü umschalten" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
@@ -352,25 +379,29 @@
                             </li>
                         </ul>
                     </div>
-                    <form class="contact-form" netlify>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required placeholder="Ihr Name" />
-                        </div>
-                        <div class="form-group">
-                            <label for="email">E-Mail</label>
-                            <input type="email" id="email" name="email" required placeholder="ihre.email@firma.ch" />
-                        </div>
-                         <div class="form-group">
-                            <label for="company">Unternehmen (optional)</label>
-                            <input type="text" id="company" name="company" placeholder="Ihr Unternehmen"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Ihre Nachricht</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Wobei können wir Ihnen helfen?"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Nachricht senden</button>
-                    </form>
+                    <div class="contact-form">
+                        <a href="https://outlook.office365.com/book/Termin@thepoweraddicts.ch/s/Ze7FMsdTZEqr3sVwIhzBtg2?ismsaljsauthenabled=true" class="btn btn-secondary" style="width: 100%; margin-bottom: 1.5rem; text-align: center;" target="_blank" rel="noopener noreferrer">Oder direkt Termin buchen</a>
+                        <div class="divider">oder</div>
+                        <form netlify>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Ihr Name" />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-Mail</label>
+                                <input type="email" id="email" name="email" required placeholder="ihre.email@firma.ch" />
+                            </div>
+                             <div class="form-group">
+                                <label for="company">Unternehmen (optional)</label>
+                                <input type="text" id="company" name="company" placeholder="Ihr Unternehmen"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Ihre Nachricht</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Wobei können wir Ihnen helfen?"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Nachricht senden</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </main>
@@ -390,7 +421,7 @@
             });
         }
         
-        const contactForm = document.querySelector('.contact-form');
+        const contactForm = document.querySelector('.contact-form form');
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
                 const isNetlify = contactForm.hasAttribute('netlify');

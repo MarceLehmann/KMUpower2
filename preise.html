@@ -96,6 +96,30 @@
             color: var(--primary-dark-color);
         }
 
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all var(--transition-speed) ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+            text-decoration: none;
+        }
+
         header {
             background-color: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -116,19 +140,24 @@
         .logo a {
             display: flex;
             align-items: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--dark-color);
+            gap: 10px;
             text-decoration: none;
         }
         .logo a:hover {
             text-decoration: none;
             opacity: 0.9;
         }
-        .logo img {
-            margin-right: 12px;
+        .logo-img {
             height: 32px;
             width: auto;
+        }
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+        .logo-text-power {
+            color: var(--primary-color);
         }
 
         nav ul {
@@ -207,7 +236,7 @@
         
         .pricing-table {
             width: 100%;
-            min-width: 800px;
+            min-width: 600px;
             border-collapse: collapse;
             margin-top: 2rem;
             box-shadow: var(--shadow);
@@ -244,6 +273,10 @@
         .pricing-table td:first-child {
             font-weight: 600;
             color: var(--dark-color);
+        }
+
+        .cta-section {
+            text-align: center;
         }
         
         footer {
@@ -291,6 +324,7 @@
         @media (max-width: 768px) {
             body { font-size: 16px; }
              header { padding: 0.75rem 0; }
+            .logo-text { font-size: 1.2rem; }
             nav {
                 display: none;
                 position: fixed;
@@ -339,7 +373,8 @@
             <div class="container">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="LOGO_KMUpower_high.webp" alt="KMUpower Logo" style="height: 32px; width: auto;"/>
+                        <img src="LOGO_KMUpower_high.webp" alt="KMUpower Logo" class="logo-img"/>
+                        <span class="logo-text">KMU<span class="logo-text-power">power</span></span>
                     </a>
                 </div>
                 <button class="menu-toggle" aria-label="Menü umschalten" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
@@ -370,14 +405,12 @@
                     <div class="pricing-table-wrapper">
                         <table class="pricing-table">
                             <thead>
-                                <tr><th>Paket</th><th>Support-Stunden/Monat</th><th>Festpreis CHF/Monat</th><th>Effektiver Satz CHF/h</th><th>Ideal für</th></tr>
+                                <tr><th>Paket</th><th>Support-Stunden/Monat</th><th>Festpreis CHF/Monat</th><th>Effektiver Satz CHF/h</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>1h-Paket</td><td>1 Stunde</td><td>220</td><td>220</td><td>Basis-Support, Monitoring & kleine Ad-hoc-Fragen</td></tr>
-                                <tr><td>2h-Paket</td><td>2 Stunden</td><td>420</td><td>210</td><td>Regelmässige Check-Ins & Routine-Support</td></tr>
-                                <tr><td>4h-Paket Basic</td><td>4 Stunden</td><td>800</td><td>200</td><td>Umfassender Support & monatliche Statusberichte</td></tr>
-                                <tr><td>8h-Paket Pro</td><td>8 Stunden</td><td>1'520</td><td>190</td><td>Intensive Betreuung & schnellere Reaktionszeit (4h)</td></tr>
-                                <tr><td>16h-Paket Premium</td><td>16 Stunden</td><td>2'880</td><td>180</td><td>Proaktive Optimierung & garantierte Reaktionszeit (2-4h)</td></tr>
+                                <tr><td>4h-Paket Basic</td><td>4 Stunden</td><td>800</td><td>200</td></tr>
+                                <tr><td>8h-Paket Pro</td><td>8 Stunden</td><td>1'520</td><td>190</td></tr>
+                                <tr><td>16h-Paket Premium</td><td>16 Stunden</td><td>2'880</td><td>180</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -411,6 +444,14 @@
                         <h2 style="color: var(--primary-color); font-weight: 700;">WinShare: Unser Erfolgsbasiertes Modell</h2>
                         <p class="lead">Ein innovatives Modell mit geteiltem Risiko. Wir erstellen Ihre individuelle Automatisierungslösung. Über 6 Monate zahlen Sie einen kleinen Fixbetrag von nur <strong>300 CHF/Monat</strong> plus <strong>11% der tatsächlich erzielten Einsparungen</strong>. Danach gehört die Lösung Ihnen. Eine echte Win-Win-Partnerschaft.</p>
                     </div>
+                </div>
+            </section>
+
+             <section class="section-bg">
+                <div class="container cta-section">
+                    <h2>Fragen oder individuelles Angebot?</h2>
+                    <p class="lead">Jedes Unternehmen ist einzigartig. Lassen Sie uns in einem unverbindlichen Gespräch herausfinden, welches Modell am besten zu Ihnen passt.</p>
+                    <a href="https://outlook.office365.com/book/Termin@thepoweraddicts.ch/s/Ze7FMsdTZEqr3sVwIhzBtg2?ismsaljsauthenabled=true" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Jetzt Termin buchen</a>
                 </div>
             </section>
         </main>

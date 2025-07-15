@@ -113,19 +113,24 @@
         .logo a {
             display: flex;
             align-items: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--dark-color);
+            gap: 10px;
             text-decoration: none;
         }
         .logo a:hover {
             text-decoration: none;
             opacity: 0.9;
         }
-        .logo img {
-            margin-right: 12px;
+        .logo-img {
             height: 32px;
             width: auto;
+        }
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+        .logo-text-power {
+            color: var(--primary-color);
         }
 
         nav ul {
@@ -227,6 +232,31 @@
         .card h3 {
             margin-bottom: 0.5rem;
         }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .video-responsive {
+            overflow: hidden;
+            padding-bottom: 56.25%; /* 16:9 */
+            position: relative;
+            height: 0;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .video-responsive iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            border: 0;
+        }
+
 
         footer {
             background-color: var(--dark-color);
@@ -276,7 +306,8 @@
 
         @media (max-width: 768px) {
             body { font-size: 16px; }
-             header { padding: 0.75rem 0; }
+            header { padding: 0.75rem 0; }
+            .logo-text { font-size: 1.2rem; }
             nav {
                 display: none;
                 position: fixed;
@@ -316,6 +347,7 @@
                 display: block;
             }
             .mission-vision { padding: 2rem; }
+            .video-grid { grid-template-columns: 1fr; }
             footer .container.grid-footer { grid-template-columns: 1fr; }
         }
     </style>
@@ -325,8 +357,9 @@
         <header>
             <div class="container">
                 <div class="logo">
-                    <a href="index.html">
-                        <img src="LOGO_KMUpower_high.webp" alt="KMUpower Logo" style="height: 32px; width: auto;"/>
+                     <a href="index.html">
+                        <img src="LOGO_KMUpower_high.webp" alt="KMUpower Logo" class="logo-img"/>
+                        <span class="logo-text">KMU<span class="logo-text-power">power</span></span>
                     </a>
                 </div>
                 <button class="menu-toggle" aria-label="Menü umschalten" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
@@ -369,8 +402,22 @@
                     <p>Als Vater und Ehemann weiss ich, wie wichtig stabile Werte sind – im Beruf wie im Privaten. Mein christlicher Glaube gibt mir die Ruhe, komplexe Projekte gelassen anzugehen und gleichzeitig Zeit für das Wesentliche zu finden.</p>
                 </div>
             </section>
+
+            <section id="videos" class="section-bg">
+                <div class="container">
+                    <h2 style="text-align: center; margin-bottom: 50px;">KMUpower in Aktion</h2>
+                    <div class="video-grid">
+                        <div class="video-responsive">
+                            <iframe src="https://www.youtube.com/embed/ng0xG618HsE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-responsive">
+                            <iframe src="https://www.youtube.com/embed/AqyL4rEyesA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
             
-            <section class="section-bg">
+            <section>
                 <div class="container">
                     <div class="grid-2">
                         <div class="mission-vision" style="background-color: var(--dark-color); color: var(--light-color);">
@@ -385,7 +432,7 @@
                 </div>
             </section>
             
-            <section>
+            <section class="section-bg">
                 <div class="container">
                     <h2 style="text-align: center; margin-bottom: 50px;">Unsere Kernwerte</h2>
                     <div class="grid-3">
