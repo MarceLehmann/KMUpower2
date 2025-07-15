@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMUpower | Digitale Exzellenz für KMU</title>
+    <meta name="description" content="KMUpower ist Ihr Spezialist für die Digitalisierung von KMU im DACH-Raum mit Microsoft Power Platform. Wir bieten Beratung, Entwicklung und Prozessoptimierung.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0078d4;
+            --secondary-color: #f0f4f8;
+            --dark-color: #2c3e50;
+            --light-color: #ffffff;
+            --text-color: #34495e;
+            --border-color: #e0e0e0;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --border-radius: 8px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex-grow: 1;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--dark-color);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 2.8rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        p.lead {
+            font-size: 1.2rem;
+            color: #566573;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #005a9e;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            text-decoration: none;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            text-decoration: none;
+        }
+
+        header {
+            background-color: var(--light-color);
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            text-decoration: none;
+        }
+        .logo a:hover {
+            text-decoration: none;
+        }
+        .logo svg {
+            margin-right: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            font-weight: 500;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease-in-out;
+        }
+
+        nav ul li a.active, nav ul li a:hover {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .section-bg {
+            background-color: var(--secondary-color);
+        }
+
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 1rem auto 2rem;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--light-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            margin-top: 1rem;
+        }
+
+        .card svg {
+            color: var(--primary-color);
+        }
+        
+        .value-list {
+            list-style: none;
+        }
+
+        .value-list li {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .value-list li svg {
+            color: var(--primary-color);
+            margin-right: 15px;
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: #bdc3c7;
+            padding-top: 40px;
+        }
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        footer h4 {
+            color: var(--light-color);
+            margin-bottom: 1rem;
+        }
+        footer ul {
+            list-style: none;
+        }
+        footer ul li {
+            margin-bottom: 0.5rem;
+        }
+        footer ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+        }
+        footer ul li a:hover {
+            color: var(--light-color);
+            text-decoration: underline;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px 0;
+            border-top: 1px solid #34495e;
+            font-size: 0.9rem;
+        }
+
+        @media(max-width: 992px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .grid-3 { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            body { font-size: 16px; }
+            .grid-3 { grid-template-columns: 1fr; }
+            
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--light-color);
+                box-shadow: var(--shadow);
+                display: none;
+                flex-direction: column;
+            }
+            nav.active {
+                display: flex;
+            }
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                padding: 1rem 0;
+            }
+            nav ul li {
+                margin: 0;
+                width: 100%;
+                text-align: center;
+            }
+            nav ul li a {
+                display: block;
+                padding: 1rem;
+                border-bottom: 1px solid var(--border-color);
+            }
+            nav ul li a.active, nav ul li a:hover {
+                background-color: var(--secondary-color);
+                border-bottom-color: var(--border-color);
+            }
+            nav ul li a:hover {
+                color: var(--primary-color);
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" rx="40" fill="#2c3e50"/><path d="M55 150V50H85L115 100L85 150H55Z" fill="#0078d4"/><path d="M145 50V150H115L85 100L115 50H145Z" fill="#f0f4f8"/></svg>
+                        <span>KMUpower</span>
+                    </a>
+                </div>
+                <button class="menu-toggle" aria-label="Menü umschalten" aria-expanded="false">&#9776;</button>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="loesungen.html">Lösungen</a></li>
+                        <li><a href="preise.html">Preise</a></li>
+                        <li><a href="ueber-uns.html">Über Uns</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <h1>Wir ermächtigen KMUs durch digitale Exzellenz.</h1>
+                    <p>KMUpower ist Ihr Spezialist für die Digitalisierung von kleinen und mittelständischen Unternehmen im DACH-Raum. Wir verwandeln Komplexität in Mehrwert – mit maßgeschneiderten Lösungen auf Basis der Microsoft Power Platform.</p>
+                    <div>
+                        <a href="kontakt.html" class="btn btn-primary">Kostenloses Erstgespräch</a>
+                        <a href="loesungen.html" class="btn btn-secondary" style="margin-left: 10px;">Unsere Lösungen entdecken</a>
+                    </div>
+                </div>
+            </section>
+    
+            <section id="services" class="section-bg">
+                <div class="container">
+                    <h2 style="text-align: center; margin-bottom: 40px;">Ihr Partner für pragmatische Digitalisierung</h2>
+                    <div class="grid-3">
+                        <div class="card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect></svg>
+                            <h3>Power Apps Entwicklung</h3>
+                            <p>Maßgeschneiderte Geschäftsanwendungen, die exakt auf Ihre Prozesse zugeschnitten sind – schnell, effizient und skalierbar.</p>
+                        </div>
+                        <div class="card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="M12 16v6"/><path d="M17.66 17.66l-1.41-1.41"/><path d="M6.34 6.34L4.93 4.93"/><path d="M20.49 7.51l-1.41-1.41"/><path d="M3.51 20.49l1.41-1.41"/><path d="M22 12h-6"/><path d="M8 12H2"/><path d="m17.66 6.34-1.41 1.41"/><path d="m6.34 17.66-1.41 1.41"/></svg>
+                            <h3>Power Automate Workflows</h3>
+                            <p>Automatisieren Sie repetitive Aufgaben und komplexe Geschäftsprozesse, um Zeit zu sparen und Fehler zu reduzieren.</p>
+                        </div>
+                        <div class="card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><path d="M12 12v9"/></svg>
+                            <h3>KI-Integration</h3>
+                            <p>Nutzen Sie die Kraft von KI mit Copilot und Azure AI, um intelligentere Entscheidungen zu treffen und Prozesse zu optimieren.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <div class="container">
+                     <h2 style="text-align: center; margin-bottom: 40px;">Warum KMUpower?</h2>
+                     <ul class="value-list">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><h3>KMU-Spezialisierung</h3><p>Wir sprechen Ihre Sprache und verstehen die Anforderungen des Mittelstands im DACH-Raum.</p></div></li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><h3>Microsoft Power Platform Expertise</h3><p>Als zertifizierte Experten schöpfen wir das volle Potenzial der Microsoft-Technologien für Sie aus.</p></div></li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><h3>Pragmatischer Ansatz</h3><p>Wir liefern schnelle, wertschaffende Implementierungen statt endloser Theorieprojekte.</p></div></li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><h3>Transparente Preismodelle</h3><p>Unsere Preisgestaltung ist fair, nachvollziehbar und speziell auf KMU-Budgets zugeschnitten.</p></div></li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div>
+                    <h4>KMUpower</h4>
+                    <p>Wir ermächtigen KMUs durch digitale Exzellenz.</p>
+                </div>
+                <div>
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="loesungen.html">Lösungen</a></li>
+                        <li><a href="preise.html">Preise</a></li>
+                        <li><a href="ueber-uns.html">Über Uns</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4>Kontakt</h4>
+                    <ul>
+                        <li>Zürich, Schweiz</li>
+                        <li><a href="mailto:info@kmupower.ch">info@kmupower.ch</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                 <p>&copy; <span id="current-year">2024</span> KMUpower. Alle Rechte vorbehalten.</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+        if (menuToggle && nav) {
+            const closeIcon = '&times;';
+            const menuIcon = '&#9776;';
+            menuToggle.addEventListener('click', () => {
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                nav.classList.toggle('active');
+                menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+                menuToggle.innerHTML = !isExpanded ? closeIcon : menuIcon;
+            });
+        }
+        const yearSpan = document.getElementById('current-year');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+    </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

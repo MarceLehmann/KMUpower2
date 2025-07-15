@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preismodelle | KMUpower</title>
+    <meta name="description" content="Transparente, skalierbare und wertorientierte Preismodelle für KMUs. Entdecken Sie unsere Retainer-, Flex- und erfolgsbasierten Angebote.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0078d4;
+            --secondary-color: #f0f4f8;
+            --dark-color: #2c3e50;
+            --light-color: #ffffff;
+            --text-color: #34495e;
+            --border-color: #e0e0e0;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --border-radius: 8px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex-grow: 1;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--dark-color);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 2.8rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        p.lead {
+            font-size: 1.2rem;
+            color: #566573;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            background-color: var(--light-color);
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            text-decoration: none;
+        }
+        .logo a:hover {
+            text-decoration: none;
+        }
+        .logo svg {
+            margin-right: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            font-weight: 500;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease-in-out;
+        }
+
+        nav ul li a.active, nav ul li a:hover {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+
+        section {
+            padding: 60px 0;
+        }
+        
+        .card {
+            background-color: var(--light-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            color: var(--dark-color);
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            box-shadow: var(--shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .pricing-table th, .pricing-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .pricing-table th {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            font-weight: 700;
+        }
+        
+        .pricing-table tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .pricing-table td:first-child {
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: #bdc3c7;
+            padding-top: 40px;
+        }
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        footer h4 {
+            color: var(--light-color);
+            margin-bottom: 1rem;
+        }
+        footer ul {
+            list-style: none;
+        }
+        footer ul li {
+            margin-bottom: 0.5rem;
+        }
+        footer ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+        }
+        footer ul li a:hover {
+            color: var(--light-color);
+            text-decoration: underline;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px 0;
+            border-top: 1px solid #34495e;
+            font-size: 0.9rem;
+        }
+
+        @media(max-width: 992px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+        }
+
+        @media (max-width: 768px) {
+            body { font-size: 16px; }
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--light-color);
+                box-shadow: var(--shadow);
+                display: none;
+                flex-direction: column;
+            }
+            nav.active {
+                display: flex;
+            }
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                padding: 1rem 0;
+            }
+            nav ul li {
+                margin: 0;
+                width: 100%;
+                text-align: center;
+            }
+            nav ul li a {
+                display: block;
+                padding: 1rem;
+                border-bottom: 1px solid var(--border-color);
+            }
+            nav ul li a.active, nav ul li a:hover {
+                background-color: var(--secondary-color);
+                border-bottom-color: var(--border-color);
+            }
+            nav ul li a:hover {
+                color: var(--primary-color);
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" rx="40" fill="#2c3e50"/><path d="M55 150V50H85L115 100L85 150H55Z" fill="#0078d4"/><path d="M145 50V150H115L85 100L115 50H145Z" fill="#f0f4f8"/></svg>
+                        <span>KMUpower</span>
+                    </a>
+                </div>
+                <button class="menu-toggle" aria-label="Menü umschalten" aria-expanded="false">&#9776;</button>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="loesungen.html">Lösungen</a></li>
+                        <li><a href="preise.html" class="active">Preise</a></li>
+                        <li><a href="ueber-uns.html">Über Uns</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <div class="container">
+                    <h1>Preismodelle</h1>
+                    <p class="lead">Transparent, skalierbar und wertorientiert – unsere Preismodelle sind speziell auf die Bedürfnisse von KMUs zugeschnitten.</p>
+        
+                    <h3>Stability Retainer: Kontinuierliche Unterstützung</h3>
+                    <p>Ideal für Unternehmen, die ihre Digitalisierung aktiv vorantreiben und laufend optimieren möchten.</p>
+                    <div style="overflow-x: auto;">
+                        <table class="pricing-table">
+                            <thead>
+                                <tr><th>Paket</th><th>Support-Stunden/Monat</th><th>Festpreis CHF/Monat</th><th>Effektiver Stundensatz CHF/h</th><th>Inklusivleistungen</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1h-Paket</td><td>1 Stunde</td><td>220</td><td>220</td><td>Basis-Support, Bugfixes, Monitoring</td></tr>
+                                <tr><td>2h-Paket</td><td>2 Stunden</td><td>420</td><td>210</td><td>Routine-Support, regelmässige Check-Ins</td></tr>
+                                <tr><td>4h-Paket Basic</td><td>4 Stunden</td><td>800</td><td>200</td><td>Umfassender Support, monatliche Statusberichte</td></tr>
+                                <tr><td>8h-Paket Pro</td><td>8 Stunden</td><td>1'520</td><td>190</td><td>Intensive Betreuung, schnellere Reaktionszeit (4h)</td></tr>
+                                <tr><td>16h-Paket Premium</td><td>16 Stunden</td><td>2'880</td><td>180</td><td>Proaktive Optimierung, garantierte Reaktionszeit (2-4h)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+        
+                    <h3 style="margin-top: 3rem;">FlexScale: Flexible Stundenpakete</h3>
+                    <p>Für projektbezogene Einsätze ohne langfristige Bindung. 12 Monate gültig.</p>
+                    <div style="overflow-x: auto;">
+                         <table class="pricing-table">
+                            <thead>
+                                <tr><th>Paket</th><th>Stunden</th><th>Festpreis CHF</th><th>Effektiver Stundensatz CHF/h</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Flex 5</td><td>5 Stunden</td><td>1'100</td><td>220</td></tr>
+                                <tr><td>Flex 10</td><td>10 Stunden</td><td>2'100</td><td>210</td></tr>
+                                <tr><td>Flex 20</td><td>20 Stunden</td><td>4'000</td><td>200</td></tr>
+                                <tr><td>Flex 30</td><td>30 Stunden</td><td>5'700</td><td>190</td></tr>
+                                <tr><td>Flex 50</td><td>50 Stunden</td><td>8'500</td><td>170</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="card" style="margin-top: 3rem;">
+                        <h3>WinShare: Erfolgsbasiertes Modell</h3>
+                        <p>Unser innovatives Modell: Wir erstellen Ihre Automatisierungslösung. Über 6 Monate zahlen Sie einen kleinen Fixbetrag (300 CHF/Monat) plus 11% der tatsächlich erzielten Einsparungen. Danach gehört die Lösung Ihnen. Ein Win-Win für beide Seiten.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div>
+                    <h4>KMUpower</h4>
+                    <p>Wir ermächtigen KMUs durch digitale Exzellenz.</p>
+                </div>
+                <div>
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="loesungen.html">Lösungen</a></li>
+                        <li><a href="preise.html">Preise</a></li>
+                        <li><a href="ueber-uns.html">Über Uns</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4>Kontakt</h4>
+                    <ul>
+                        <li>Zürich, Schweiz</li>
+                        <li><a href="mailto:info@kmupower.ch">info@kmupower.ch</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                 <p>&copy; <span id="current-year">2024</span> KMUpower. Alle Rechte vorbehalten.</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+        if (menuToggle && nav) {
+            const closeIcon = '&times;';
+            const menuIcon = '&#9776;';
+            menuToggle.addEventListener('click', () => {
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                nav.classList.toggle('active');
+                menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+                menuToggle.innerHTML = !isExpanded ? closeIcon : menuIcon;
+            });
+        }
+        const yearSpan = document.getElementById('current-year');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+    </script>
+</body>
+</html>
