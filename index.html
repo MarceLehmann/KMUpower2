@@ -935,28 +935,22 @@
         });
     </script>
 <script type="module" src="/index.tsx"></script>
-<!-- Newsletter Anmeldung mit Free Flow Gewinnspiel-Checkbox -->
-<form id="newsletterForm" action="https://systeme.io/embedded/31566989/subscription" method="post" style="max-width:340px;margin:40px auto;padding:24px 20px;border-radius:10px;background:#f9f9f9;border:1px solid #ddd;box-shadow:0 2px 12px rgba(0,0,0,0.03);display:flex;flex-direction:column;gap:16px;">
-  <div style="font-weight:600;font-size:1.1em;">Newsletter abonnieren</div>
-  <input type="text" name="first_name" placeholder="Vorname*" required style="padding:12px;border-radius:5px;border:1px solid #ccc;">
-  <input type="email" name="email" placeholder="E-Mail*" required style="padding:12px;border-radius:5px;border:1px solid #ccc;">
-  <label style="font-size:0.98em;">
-    <input type="checkbox" name="newsletterConsent" style="width:16px;height:16px;margin-right:5px;" required>
+<form action="https://systeme.io/embedded/31566989/subscription" method="post" style="max-width:340px;margin:40px auto;padding:24px 20px;background:#f9f9f9;border-radius:10px;">
+  <input type="text" name="first_name" placeholder="Vorname*" required>
+  <input type="email" name="email" placeholder="E-Mail*" required>
+  <!-- Opt-in Newsletter -->
+  <label>
+    <input type="checkbox" name="newsletterConsent" required>
     Ja, ich will den Newsletter.
   </label>
-  <label style="font-size:0.98em;">
-    <input type="checkbox" id="freeflow-checkbox" style="width:16px;height:16px;margin-right:5px;">
+  <!-- Gewinnspiel-Checkbox -->
+  <label>
+    <input type="checkbox" name="Winsharegewinnspiel" value="JA">
     Ja, ich will am FREE FLOW Gewinnspiel teilnehmen und akzeptiere die Teilnahmebedingungen.
   </label>
-  <!-- Wird per Script befüllt! -->
-  <input type="hidden" id="winshare-feld" name="WinShareGewinnspiel" value="">
-  <button type="submit" style="padding:12px;border-radius:5px;background:#48e0d1;color:#fff;border:none;font-weight:bold;cursor:pointer;">
-    Abonnieren
-  </button>
-  <div style="font-size:0.9em;color:#888;text-align:center;margin-top:6px;">
-    Kein Spam. Jederzeit abbestellbar.
-  </div>
+  <button type="submit">Abonnieren</button>
 </form>
+
 
 <script>
   const freeflowCheckbox = document.getElementById('freeflow-checkbox');
