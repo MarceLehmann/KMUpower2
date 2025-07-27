@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KMUpower | Digitale Exzellenz für KMU</title>
-    <meta name="description" content="KMUpower ist Ihr Spezialist für die Digitalisierung von KMU im DACH-Raum mit Microsoft Power Platform. Wir bieten Beratung, Entwicklung und Prozessoptimierung.">
+    <title>KMUpowerSuite | KMUpower</title>
+    <meta name="description" content="Die KMUpowerSuite: Ihre modulare Business-Plattform für KMU auf Basis von Microsoft 365. Zentralisieren, automatisieren und skalieren Sie Ihre Geschäftsprozesse.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -73,7 +73,7 @@
         }
 
         h1 { font-size: 3.2rem; letter-spacing: -1.5px; }
-        h2 { font-size: 2.5rem; letter-spacing: -1px;}
+        h2 { font-size: 2.5rem; letter-spacing: -1px; }
         h3 { font-size: 1.5rem; }
         h4 { font-size: 1.1rem; font-weight: 600; }
 
@@ -86,8 +86,6 @@
             font-size: 1.25rem;
             color: var(--text-light-color);
             max-width: 750px;
-            margin-left: auto;
-            margin-right: auto;
         }
         
         p.subheading {
@@ -107,7 +105,7 @@
         a:hover {
             color: var(--primary-dark-color);
         }
-
+        
         .btn {
             display: inline-block;
             padding: 16px 32px;
@@ -119,6 +117,7 @@
             border: 2px solid transparent;
             font-size: 1rem;
             text-align: center;
+            width: 100%;
         }
 
         .btn-primary {
@@ -131,20 +130,6 @@
             background-color: var(--primary-dark-color);
             transform: translateY(-3px);
             box-shadow: var(--shadow-hover);
-            text-decoration: none;
-        }
-        
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--dark-color);
-            border-color: var(--border-color);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--dark-color);
-            color: var(--light-color);
-            border-color: var(--dark-color);
-            transform: translateY(-3px);
             text-decoration: none;
         }
 
@@ -189,7 +174,6 @@
             color: var(--primary-color);
         }
 
-
         nav ul {
             display: flex;
             list-style: none;
@@ -218,7 +202,7 @@
             border-bottom-color: var(--primary-color);
             text-decoration: none;
         }
-        
+
         .dropdown .dropdown-toggle .arrow {
             transition: transform 0.2s ease;
             font-size: 0.8em;
@@ -272,40 +256,14 @@
         section {
             padding: 100px 0;
         }
-
         .section-bg {
             background-color: var(--secondary-color);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .hero {
-            padding: 120px 0;
-            text-align: center;
-            background-color: var(--light-color);
-        }
-        
-        .hero .buttons {
-            margin-top: 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
         }
         
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-        }
-        
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
         }
 
         .card {
@@ -315,133 +273,110 @@
             padding: 2.5rem;
             box-shadow: var(--shadow);
             transition: all var(--transition-speed) ease;
+            display: flex;
+            flex-direction: column;
         }
         .card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-hover);
         }
         .card h3 {
-            margin-top: 1.5rem;
             margin-bottom: 0.5rem;
         }
-        .card .icon {
-            color: var(--primary-color);
-            background-color: var(--secondary-color);
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-        }
         
-        .authority-bar {
-            background-color: var(--secondary-color);
-            padding: 20px 0;
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+        .card.card-link {
+            text-decoration: none;
+            color: inherit;
         }
-        .authority-bar .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px 40px;
+        .card.card-link h3, .card.card-link p {
+             color: inherit;
+             color: var(--dark-color);
         }
-        .authority-bar span {
-            font-weight: 600;
-            color: var(--text-light-color);
-        }
-        .authority-bar .authority-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .authority-bar .authority-item img {
-            height: 40px;
+         .card.card-link p {
+             color: var(--text-light-color);
+         }
+        
+        .module-grid {
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+             gap: 30px;
         }
 
-        .logo-wall {
-            text-align: center;
-        }
-        .logo-wall-grid {
-            margin-top: 3rem;
+        .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 40px;
-            align-items: center;
-        }
-        .logo-wall-grid img {
-            max-width: 130px;
-            margin: 0 auto;
-            filter: grayscale(100%) opacity(0.7);
-            transition: all 0.3s ease;
-        }
-        .logo-wall-grid img:hover {
-            filter: grayscale(0%) opacity(1);
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            align-items: flex-end;
+            margin-top: 60px;
         }
         
-        .pain-points {
+        .pricing-card {
+            background-color: var(--light-color);
             border: 1px solid var(--border-color);
             border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: all var(--transition-speed) ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
-        
-        .pain-points li {
+        .pricing-card-header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .pricing-card-body {
+            flex-grow: 1;
+        }
+        .pricing-card-footer {
+            margin-top: 2rem;
+        }
+        .pricing-card.highlight {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+            box-shadow: var(--shadow-hover);
+        }
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--dark-color);
+        }
+        .pricing-card .price span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-light-color);
+        }
+        .pricing-card ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .pricing-card ul li {
             display: flex;
             align-items: flex-start;
             margin-bottom: 1rem;
         }
-        
-        .pain-points li svg {
-            color: #e74c3c;
-            margin-right: 1rem;
+        .pricing-card ul li svg {
+            color: var(--primary-color);
+            margin-right: 15px;
             flex-shrink: 0;
             margin-top: 5px;
         }
-
-        .founder-section {
-            background: linear-gradient(45deg, var(--dark-color), #3c5a75);
-            color: var(--light-color);
-            border-radius: var(--border-radius);
-            padding: 4rem;
-        }
-        .founder-section h2, .founder-section p {
-            color: var(--light-color);
-        }
-         .founder-section p.lead {
-             color: #e0e6ed;
-         }
         
-        .video-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        .video-responsive {
-            overflow: hidden;
-            padding-bottom: 56.25%;
-            position: relative;
-            height: 0;
+        .cta-section {
+            background: linear-gradient(45deg, var(--dark-color), #3c5a75);
+            text-align: center;
+            padding: 5rem 2rem;
             border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
+            margin: 100px auto 0;
         }
-        .video-responsive:hover {
-            transform: scale(1.03);
+        .cta-section h2, .cta-section p {
+            color: var(--light-color);
         }
-
-        .video-responsive iframe {
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            border: 0;
+        .cta-section p {
+            color: #bdc3c7;
         }
-
 
         footer {
             background-color: var(--dark-color);
@@ -478,7 +413,7 @@
             border-top: 1px solid #34495e;
             font-size: 0.9rem;
         }
-
+        
         /* --- Modal Styles --- */
         .modal-overlay {
             position: fixed;
@@ -570,10 +505,8 @@
         @media(max-width: 992px) {
             h1 { font-size: 2.8rem; }
             h2 { font-size: 2.2rem; }
-            .hero { padding: 80px 0; }
-            .grid-3, .grid-2 { grid-template-columns: 1fr; }
-            .grid-2 > .image-placeholder { order: -1; margin-bottom: 2rem; }
-            .founder-section { padding: 3rem; }
+            .grid-3, .pricing-grid { grid-template-columns: 1fr; }
+            .pricing-card.highlight { transform: scale(1); }
             footer .container.grid-footer { grid-template-columns: repeat(3, 1fr); gap: 30px; }
         }
 
@@ -617,6 +550,7 @@
                 border-bottom-color: transparent;
                 background-color: var(--secondary-color);
             }
+            
             .dropdown .dropdown-menu {
                 display: none;
                 position: static;
@@ -634,47 +568,39 @@
                 justify-content: space-between;
                 width: 100%;
             }
-            
+
             .menu-toggle {
                 display: block;
             }
-            .hero .buttons { flex-direction: column; }
-            .video-grid { grid-template-columns: 1fr; }
-            .founder-section { padding: 2rem; }
+            .cta-section {
+                 padding: 3rem 1.5rem;
+            }
             footer .container.grid-footer { grid-template-columns: 1fr 1fr; }
         }
-        
+
         @media (max-width: 480px) {
             footer .container.grid-footer { grid-template-columns: 1fr; }
         }
     </style>
-<link rel="stylesheet" href="/index.css">
 </head>
 <body>
     <div class="app-container">
         <header>
             <div class="container">
                 <div class="logo">
-                    <a href="/">
-                        <img src="assets/logos/LOGO_KMUpower_high.webp" alt="KMUpower Logo" class="logo-img"/>
+                    <a href="../index.html">
+                        <img src="../assets/logos/LOGO_KMUpower_high.webp" alt="KMUpower Logo" class="logo-img"/>
                         <span class="logo-text">KMU<span class="logo-text-power">power</span></span>
                     </a>
                 </div>
                 <button class="menu-toggle" aria-label="Menü umschalten" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
-                <nav id="main-nav">
+                <nav class="main-nav">
                     <ul>
-                        <li><a href="/" class="active">Home</a></li>
+                        <li><a href="../">Home</a></li>
                         <li><a href="loesungen">Lösungen</a></li>
-                        <li class="dropdown">
-                            <a href="kmupowersuite" class="dropdown-toggle">KMUpowerSuite <span class="arrow">&#9662;</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="kmupowersuite">Übersicht</a></li>
-                                <li><a href="suite-crm">CRM</a></li>
-                                <li><a href="suite-mailing">Mailing</a></li>
-                                <li><a href="suite-mitarbeiter">Mitarbeiter</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="kmupowersuite">KMUpower Suite</a></li>
                         <li><a href="preise">Preise</a></li>
+                        <li><a href="blog">Blog</a></li>
                         <li><a href="ueber-uns">Über Uns</a></li>
                         <li><a href="kontakt">Kontakt</a></li>
                     </ul>
@@ -683,82 +609,62 @@
         </header>
 
         <main>
-            <section class="hero">
-                <div class="container">
-                    <h1>Wir ermächtigen KMUs durch digitale Exzellenz.</h1>
-                    <p class="lead">KMUpower ist Ihr Spezialist für die Digitalisierung von kleinen und mittelständischen Unternehmen im DACH-Raum. Wir verwandeln Komplexität in Mehrwert – mit massgeschneiderten Lösungen auf Basis der Microsoft Power Platform.</p>
-                    <div class="buttons">
-                        <button class="btn btn-primary" data-modal-target="#booking-modal">Kostenloses Erstgespräch buchen</button>
-                        <a href="loesungen" class="btn btn-secondary">Unsere Lösungen entdecken</a>
-                    </div>
+            <section class="section-bg" style="text-align: center;">
+                <div class="container container-sm">
+                    <p class="subheading">DAS BETRIEBSSYSTEM FÜR IHR KMU</p>
+                    <h1>Die KMUpowerSuite</h1>
+                    <p class="lead">Eine modulare Business-Plattform auf Basis von Microsoft 365. Zentralisieren, automatisieren und skalieren Sie Ihre Geschäftsprozesse – ohne zusätzliche Server-Infrastruktur.</p>
                 </div>
             </section>
             
-            <div class="authority-bar">
+            <section>
                 <div class="container">
-                    <span><strong>AUSGEZEICHNETE EXPERTISE:</strong></span>
-                    <div class="authority-item">
-                        <img src="assets/banners/Microsoft_MVP_banner.png" alt="Microsoft MVP Logo">
+                    <div class="container-sm" style="text-align: center; margin-bottom: 60px;">
+                        <h2>Kernmodule & Add-ons</h2>
+                        <p>Beginnen Sie mit einer soliden Basis und erweitern Sie die Suite flexibel, wenn Ihr Unternehmen wächst. Alle Module sind perfekt aufeinander abgestimmt.</p>
                     </div>
-                </div>
-            </div>
-            
-            <section id="customers">
-                <div class="container logo-wall">
-                    <p class="subheading">IHR ERFOLG IST UNSER ZIEL</p>
-                    <h2>Unternehmen, die uns vertrauen.</h2>
-                    <p>Wir sind stolz darauf, das Rückgrat der Digitalisierung für führende KMUs in verschiedenen Branchen zu sein.</p>
-                    <div class="logo-wall-grid">
-                        <img src="https://storage.googleapis.com/gemini-marc-files/9e81c7e90141a3d3cbe498de163c4c9b" alt="Kunden Logo 1"/>
-                        <img src="https://storage.googleapis.com/gemini-marc-files/eb9d107a61d155e89467d44869c4c702" alt="Kunden Logo 2"/>
-                        <img src="https://storage.googleapis.com/gemini-marc-files/d62f01f41aa50eb9d6ea2f9c34e40263" alt="Kunden Logo 3"/>
-                        <img src="https://storage.googleapis.com/gemini-marc-files/9e81c7e90141a3d3cbe498de163c4c9b" alt="Kunden Logo 4"/>
-                        <img src="https://storage.googleapis.com/gemini-marc-files/eb9d107a61d155e89467d44869c4c702" alt="Kunden Logo 5"/>
+                    
+                    <h3>Kernmodule (Ihre Basis für den Erfolg)</h3>
+                    <div class="module-grid" style="margin-top: 2rem; margin-bottom: 4rem;">
+                        <a href="suite-crm" class="card card-link">
+                            <h3>CRM</h3>
+                            <p>Kunden, Interessenten und Lieferanten in einer 360°-Sicht verwalten.</p>
+                        </a>
+                        <a href="suite-mailing" class="card card-link">
+                            <h3>Mailing / Newsletter</h3>
+                            <p>Zielgruppen aus dem CRM erstellen und Sequenzmails versenden.</p>
+                        </a>
+                        <a href="suite-mitarbeiter" class="card card-link">
+                            <h3>Mitarbeiterverwaltung</h3>
+                            <p>Zentrale Verwaltung von Stammdaten und Rollen.</p>
+                        </a>
                     </div>
-                </div>
-            </section>
-            
-            <section id="problem" class="section-bg">
-                <div class="container grid-2">
-                    <div>
-                        <p class="subheading">KENNEN SIE DAS?</p>
-                        <h2>Ist das Ihre Situation?</h2>
-                        <p>Viele KMU-Führungskräfte kämpfen mit denselben Herausforderungen. Veraltete Systeme, manuelle Prozesse und fehlendes IT-Know-how bremsen das Wachstum und führen zu Frustration.</p>
-                        <p>Diese Ineffizienzen kosten nicht nur Geld, sondern auch wertvolle Zeit, die Sie in Ihr Kerngeschäft investieren könnten.</p>
-                    </div>
-                    <div class="pain-points">
-                        <ul style="list-style: none;">
-                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg><div><strong>Zeitfressende Routineaufgaben</strong> binden Ihre besten Mitarbeitenden.</div></li>
-                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg><div><strong>Fehlender Überblick</strong> durch isolierte Daten in Excel-Listen.</div></li>
-                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg><div><strong>Hohe Fehleranfälligkeit</strong> durch manuelle Datenübertragung.</div></li>
-                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg><div><strong>Teure Standard-Software</strong> passt nicht zu Ihren Prozessen.</div></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-    
-            <section id="services">
-                <div class="container">
-                    <div class="section-title container-sm">
-                        <p class="subheading">UNSERE LÖSUNG</p>
-                        <h2>Ihr Partner für pragmatische Digitalisierung</h2>
-                        <p class="lead">Wir konzentrieren uns auf das, was wirklich zählt: schnelle, wertschaffende Ergebnisse mit der Microsoft Power Platform.</p>
-                    </div>
-                    <div class="grid-3">
-                        <div class="card">
-                            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg></div>
-                            <h3>Power Apps Entwicklung</h3>
-                            <p>Massgeschneiderte Geschäftsanwendungen, die exakt auf Ihre Prozesse zugeschnitten sind – schnell, effizient und skalierbar.</p>
+
+                    <h3>Erweiterbare Add-ons</h3>
+                    <div class="module-grid" style="margin-top: 2rem;">
+                         <div class="card">
+                            <h3>Zeiterfassung</h3>
+                            <p>Kommt-/Geht-Zeiten und Pausen einfach erfassen.</p>
                         </div>
-                        <div class="card">
-                             <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6m0 8v6m4.95-14.95l-4.24 4.24m-6.42 6.42l-4.24 4.24m14.9-6.42l-4.24-4.24m-6.42-6.42L4.93 4.93m16.56 2.58l-4.24 4.24M2.51 9.51l4.24-4.24M22 12h-6m-8 0H2"/></svg></div>
-                            <h3>Power Automate Workflows</h3>
-                            <p>Automatisieren Sie repetitive Aufgaben und komplexe Geschäftsprozesse, um Zeit zu sparen und Fehler zu reduzieren.</p>
+                         <div class="card">
+                            <h3>Projektmanagement</h3>
+                            <p>Aufgaben, Ressourcen und Teams-Kanäle verwalten.</p>
                         </div>
-                        <div class="card">
-                            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 1-3.5 3.5c-2 2-2 5.1 0 7.1 2 2 5.1 2 7.1 0l3.5-3.5-7-7z"/><path d="m12 23 3.5-3.5c2-2 2-5.1 0-7.1-2-2-5.1-2-7.1 0L1 23h11z"/><path d="M15 9s-2-2-4-4"/><path d="M9 15s2 2 4 4"/></svg></div>
-                            <h3>KI-Integration</h3>
-                            <p>Nutzen Sie die Kraft von KI mit Copilot und Azure AI, um intelligentere Entscheidungen zu treffen und Prozesse zu optimieren.</p>
+                         <div class="card">
+                            <h3>Urlaubsverwaltung</h3>
+                            <p>Integrierter Genehmigungs-Workflow für Abwesenheiten.</p>
+                        </div>
+                         <div class="card">
+                            <h3>Spesenabrechnung</h3>
+                            <p>Digitaler Beleg-Upload mit einfachem Freigabeprozess.</p>
+                        </div>
+                         <div class="card">
+                            <h3>Fakturierung</h3>
+                            <p>Rechnungen direkt aus Angeboten erstellen.</p>
+                        </div>
+                         <div class="card">
+                            <h3>Serviceportal</h3>
+                            <p>Internes und externes Ticketing-System.</p>
                         </div>
                     </div>
                 </div>
@@ -766,40 +672,115 @@
             
             <section class="section-bg">
                 <div class="container">
-                    <div class="founder-section">
-                        <div class="grid-2">
-                             <div>
-                                <img src="assets/images/ml.jpg" alt="Portrait of Marcel Lehmann" style="width: 100%; border-radius: var(--border-radius); max-width: 350px;">
-                             </div>
-                             <div>
-                                <p class="subheading" style="color:var(--primary-color);">VOM QUEREINSTEIGER ZUM MICROSOFT MVP</p>
-                                <h2>Eine Geschichte aus der Praxis, für die Praxis.</h2>
-                                <p class="lead">"Mein Weg in die Tech-Welt war unkonventionell. Als Citizen Developer habe ich mir Expertise selbst erarbeitet. Diese Perspektive ermöglicht es mir, innovative Lösungen zu schaffen, die Theorie und Praxis verbinden und echten Mehrwert für KMUs schaffen."</p>
-                                <p>– Marcel Lehmann, Gründer KMUpower</p>
-                                <a href="ueber-uns" class="btn btn-primary" style="background-color: transparent; border-color: var(--primary-color); color: var(--primary-color); margin-top: 1rem;">Mehr über unsere Geschichte</a>
-                             </div>
+                     <div class="container-sm" style="text-align: center; margin-bottom: 60px;">
+                        <h2>Preisgestaltung</h2>
+                        <p>Transparente Einmalpreise für die Implementierung. Keine versteckten Lizenzkosten – eine M365 Business Standard Lizenz pro User genügt.</p>
+                    </div>
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <div class="pricing-card-header">
+                                <h3>Einzelmodul</h3>
+                                <div class="price">1'000<span> CHF</span></div>
+                                <p>Ein Modul nach Wahl inkl. Grundeinrichtung.</p>
+                            </div>
+                            <div class="pricing-card-body">
+                                <ul>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Perfekter Einstieg</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Jederzeit erweiterbar</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-card-footer">
+                                <button class="btn btn-secondary" style="width:100%" data-modal-target="#booking-modal">Anfragen</button>
+                            </div>
+                        </div>
+                        <div class="pricing-card highlight">
+                             <div class="pricing-card-header">
+                                <h3>Kernpaket</h3>
+                                <div class="price">2'222<span> CHF</span></div>
+                                <p>Die 3 wichtigsten Module für einen erfolgreichen Start.</p>
+                            </div>
+                            <div class="pricing-card-body">
+                                <ul>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>CRM-Modul</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Mailing-Modul</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Mitarbeiter-Modul</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-card-footer">
+                                <button class="btn btn-primary" style="width:100%" data-modal-target="#booking-modal">Beliebtestes Paket</button>
+                            </div>
+                        </div>
+                        <div class="pricing-card">
+                             <div class="pricing-card-header">
+                                <h3>Komplettpaket</h3>
+                                <div class="price">7'500<span> CHF</span></div>
+                                <p>Das Rundum-sorglos-Paket für die komplette Digitalisierung.</p>
+                            </div>
+                            <div class="pricing-card-body">
+                               <ul>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Kernpaket (3 Module)</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Plus 4 Add-ons nach Wahl</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Inklusive 20h Support</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-card-footer">
+                                <button class="btn btn-secondary" style="width:100%" data-modal-target="#booking-modal">Anfragen</button>
+                            </div>
+                        </div>
+                    </div>
+                     <p style="text-align: center; margin-top: 2rem; font-style: italic;">Nachkauf-Staffel: 2. Modul 900 / 3. 800 / 4. 700 / 5. 600 / ab 6. 500</p>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <div class="container-sm" style="text-align: center; margin-bottom: 60px;">
+                        <h2>Support & Wartung</h2>
+                        <p>Wir lassen Sie nicht allein. Wählen Sie den passenden Retainer für kontinuierlichen Support und proaktive Wartung.</p>
+                    </div>
+                     <div class="grid-3">
+                        <div class="card">
+                            <h3>Basic</h3>
+                            <p><strong>420 CHF/Monat</strong></p>
+                            <ul>
+                                <li>2 Support-Stunden</li>
+                                <li>24-48h Reaktionszeit</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3>Pro</h3>
+                            <p><strong>800 CHF/Monat</strong></p>
+                            <ul>
+                                <li>4 Support-Stunden</li>
+                                <li>&lt; 8h Reaktionszeit</li>
+                                <li>Proaktives Monitoring</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3>Premium</h3>
+                            <p><strong>1'520 CHF/Monat</strong></p>
+                            <ul>
+                                <li>8 Support-Stunden</li>
+                                <li>&lt; 4h Reaktionszeit</li>
+                                <li>Kostenlose Zusatzmodule & Quartals-Strategie</li>
+                            </ul>
+                        </div>
+                     </div>
+                </div>
+            </section>
+            
+            <section class="section-bg">
+                <div class="container">
+                    <div class="cta-section">
+                        <div class="container">
+                            <h2>Bereit für den nächsten Schritt?</h2>
+                            <p class="lead">Entdecken Sie, wie die KMUpowerSuite Ihr Unternehmen transformieren kann. Starten Sie noch heute.</p>
+                            <a href="/kontakt" class="btn btn-primary">Jetzt Demo anfordern</a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="videos">
-                <div class="container">
-                    <div class="section-title container-sm">
-                        <p class="subheading">EINBLICKE</p>
-                        <h2>KMUpower in Aktion</h2>
-                        <p class="lead">Sehen Sie selbst, wie wir mit Leidenschaft und Pragmatismus die Power Platform nutzen, um komplexe Herausforderungen für unsere Kunden zu lösen.</p>
-                    </div>
-                    <div class="video-grid">
-                        <div class="video-responsive">
-                            <iframe src="https://www.youtube.com/embed/ng0xG618HsE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <div class="video-responsive">
-                            <iframe src="https://www.youtube.com/embed/AqyL4rEyesA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </main>
 
         <footer>
@@ -811,7 +792,7 @@
                 <div>
                     <h4>Navigation</h4>
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="../">Home</a></li>
                         <li><a href="loesungen">Lösungen</a></li>
                         <li><a href="kmupowersuite">KMUpowerSuite</a></li>
                         <li><a href="preise">Preise</a></li>
@@ -842,7 +823,8 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                 <p>&copy; <span id="current-year">2024</span> KMUpower. Alle Rechte vorbehalten.</p>
+                <p>&copy; 2024 KMUpower. Alle Rechte vorbehalten.</p>
+                <p><a href="agb-impressum">AGB & Impressum</a></p>
             </div>
         </footer>
     </div>
@@ -863,7 +845,6 @@
 
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
-
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav');
         if (menuToggle && nav) {
@@ -874,21 +855,20 @@
                 menuToggle.innerHTML = !isExpanded ? '&times;' : '&#9776;';
                 document.body.style.overflow = !isExpanded ? 'hidden' : '';
             });
-             // Handle mobile dropdown
+            // Handle mobile dropdown
             const dropdowns = nav.querySelectorAll('.dropdown');
             dropdowns.forEach(dropdown => {
                 const toggle = dropdown.querySelector('.dropdown-toggle');
                 toggle.addEventListener('click', (e) => {
                     if (window.innerWidth <= 768) {
-                        // Prevent link navigation only on mobile
                         e.preventDefault();
-                        // Toggle the 'open' class on the parent .dropdown element
                         dropdown.classList.toggle('open');
                     }
                 });
             });
         }
-        
+
+        // --- Modal Logic ---
         const openModalButtons = document.querySelectorAll('[data-modal-target]');
         const closeModalButtons = document.querySelectorAll('[data-modal-close]');
         const overlay = document.getElementById('booking-modal');
@@ -934,6 +914,5 @@
             }
         });
     </script>
-<script type="module" src="/index.tsx"></script>
 </body>
 </html>
