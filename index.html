@@ -935,21 +935,23 @@
         });
     </script>
 <script type="module" src="/index.tsx"></script>
-<!-- Newsletter Anmeldung -->
-<form action="https://systeme.io/embedded/31566989/subscription" method="post" style="max-width:400px;margin:40px auto;padding:20px;border:1px solid #ddd;border-radius:8px;background:#f9f9f9;display:flex;flex-direction:column;gap:16px;">
-  <label for="nl-first_name">Vorname*</label>
-  <input id="nl-first_name" type="text" name="first_name" placeholder="Vorname*" required style="padding: 12px; border-radius: 5px; border: 1px solid #ccc;">
-  
-  <label for="nl-email">E-Mail*</label>
-  <input id="nl-email" type="email" name="email" placeholder="E-Mail*" required style="padding: 12px; border-radius: 5px; border: 1px solid #ccc;">
-  
-  <label style="font-size:0.95em;">
-    <input type="checkbox" name="gdpr" required>
-    Ich habe die <a href="agb-impressum.html" target="_blank">Datenschutzerklärung</a> gelesen und akzeptiert.
+<!-- Minimalistisches Newsletter-Formular -->
+<form action="https://systeme.io/embedded/31566989/subscription" method="post" style="max-width:340px;margin:40px auto;padding:24px 20px;border-radius:10px;background:#f9f9f9;border:1px solid #ddd;box-shadow:0 2px 12px rgba(0,0,0,0.03);display:flex;flex-direction:column;gap:16px;">
+  <div style="font-weight:600;font-size:1.1em;">Newsletter abonnieren</div>
+  <input type="text" name="first_name" placeholder="Vorname*" required style="padding:12px;border-radius:5px;border:1px solid #ccc;">
+  <input type="email" name="email" placeholder="E-Mail*" required style="padding:12px;border-radius:5px;border:1px solid #ccc;">
+  <label style="font-size:0.98em;">
+    <input type="checkbox" name="newsletterConsent" style="width:16px;height:16px;margin-right:5px;" required>
+    Ja, ich will den Newsletter.
   </label>
-  
-  <button type="submit" style="padding: 12px; border-radius: 5px; background: #48e0d1; color: #fff; border: none; font-weight: bold;">Anmelden</button>
+  <button type="submit" style="padding:12px;border-radius:5px;background:#48e0d1;color:#fff;border:none;font-weight:bold;cursor:pointer;">
+    Abonnieren
+  </button>
+  <div style="font-size:0.9em;color:#888;text-align:center;margin-top:6px;">
+    Kein Spam. Jederzeit abbestellbar.
+  </div>
 </form>
+
 
 </body>
 </html>
