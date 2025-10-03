@@ -1,0 +1,52 @@
+{
+  "name": "KMUpower - Digitale Exzellenz für KMU",
+  "short_name": "KMUpower",
+  "description": "KMUpower ist Ihr Spezialist für die Digitalisierung von KMU im DACH-Raum mit Microsoft Power Platform.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#48e0d1",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity"],
+  "lang": "de-CH",
+  "icons": [
+    {
+      "src": "/assets/logos/LOGO_KMUpower_high.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/logos/LOGO_KMUpower_high.webp",
+      "sizes": "512x512", 
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Kostenloses Erstgespräch",
+      "short_name": "Erstgespräch",
+      "description": "Buchen Sie ein kostenloses Beratungsgespräch",
+      "url": "/kontakt",
+      "icons": [
+        {
+          "src": "/assets/images/DigitalStrategySession.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Unsere Lösungen",
+      "short_name": "Lösungen", 
+      "description": "Entdecken Sie unsere Power Platform Lösungen",
+      "url": "/loesungen",
+      "icons": [
+        {
+          "src": "/assets/images/PowerAutomateWorkflow.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}

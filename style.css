@@ -1,0 +1,58 @@
+/* Einheitliche Zentrierung für alle CTA-Buttons */
+.btn,
+button.btn,
+a.btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Optional: Maximale Breite für große Buttons */
+.btn-primary,
+.btn-secondary {
+  max-width: 350px;
+  width: 100%;
+}
+
+/* Buttons in Cards oder Sektionen mittig */
+.card .btn,
+.card button.btn,
+.card a.btn {
+  margin-top: 1rem;
+}
+
+/* Buttons in Listen (z.B. Visitenkarte) mittig */
+li > .btn {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/* Immer Dropdown-Menü anzeigen */
+nav #main-nav .dropdown:hover .dropdown-menu,
+nav #main-nav .dropdown:focus-within .dropdown-menu,
+nav #main-nav .dropdown .dropdown-menu {
+  display: block !important;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+nav #main-nav .dropdown .dropdown-menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  min-width: 200px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  z-index: 1000;
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+nav #main-nav .dropdown .dropdown-toggle:after {
+  content: "";
+}

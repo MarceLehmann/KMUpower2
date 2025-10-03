@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGB & Impressum | KMUpower</title>
+    <meta name="description" content="Rechtliche Informationen, Allgemeine Geschäftsbedingungen und Impressum von KMUpower.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #48e0d1;
+            --primary-dark-color: #3abdb0;
+            --secondary-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --dark-color-rgb: 44, 62, 80;
+            --light-color: #ffffff;
+            --text-color: #34495e;
+            --text-light-color: #566573;
+            --border-color: #e0e6ed;
+            --shadow: 0 4px 15px rgba(0,0,0,0.05);
+            --shadow-hover: 0 8px 25px rgba(0,0,0,0.1);
+            --border-radius: 12px;
+            --transition-speed: 0.3s;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex-grow: 1;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--dark-color);
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        h1 { font-size: 3rem; letter-spacing: -1.5px; }
+        h2 { font-size: 2rem; letter-spacing: -1px; margin-top: 3rem;}
+
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--text-light-color);
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color var(--transition-speed) ease;
+        }
+
+        a:hover {
+            color: var(--primary-dark-color);
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232c3e50' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        header .container {
+            max-width: 1140px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .logo a:hover {
+            text-decoration: none;
+            opacity: 0.9;
+        }
+        .logo-img {
+            height: 32px;
+            width: auto;
+        }
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark-color);
+        }
+        .logo-text-power {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            font-weight: 600;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        nav ul li a.active, nav ul li a:hover {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .dropdown .dropdown-toggle .arrow {
+            transition: transform 0.2s ease;
+            font-size: 0.8em;
+        }
+        .dropdown:hover .dropdown-toggle .arrow {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: -1rem;
+            background-color: var(--light-color);
+            box-shadow: var(--shadow-hover);
+            border-radius: var(--border-radius);
+            padding: 0.5rem 0;
+            list-style: none;
+            z-index: 1010;
+            min-width: 200px;
+            border: 1px solid var(--border-color);
+        }
+        .dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu li {
+            margin: 0;
+        }
+        .dropdown-menu li a {
+            padding: 0.75rem 1.5rem;
+            border-bottom: none;
+            display: block;
+            width: 100%;
+        }
+         .dropdown-menu li a:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-dark-color);
+            border-bottom: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--dark-color);
+            line-height: 1;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .content-section {
+            padding-bottom: 50px;
+        }
+        
+        .content-section p, .content-section ul {
+            font-size: 1.1rem;
+        }
+
+        .content-section ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+        
+        .content-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: #bdc3c7;
+            padding: 50px 0 0;
+        }
+        footer .container.grid-footer {
+            max-width: 1140px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 30px;
+        }
+        footer h4 {
+            color: var(--light-color);
+            margin-bottom: 1rem;
+        }
+        footer ul {
+            list-style: none;
+        }
+        footer ul li {
+            margin-bottom: 0.75rem;
+        }
+        footer ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+        }
+        footer ul li a:hover {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px 0;
+            border-top: 1px solid #34495e;
+            font-size: 0.9rem;
+        }
+
+        @media(max-width: 992px) {
+            footer .container.grid-footer { grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 0.75rem 0; }
+            .logo-text { font-size: 1.2rem; }
+            nav {
+                display: none;
+                position: fixed;
+                top: 67px;
+                left: 0;
+                width: 100%;
+                height: calc(100vh - 67px);
+                background-color: var(--light-color);
+                flex-direction: column;
+                transform: translateX(100%);
+                transition: transform var(--transition-speed) ease-in-out;
+            }
+            nav.active {
+                display: flex;
+                transform: translateX(0);
+            }
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                padding: 2rem 0;
+                align-items: flex-start;
+            }
+            nav ul li {
+                margin: 0;
+                width: 100%;
+            }
+            nav ul li a {
+                display: block;
+                padding: 1rem 2rem;
+                font-size: 1.2rem;
+                border-bottom: none !important;
+            }
+             nav ul li a.active, nav ul li a:hover {
+                border-bottom-color: transparent;
+                background-color: var(--secondary-color);
+            }
+            
+            .dropdown .dropdown-menu {
+                display: none;
+                position: static;
+                box-shadow: none;
+                border: none;
+                width: 100%;
+                padding-left: 2rem;
+                background-color: var(--secondary-color);
+                border-radius: 0;
+            }
+            .dropdown.open .dropdown-menu {
+                display: block;
+            }
+            .dropdown a.dropdown-toggle {
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+            footer .container.grid-footer { grid-template-columns: 1fr 1fr; }
+        }
+        
+        @media (max-width: 480px) {
+            footer .container.grid-footer { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <a href="../">
+                        <img src="../assets/logos/LOGO_KMUpower_high.webp" alt="KMUpower Logo" class="logo-img"/>
+                        <span class="logo-text">KMU<span class="logo-text-power">power</span></span>
+                    </a>
+                </div>
+                <button class="menu-toggle" aria-label="Menü umschalten" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+                <nav id="main-nav">
+                    <ul>
+                        <li><a href="../">Home</a></li>
+                        <li><a href="loesungen">Lösungen</a></li>
+                        <li class="dropdown">
+                            <a href="kmupowersuite" class="dropdown-toggle">KMUpowerSuite <span class="arrow">&#9662;</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="kmupowersuite">Übersicht</a></li>
+                                <li><a href="suite-crm">CRM</a></li>
+                                <li><a href="suite-mailing">Mailing</a></li>
+                                <li><a href="suite-mitarbeiter">Mitarbeiter</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="preise">Preise</a></li>
+                        <li><a href="ueber-uns">Über Uns</a></li>
+                        <li><a href="kontakt">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <div class="container content-section">
+                    <h1>AGB & Impressum</h1>
+                    
+                    <h2 id="impressum">Impressum</h2>
+                    <p><strong>Verantwortlich für den Inhalt dieser Webseite:</strong></p>
+                    <p>
+                        KMUpower<br>
+                        Inhaber: Marcel Lehmann<br>
+                        c/o Impact Hub<br>
+                        Sihlquai 131<br>
+                        8005 Zürich<br>
+                        Schweiz
+                    </p>
+                    <p>
+                        <strong>E-Mail:</strong> <a href="mailto:info@kmupower.ch">info@kmupower.ch</a>
+                    </p>
+                    
+                    <p><strong>Rechtsform:</strong> Einzelfirma</p>
+
+                    <h2 id="agb">Allgemeine Geschäftsbedingungen (AGB)</h2>
+                    <p><em>Stand: 5. Mai 2025</em></p>
+                    
+                    <h3>1. Geltungsbereich</h3>
+                    <p>Diese Allgemeinen Geschäftsbedingungen (AGB) regeln die vertraglichen Beziehungen zwischen KMUpower (nachfolgend "Anbieter") und ihren Kunden. Abweichende Bedingungen des Kunden werden nicht anerkannt, es sei denn, der Anbieter hat ihrer Geltung ausdrücklich schriftlich zugestimmt.</p>
+                    
+                    <h3>2. Vertragsabschluss</h3>
+                    <p>Angebote des Anbieters sind freibleibend. Ein Vertrag kommt durch die schriftliche Auftragsbestätigung des Anbieters oder durch die Erbringung der Leistung zustande. Der Leistungsumfang richtet sich nach dem jeweiligen Angebot und der Auftragsbestätigung.</p>
+                    
+                    <h3>3. Leistungen und Preise</h3>
+                    <p>Die vom Anbieter erbrachten Leistungen umfassen insbesondere Digitalisierungsberatung, Entwicklung von Softwarelösungen auf Basis der Microsoft Power Platform sowie zugehörige Support- und Wartungsdienstleistungen. Alle Preise verstehen sich, falls nicht anders angegeben, in Schweizer Franken (CHF) exklusive der gesetzlichen Mehrwertsteuer.</p>
+                    
+                    <h3>4. Zahlungsbedingungen</h3>
+                    <p>Rechnungen sind innerhalb von 30 Tagen ab Rechnungsdatum ohne Abzug zur Zahlung fällig. Bei Zahlungsverzug ist der Anbieter berechtigt, Verzugszinsen in gesetzlicher Höhe zu fordern.</p>
+                    
+                    <h3>5. Haftung</h3>
+                    <p>Der Anbieter haftet nur für Schäden, die auf Vorsatz oder grober Fahrlässigkeit beruhen. Die Haftung für leichte Fahrlässigkeit, indirekte Schäden und Folgeschäden wird, soweit gesetzlich zulässig, ausgeschlossen. Die Haftung für Datenverlust ist auf den typischen Wiederherstellungsaufwand beschränkt.</p>
+
+                    <h3>6. Datenschutz</h3>
+                    <p>Der Anbieter verpflichtet sich zur Einhaltung der geltenden Datenschutzgesetze. Kundendaten werden vertraulich behandelt und nur im Rahmen der Vertragserfüllung verwendet. Eine Weitergabe an Dritte erfolgt nur, wenn dies zur Leistungserbringung erforderlich ist oder eine gesetzliche Verpflichtung besteht.</p>
+
+                    <h3>7. Gerichtsstand und anwendbares Recht</h3>
+                    <p>Ausschliesslicher Gerichtsstand ist Zürich, Schweiz. Es gilt ausschliesslich schweizerisches Recht.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container grid-footer">
+                <div>
+                    <h4>KMUpower</h4>
+                    <p style="color: #bdc3c7;">Wir ermächtigen KMUs durch digitale Exzellenz. Unser Fokus: Pragmatische Lösungen mit messbarem Mehrwert auf Basis der Microsoft Power Platform.</p>
+                </div>
+                <div>
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="../">Home</a></li>
+                        <li><a href="loesungen">Lösungen</a></li>
+                        <li><a href="kmupowersuite">KMUpowerSuite</a></li>
+                        <li><a href="preise">Preise</a></li>
+                        <li><a href="ueber-uns">Über Uns</a></li>
+                        <li><a href="kontakt">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Leistungen</h4>
+                    <ul>
+                        <li><a href="loesungen#power-apps">Power Apps</a></li>
+                        <li><a href="loesungen#power-automate">Power Automate</a></li>
+                        <li><a href="loesungen#ki-integration">KI-Integration</a></li>
+                        <li><a href="loesungen#beratung">Beratung</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Für Partner</h4>
+                    <ul>
+                        <li><a href="it-partner">IT-Partner Programm</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="agb-impressum">AGB & Impressum</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2024</span> KMUpower. Alle Rechte vorbehalten.</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+        if (menuToggle && nav) {
+            menuToggle.addEventListener('click', () => {
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                nav.classList.toggle('active');
+                menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+                menuToggle.innerHTML = !isExpanded ? '&times;' : '&#9776;';
+                document.body.style.overflow = !isExpanded ? 'hidden' : '';
+            });
+            // Handle mobile dropdown
+            const dropdowns = nav.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+                toggle.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('open');
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>

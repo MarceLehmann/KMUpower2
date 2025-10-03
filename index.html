@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMUpower | Digitale Exzellenz für KMU</title>
+    <meta name="description" content="KMUpower ist Ihr Spezialist für die Digitalisierung von KMU im DACH-Raum mit Microsoft Power Platform. Wir bieten Beratung, Entwicklung und Prozessoptimierung.">
+    
+    <!-- Enhanced Meta Tags -->
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Marcel Lehmann, Microsoft MVP">
+    <link rel="canonical" href="https://kmupower.ch/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kmupower.ch/">
+    <meta property="og:title" content="KMUpower | Digitale Exzellenz für KMU">
+    <meta property="og:description" content="KMUpower ist Ihr Spezialist für die Digitalisierung von KMU im DACH-Raum mit Microsoft Power Platform.">
+    <meta property="og:image" content="https://kmupower.ch/assets/logos/LOGO_KMUpower_high.webp">
+    <meta property="og:site_name" content="KMUpower">
+    <meta property="og:locale" content="de_DE">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="KMUpower | Digitale Exzellenz für KMU">
+    <meta name="twitter:description" content="KMUpower ist Ihr Spezialist für die Digitalisierung von KMU im DACH-Raum mit Microsoft Power Platform.">
+    <meta name="twitter:image" content="https://kmupower.ch/assets/logos/LOGO_KMUpower_high.webp">
+    <!-- Optimierte Font-Ladung -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Strukturierte Daten -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "KMUpower",
+      "url": "https://kmupower.ch",
+      "logo": "https://kmupower.ch/assets/logos/LOGO_KMUpower_high.webp",
+      "description": "KMUpower ist Ihr Spezialist für die Digitalisierung von KMU im DACH-Raum mit Microsoft Power Platform.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "info@kmupower.ch"
+      },
+      "foundingDate": "2024",
+      "founder": {
+        "@type": "Person",
+        "name": "Marcel Lehmann",
+        "jobTitle": "Microsoft MVP"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "CH"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/kmupower/"
+      ]
+    }
+    </script>
+    <style>
+        :root {
+            --primary-color: #48e0d1;
+            --primary-dark-color: #2c9085;
+            --secondary-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --dark-color-rgb: 44, 62, 80;
+            --light-color: #ffffff;
+            --text-color: #34495e;
+            --text-light-color: #495057;
+            --border-color: #e0e6ed;
+            --shadow: 0 4px 15px rgba(0,0,0,0.05);
+            --shadow-hover: 0 8px 25px rgba(0,0,0,0.1);
+            --border-radius: 12px;
+            --transition-speed: 0.3s;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex-grow: 1;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .container-sm {
+            max-width: 800px;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--dark-color);
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        h1 { font-size: 3.2rem; letter-spacing: -1.5px; }
+        h2 { font-size: 2.5rem; letter-spacing: -1px;}
+        h3 { font-size: 1.5rem; }
+        h4 { font-size: 1.1rem; font-weight: 600; }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--text-light-color);
+        }
+
+        p.lead {
+            font-size: 1.25rem;
+            color: var(--text-light-color);
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        p.subheading {
+            text-transform: uppercase;
+            color: var(--primary-color);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: var(--primary-dark-color);
+            text-decoration: none;
+            transition: color var(--transition-speed) ease;
+        }
+
+        a:hover {
+            color: #1e6b61;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            text-decoration: none;
+            transition: all var(--transition-speed) ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #1a1a1a;
+            box-shadow: 0 4px 6px rgba(var(--dark-color-rgb), 0.1);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+            text-decoration: none;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: #1a1a1a;
+            border-color: #495057;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            border-color: var(--dark-color);
+            transform: translateY(-3px);
+            text-decoration: none;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232c3e50' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .logo a:hover {
+            text-decoration: none;
+            opacity: 0.9;
+        }
+        .logo-img {
+            height: 32px;
+            width: auto;
+        }
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark-color);
+        }
+        .logo-text-power {
+            color: var(--primary-color);
+        }
+
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            font-weight: 600;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        nav ul li a.active, nav ul li a:hover {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .dropdown .dropdown-toggle .arrow {
+            transition: transform 0.2s ease;
+            font-size: 0.8em;
+        }
+        .dropdown:hover .dropdown-toggle .arrow {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: -1rem;
+            background-color: var(--light-color);
+            box-shadow: var(--shadow-hover);
+            border-radius: var(--border-radius);
+            padding: 0.5rem 0;
+            list-style: none;
+            z-index: 1010;
+            min-width: 200px;
+            border: 1px solid var(--border-color);
+        }
+        .dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu li {
+            margin: 0;
+        }
+        .dropdown-menu li a {
+            padding: 0.75rem 1.5rem;
+            border-bottom: none;
+            display: block;
+            width: 100%;
+        }
+         .dropdown-menu li a:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-dark-color);
+            border-bottom: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--dark-color);
+            line-height: 1;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-bg {
+            background-color: var(--secondary-color);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .hero {
+            padding: 120px 0;
+            text-align: center;
+            background-color: var(--light-color);
+        }
+        
+        .hero .buttons {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .card {
+            background-color: var(--light-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: all var(--transition-speed) ease;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        .card h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .card .icon {
+            color: var(--primary-color);
+            background-color: var(--secondary-color);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .authority-bar {
+            background-color: var(--secondary-color);
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .authority-bar .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px 40px;
+        }
+        .authority-bar span {
+            font-weight: 600;
+            color: #495057;
+        }
+        .authority-bar .authority-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .authority-bar .authority-item img {
+            height: 40px;
+        }
+
+        .logo-wall {
+            text-align: center;
+        }
+        .logo-wall-grid {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+        .logo-wall-grid img {
+            max-width: 130px;
+            margin: 0 auto;
+            filter: grayscale(100%) opacity(0.7);
+            transition: all 0.3s ease;
+        }
+        .logo-wall-grid img:hover {
+            filter: grayscale(0%) opacity(1);
+        }
+        
+        .pain-points {
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+        }
+        
+        .pain-points li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .pain-points li svg {
+            color: #c0392b;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+
+        .founder-section {
+            background: linear-gradient(45deg, var(--dark-color), #3c5a75);
+            color: var(--light-color);
+            border-radius: var(--border-radius);
+            padding: 4rem;
+        }
+        .founder-section h2, .founder-section p {
+            color: var(--light-color);
+        }
+         .founder-section p.lead {
+             color: #e0e6ed;
+         }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .video-responsive {
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        .video-responsive:hover {
+            transform: scale(1.03);
+        }
+
+        .video-responsive iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            border: 0;
+        }
+
+
+        footer {
+            background-color: var(--dark-color);
+            color: #e9ecef;
+            padding: 50px 0 0;
+        }
+        footer .container.grid-footer {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 30px;
+        }
+        footer h4 {
+            color: var(--light-color);
+            margin-bottom: 1rem;
+        }
+        footer ul {
+            list-style: none;
+        }
+        footer ul li {
+            margin-bottom: 0.75rem;
+        }
+        footer ul li a {
+            color: #e9ecef;
+            text-decoration: none;
+        }
+        footer ul li a:hover {
+            color: #f8f9fa;
+            text-decoration: none;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px 0;
+            border-top: 1px solid #34495e;
+            font-size: 0.9rem;
+        }
+
+        /* --- Modal Styles --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(var(--dark-color-rgb), 0.85);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0s 0.3s;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-container {
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 900px;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform: scale(0.95) translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-container {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            flex-shrink: 0;
+        }
+
+        .modal-title-text {
+            font-size: 1.25rem;
+            margin: 0;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 2.5rem;
+            line-height: 1;
+            cursor: pointer;
+            color: var(--text-light-color);
+            transition: color 0.2s, transform 0.2s;
+        }
+        .modal-close:hover {
+            color: var(--dark-color);
+            transform: rotate(90deg);
+        }
+
+        .modal-content {
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Focus States für bessere Accessibility */
+        a:focus,
+        button:focus,
+        .btn:focus {
+            outline: 2px solid #2c9085;
+            outline-offset: 2px;
+            box-shadow: 0 0 0 3px rgba(44, 144, 133, 0.3);
+        }
+
+        @media(max-width: 992px) {
+            h1 { font-size: 2.8rem; }
+            h2 { font-size: 2.2rem; }
+            .hero { padding: 80px 0; }
+            .grid-3, .grid-2 { grid-template-columns: 1fr; }
+            .grid-2 > .image-placeholder { order: -1; margin-bottom: 2rem; }
+            .founder-section { padding: 3rem; }
+            footer .container.grid-footer { grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        }
+
+        @media (max-width: 768px) {
+            body { font-size: 16px; }
+            header { padding: 0.75rem 0; }
+            .logo-text { font-size: 1.2rem; }
+            nav {
+                display: none;
+                position: fixed;
+                top: 67px;
+                left: 0;
+                width: 100%;
+                height: calc(100vh - 67px);
+                background-color: var(--light-color);
+                flex-direction: column;
+                transform: translateX(100%);
+                transition: transform var(--transition-speed) ease-in-out;
+            }
+            nav.active {
+                display: flex;
+                transform: translateX(0);
+            }
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                padding: 2rem 0;
+                align-items: flex-start;
+            }
+            nav ul li {
+                margin: 0;
+                width: 100%;
+            }
+            nav ul li a {
+                display: block;
+                padding: 1rem 2rem;
+                font-size: 1.2rem;
+                border-bottom: none !important;
+            }
+             nav ul li a.active, nav ul li a:hover {
+                border-bottom-color: transparent;
+                background-color: var(--secondary-color);
+            }
+            .dropdown .dropdown-menu {
+                display: none;
+                position: static;
+                box-shadow: none;
+                border: none;
+                width: 100%;
+                padding-left: 2rem;
+                background-color: var(--secondary-color);
+                border-radius: 0;
+            }
+            .dropdown.open .dropdown-menu {
+                display: block;
+            }
+            .dropdown a.dropdown-toggle {
+                justify-content: space-between;
+                width: 100%;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            .hero .buttons { flex-direction: column; }
+            .video-grid { grid-template-columns: 1fr; }
+            .founder-section { padding: 2rem; }
+            footer .container.grid-footer { grid-template-columns: 1fr 1fr; }
+        }
+        
+        @media (max-width: 480px) {
+            footer .container.grid-footer { grid-template-columns: 1fr; }
+        }
+    </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <a href="/">
+                        <img src="assets/logos/LOGO_KMUpower_high.webp" alt="KMUpower Logo" class="logo-img"/>
+                        <span class="logo-text">KMU<span class="logo-text-power">power</span></span>
+                    </a>
+                </div>
+                <button class="menu-toggle" aria-label="Menü umschalten" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+                <nav id="main-nav">
+                    <ul>
+                        <li><a href="/" class="active">Home</a></li>
+                        <li><a href="loesungen">Lösungen</a></li>
+                        <li class="dropdown">
+                            <a href="kmupowersuite" class="dropdown-toggle">KMUpowerSuite <span class="arrow">&#9662;</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="kmupowersuite">Übersicht</a></li>
+                                <li><a href="suite-crm">CRM</a></li>
+                                <li><a href="suite-mailing">Mailing</a></li>
+                                <li><a href="suite-mitarbeiter">Mitarbeiter</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="preise">Preise</a></li>
+                        <li><a href="ueber-uns">Über Uns</a></li>
+                        <li><a href="kontakt">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <h1>Wir ermächtigen KMUs durch digitale Exzellenz.</h1>
+                    <p class="lead">KMUpower ist Ihr Spezialist für die Digitalisierung von kleinen und mittelständischen Unternehmen im DACH-Raum. Wir verwandeln Komplexität in Mehrwert – mit massgeschneiderten Lösungen auf Basis der Microsoft Power Platform.</p>
+                    <div class="buttons">
+                        <button class="btn btn-primary" data-modal-target="#booking-modal">Kostenloses Erstgespräch buchen</button>
+                        <a href="loesungen" class="btn btn-secondary">Unsere Lösungen entdecken</a>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="authority-bar">
+                <div class="container">
+                    <span><strong>AUSGEZEICHNETE EXPERTISE:</strong></span>
+                    <div class="authority-item">
+                        <img src="assets/banners/Microsoft_MVP_banner.png" alt="Microsoft MVP Logo">
+                    </div>
+                </div>
+            </div>
+            
+            <section id="customers">
+                <div class="container logo-wall">
+                    <p class="subheading">IHR ERFOLG IST UNSER ZIEL</p>
+                    <h2>Unternehmen, die uns vertrauen.</h2>
+                    <p>Wir sind stolz darauf, das Rückgrat der Digitalisierung für führende KMUs in verschiedenen Branchen zu sein.</p>
+                    <div class="logo-wall-grid">
+                        <img src="https://storage.googleapis.com/gemini-marc-files/9e81c7e90141a3d3cbe498de163c4c9b" alt="Logo eines zufriedenen KMU-Kunden" loading="lazy"/>
+                        <img src="https://storage.googleapis.com/gemini-marc-files/eb9d107a61d155e89467d44869c4c702" alt="Kundenlogo - Digitalisierung erfolgreich umgesetzt" loading="lazy"/>
+                        <img src="https://storage.googleapis.com/gemini-marc-files/d62f01f41aa50eb9d6ea2f9c34e40263" alt="Partnerunternehmen - Power Platform Expertise" loading="lazy"/>
+                        <img src="https://storage.googleapis.com/gemini-marc-files/9e81c7e90141a3d3cbe498de163c4c9b" alt="Kunde - erfolgreiche KMU-Digitalisierung" loading="lazy"/>
+                        <img src="https://storage.googleapis.com/gemini-marc-files/eb9d107a61d155e89467d44869c4c702" alt="Referenzkunde - Microsoft Power Platform Lösung" loading="lazy"/>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="problem" class="section-bg">
+                <div class="container grid-2">
+                    <div>
+                        <p class="subheading">KENNEN SIE DAS?</p>
+                        <h2>Ist das Ihre Situation?</h2>
+                        <p>Viele KMU-Führungskräfte kämpfen mit denselben Herausforderungen. Veraltete Systeme, manuelle Prozesse und fehlendes IT-Know-how bremsen das Wachstum und führen zu Frustration.</p>
+                        <p>Diese Ineffizienzen kosten nicht nur Geld, sondern auch wertvolle Zeit, die Sie in Ihr Kerngeschäft investieren könnten.</p>
+                    </div>
+                    <div class="pain-points">
+                        <ul style="list-style: none;">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg><div><strong>Zeitfressende Routineaufgaben</strong> binden Ihre besten Mitarbeitenden.</div></li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg><div><strong>Fehlender Überblick</strong> durch isolierte Daten in Excel-Listen.</div></li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg><div><strong>Hohe Fehleranfälligkeit</strong> durch manuelle Datenübertragung.</div></li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg><div><strong>Teure Standard-Software</strong> passt nicht zu Ihren Prozessen.</div></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+    
+            <section id="services">
+                <div class="container">
+                    <div class="section-title container-sm">
+                        <p class="subheading">UNSERE LÖSUNG</p>
+                        <h2>Ihr Partner für pragmatische Digitalisierung</h2>
+                        <p class="lead">Wir konzentrieren uns auf das, was wirklich zählt: schnelle, wertschaffende Ergebnisse mit der Microsoft Power Platform.</p>
+                    </div>
+                    <div class="grid-3">
+                        <div class="card">
+                            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg></div>
+                            <h3>Power Apps Entwicklung</h3>
+                            <p>Massgeschneiderte Geschäftsanwendungen, die exakt auf Ihre Prozesse zugeschnitten sind – schnell, effizient und skalierbar.</p>
+                        </div>
+                        <div class="card">
+                             <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6m0 8v6m4.95-14.95l-4.24 4.24m-6.42 6.42l-4.24 4.24m14.9-6.42l-4.24-4.24m-6.42-6.42L4.93 4.93m16.56 2.58l-4.24 4.24M2.51 9.51l4.24-4.24M22 12h-6m-8 0H2"/></svg></div>
+                            <h3>Power Automate Workflows</h3>
+                            <p>Automatisieren Sie repetitive Aufgaben und komplexe Geschäftsprozesse, um Zeit zu sparen und Fehler zu reduzieren.</p>
+                        </div>
+                        <div class="card">
+                            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 1-3.5 3.5c-2 2-2 5.1 0 7.1 2 2 5.1 2 7.1 0l3.5-3.5-7-7z"/><path d="m12 23 3.5-3.5c2-2 2-5.1 0-7.1-2-2-5.1-2-7.1 0L1 23h11z"/><path d="M15 9s-2-2-4-4"/><path d="M9 15s2 2 4 4"/></svg></div>
+                            <h3>KI-Integration</h3>
+                            <p>Nutzen Sie die Kraft von KI mit Copilot und Azure AI, um intelligentere Entscheidungen zu treffen und Prozesse zu optimieren.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section-bg">
+                <div class="container">
+                    <div class="founder-section">
+                        <div class="grid-2">
+                             <div>
+                                <img src="assets/images/ml.jpg" alt="Marcel Lehmann, Microsoft MVP und Gründer von KMUpower" style="width: 100%; border-radius: var(--border-radius); max-width: 350px;" loading="lazy">
+                             </div>
+                             <div>
+                                <p class="subheading" style="color:var(--primary-color);">VOM QUEREINSTEIGER ZUM MICROSOFT MVP</p>
+                                <h2>Eine Geschichte aus der Praxis, für die Praxis.</h2>
+                                <p class="lead">"Mein Weg in die Tech-Welt war unkonventionell. Als Citizen Developer habe ich mir Expertise selbst erarbeitet. Diese Perspektive ermöglicht es mir, innovative Lösungen zu schaffen, die Theorie und Praxis verbinden und echten Mehrwert für KMUs schaffen."</p>
+                                <p>– Marcel Lehmann, Gründer KMUpower</p>
+                                <a href="ueber-uns" class="btn btn-primary" style="background-color: transparent; border-color: var(--primary-color); color: var(--primary-color); margin-top: 1rem;">Mehr über unsere Geschichte</a>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="videos">
+                <div class="container">
+                    <div class="section-title container-sm">
+                        <p class="subheading">EINBLICKE</p>
+                        <h2>KMUpower in Aktion</h2>
+                        <p class="lead">Sehen Sie selbst, wie wir mit Leidenschaft und Pragmatismus die Power Platform nutzen, um komplexe Herausforderungen für unsere Kunden zu lösen.</p>
+                    </div>
+                    <div class="video-grid">
+                        <div class="video-responsive">
+                            <iframe src="https://www.youtube.com/embed/ng0xG618HsE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-responsive">
+                            <iframe src="https://www.youtube.com/embed/AqyL4rEyesA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container grid-footer">
+                <div>
+                    <h4>KMUpower</h4>
+                    <p style="color: #e9ecef;">Wir ermächtigen KMUs durch digitale Exzellenz. Unser Fokus: Pragmatische Lösungen mit messbarem Mehrwert auf Basis der Microsoft Power Platform.</p>
+                </div>
+                <div>
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="loesungen">Lösungen</a></li>
+                        <li><a href="kmupowersuite">KMUpowerSuite</a></li>
+                        <li><a href="preise">Preise</a></li>
+                        <li><a href="ueber-uns">Über Uns</a></li>
+                        <li><a href="kontakt">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Leistungen</h4>
+                    <ul>
+                        <li><a href="loesungen#power-apps">Power Apps</a></li>
+                        <li><a href="loesungen#power-automate">Power Automate</a></li>
+                        <li><a href="loesungen#ki-integration">KI-Integration</a></li>
+                        <li><a href="loesungen#beratung">Beratung</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Für Partner</h4>
+                    <ul>
+                        <li><a href="it-partner">IT-Partner Programm</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="agb-impressum">AGB & Impressum</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                 <p>&copy; <span id="current-year">2024</span> KMUpower. Alle Rechte vorbehalten.</p>
+            </div>
+        </footer>
+    </div>
+    
+    <div id="booking-modal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <header class="modal-header">
+                <h2 id="modal-title" class="modal-title-text">Kostenloses Erstgespräch buchen</h2>
+                <button class="modal-close" aria-label="Schliessen" data-modal-close>&times;</button>
+            </header>
+            <div class="modal-content">
+                <div class="iframe-container">
+                     <iframe src="https://outlook.office365.com/book/Termin@thepoweraddicts.ch/s/Ze7FMsdTZEqr3sVwIhzBtg2?ismsaljsauthenabled=true" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Optimiertes JavaScript mit Error Handling
+        document.addEventListener('DOMContentLoaded', function() {
+            // Jahr automatisch setzen
+            const yearElement = document.getElementById('current-year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+
+            // Menu Toggle mit Error Handling
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('nav');
+            if (menuToggle && nav) {
+                menuToggle.addEventListener('click', () => {
+                    try {
+                        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                        nav.classList.toggle('active');
+                        menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+                        menuToggle.innerHTML = !isExpanded ? '&times;' : '&#9776;';
+                        document.body.style.overflow = !isExpanded ? 'hidden' : '';
+                    } catch (error) {
+                        console.warn('Menu toggle error:', error);
+                    }
+                });
+                
+                // Handle mobile dropdown
+                const dropdowns = nav.querySelectorAll('.dropdown');
+                dropdowns.forEach(dropdown => {
+                    const toggle = dropdown.querySelector('.dropdown-toggle');
+                    if (toggle) {
+                        toggle.addEventListener('click', (e) => {
+                            if (window.innerWidth <= 768) {
+                                e.preventDefault();
+                                dropdown.classList.toggle('open');
+                            }
+                        });
+                    }
+                });
+            }
+        });
+        
+        // Modal Handling mit verbessertem Error Handling
+        const openModalButtons = document.querySelectorAll('[data-modal-target]');
+        const closeModalButtons = document.querySelectorAll('[data-modal-close]');
+        const overlay = document.getElementById('booking-modal');
+
+        function openModal(modal) {
+            if (modal == null) return;
+            try {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            } catch (error) {
+                console.warn('Modal open error:', error);
+            }
+        }
+
+        function closeModal(modal) {
+            if (modal == null) return;
+            try {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            } catch (error) {
+                console.warn('Modal close error:', error);
+            }
+        }
+
+        openModalButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                try {
+                    const modal = document.querySelector(button.dataset.modalTarget);
+                    openModal(modal);
+                } catch (error) {
+                    console.warn('Modal target error:', error);
+                }
+            });
+        });
+
+        if (overlay) {
+            overlay.addEventListener('click', e => {
+                if (e.target === overlay) {
+                    closeModal(overlay);
+                }
+            });
+        }
+
+        closeModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                try {
+                    const modal = button.closest('.modal-overlay');
+                    closeModal(modal);
+                } catch (error) {
+                    console.warn('Modal close error:', error);
+                }
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape" && overlay && overlay.classList.contains('active')) {
+                closeModal(overlay);
+            }
+        });
+
+        // Error Handling für externe Ressourcen
+        window.addEventListener('error', function(e) {
+            if (e.target && e.target.tagName === 'IFRAME') {
+                console.warn('Iframe loading issue:', e.target.src);
+            }
+        }, true);
+    </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

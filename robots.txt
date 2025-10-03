@@ -1,0 +1,17 @@
+
+User-agent: *
+Allow: /
+
+# Spezifische Regeln
+Disallow: /assets/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /_site/
+Allow: /assets/images/
+Allow: /assets/logos/
+
+# Sitemap
+Sitemap: https://kmupower.ch/sitemap.xml
+
+# Crawl-delay für bessere Server-Performance
+Crawl-delay: 1

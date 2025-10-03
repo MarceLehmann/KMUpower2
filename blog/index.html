@@ -1,0 +1,18 @@
+---
+layout: default
+title: KMUpower Blog
+---
+<main class="container">
+    <h1>KMUpower Blog</h1>
+    {% for post in site.posts %}
+    <div class="blog-post">
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <div class="blog-meta">Veröffentlicht am {{ post.date | date: "%d. %B %Y" }}{% if post.author %} von {{ post.author }}{% endif %}</div>
+        {% if post.image %}
+        <img src="{{ post.image }}" alt="{{ post.title }}" style="max-width: 100%; height: auto; margin-bottom: 1rem;">
+        {% endif %}
+        <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
+        <a href="{{ post.url }}" class="btn btn-primary">Weiterlesen</a>
+    </div>
+    {% endfor %}
+</main>

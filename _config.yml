@@ -1,0 +1,23 @@
+title: KMUpower
+email: info@kmupower.ch
+description: >-
+  Der Blog von KMUpower – Digitalisierung, Power Platform und Lösungen für KMU.
+baseurl: "/KMUpower2"
+url: "https://marcelehmann.github.io"
+permalink: /blog/:title/
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year-:month-:day-:title/
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      author: KMUpower Team
+      image: /assets/images/DigitalStrategySession.png
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
